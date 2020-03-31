@@ -16,6 +16,7 @@ namespace archive
     public partial class FormSearch : Form
     {
         DataTable DtSearchFile = new DataTable();
+        DataTable dtCombinedFilesData = new DataTable();
         OpenFileDialog Pdf = new OpenFileDialog();
         string id = "";
         ArchieveDatabase Search = new ArchieveDatabase();
@@ -23,12 +24,13 @@ namespace archive
         PdfClass MyPdf = new PdfClass();
         String type = "وارد / صادر ";
         string job;
+        int globalIndex = 0;
         public FormSearch(string name, string password)
         {
-                  
+
             InitializeComponent();
             TxtUser.Text = name;
-           
+
         }
         private void FormSearch_Load(object sender, EventArgs e)
         {
@@ -40,38 +42,38 @@ namespace archive
             ImportDate2.Value = DateTime.Now;
             OrgExportDate2.Value = DateTime.Now;
             FollowingDate2.Value = DateTime.Now;
-          //  SearchNew();
+            //  SearchNew();
         }
         void FillCmbBxUserName()
         {
 
 
             DataTable Dt = new DataTable();
-            Dt = Search.QuaryExecute("select username from users");
+            Dt = Search.QueryExecute("select username from users");
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
             {
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);
             }
-          
+
             //CmbBxUserName.Sorted = true;
         }
         void Authority()
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + TxtUser.Text + "' ";
-            Dt = Search.QuaryExecute(Quary);
-           
+            Dt = Search.QueryExecute(Quary);
+
             job = Dt.Rows[0]["job"].ToString();
-           
+
         }
         void Init_Dgv()
         {
-            String[] DgvHeaders = {  "رقم المكانبة ", "تاريخ المكاتبة ", "اسم الجهة", "المختصون", "تاريخ المتابعة ", "ملخص الموضوع ", " اجراء متخذ" };
+            String[] DgvHeaders = { "رقم المكانبة ", "تاريخ المكاتبة ", "اسم الجهة", "المختصون", "تاريخ المتابعة ", "ملخص الموضوع ", " اجراء متخذ" };
             for (int i = 0; i < DgvHeaders.Length; i++)
             {
                 DgvSearch.Columns[i].HeaderText = DgvHeaders[i];
             }
-        
+
             DgvSearch.Columns[0].Width = 55;
             DgvSearch.Columns[1].Width = 75;
             DgvSearch.Columns[2].Width = 200;
@@ -98,7 +100,7 @@ namespace archive
             txtexportchange.Text = "";
             txtsummary.Text = "";
             orgname.Text = "";
-   
+
 
         }
 
@@ -152,20 +154,6 @@ namespace archive
                 SearchNew();
                 SearchFile();
             }
-        }
-        String StringNewSearchForm(String Data)
-        {
-            int IndexString;
-            StringBuilder NewFormat = new StringBuilder(Data);
-
-            //for (IndexString = 0; IndexString < Data.Length; IndexString++)
-            //{
-            //    if (Data[IndexString] == 'أ' || Data[IndexString] == 'ا' || Data[IndexString] == 'إ' || Data[IndexString] == 'آ' || Data[IndexString] == 'ي' || Data[IndexString] == 'ى' || Data[IndexString] == 'ه' || Data[IndexString] == 'ة' || Data[IndexString] == ' ')
-            //    {
-            //        NewFormat[IndexString] = '%';
-            //    }
-            //}
-            return NewFormat.ToString();
         }
         private void CkBxImportId_OnChange(object sender, EventArgs e)
         {
@@ -247,20 +235,20 @@ namespace archive
         private void orgid_OnValueChanged(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
-            Dt = Search.QuaryExecute("select orgname from org where idorg = '"+orgid.Text+"'");
+            Dt = Search.QueryExecute("select orgname from org where idorg = '" + orgid.Text + "'");
             string array = String.Empty;
             if (Dt.Rows.Count > 0)
             {
                 array = Dt.Rows[0]["orgname"].ToString();
             }
-           orgname.Text = array;
+            orgname.Text = array;
 
         }
 
         private void orgname_OnValueChanged(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
-            Dt = Search.QuaryExecute("select idorg from org where orgname like '"+  orgname.Text + "'");
+            Dt = Search.QueryExecute("select idorg from org where orgname like '" + orgname.Text + "'");
             string array = String.Empty;
             if (Dt.Rows.Count > 0)
             {
@@ -305,12 +293,12 @@ namespace archive
                 }
                 if (txtsummary.Text != "")
                 {
-                    CommandText1 += "  summary like'" + '%' + StringNewSearchForm(txtsummary.Text) + '%' + "'and";
+                    CommandText1 += "  summary like'" + '%' + txtsummary.Text + '%' + "'and";
                 }
 
                 if (orgname.Text != "")
                 {
-                    CommandText1 += " orgname like'" + '%' + StringNewSearchForm(orgname.Text) + '%' + "' and ";
+                    CommandText1 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
                 }
                 if (job != "")
                 {
@@ -319,9 +307,9 @@ namespace archive
 
                 if (CmbBxUserName.Text != "اختر مختص")
                 {
-                    CommandText1 += " username like'" + '%' + StringNewSearchForm(CmbBxUserName.Text) + '%' + "' and ";
+                    CommandText1 += " username like'" + '%' + CmbBxUserName.Text + '%' + "' and ";
                 }
-           
+
                 if (CkBxImportDate.Checked == true)
                 {
                     CommandText1 += "   importdate >= '" + Dates[0] + "' AND importdate <= '" + Dates[1] + "' and ";
@@ -334,36 +322,29 @@ namespace archive
                 if (ChkBxFollowing.Checked == true)
                 {
                     CommandText1 += "   followingdate >= '" + Dates[4] + "' AND followingdate <= '" + Dates[5] + "' and ";
-                   // CommandText1 += "  DATE(followingdate) ASC , ";
 
                 }
                 CommandText1 += "  importid > 0";
 
-
                 CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action ,id as mah FROM exportdata where  ";
 
-                if (TxtImportId.Text != "")
-                {
-                    CommandText2 += "  exportid ='"  + TxtImportId.Text + "'and";
-                }
+                if (TxtExportId.Text != "")
+                    CommandText2 += "  exportid ='" + TxtExportId.Text + "' and ";
 
                 if (txtsummary.Text != "")
-                {
-                    CommandText2 += "  summary like'" + '%' + StringNewSearchForm(txtsummary.Text) + '%' + "'and";
-                }
+                    CommandText2 += "  summary like'" + '%' + txtsummary.Text + '%' + "'and";
 
                 if (orgname.Text != "")
-                {
-                    CommandText2 += " orgname like'" + '%' + StringNewSearchForm(orgname.Text) + '%' + "' and ";
-                }
+                    CommandText2 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
+
                 if (job != "")
                 {
-                    CommandText2 += "username like'" + '%' + job + '%' + "' and ";
+                    CommandText2 += " username like'" + '%' + job + '%' + "' and ";
                 }
 
                 if (CmbBxUserName.Text != "اختر مختص")
                 {
-                    CommandText2 += " username like'" + '%' + StringNewSearchForm(CmbBxUserName.Text) + '%' + "' and ";
+                    CommandText2 += " username like'" + '%' + CmbBxUserName.Text + '%' + "' and ";
                 }
 
                 if (CkBxImportDate.Checked == true)
@@ -375,48 +356,50 @@ namespace archive
                 if (ChkBxFollowing.Checked == true)
                 {
                     CommandText2 += "   followingdate >= '" + Dates[4] + "' AND followingdate <= '" + Dates[5] + "' and ";
-                 //   CommandText1 += "  DATE(followingdate) ASC , ";
 
                 }
 
-                if (txtexportorg.Text !="" || txtexportchange.Text!="" || CkBxImportDate.Checked == true)
+                if (txtexportorg.Text != "" || txtexportchange.Text != "" || CkBxImportDate.Checked == true)
                 {
-                    CommandText2 += "  exportid < 0 and" ;
+                    CommandText2 += "  exportid < 0 and";
 
                 }
                 CommandText2 += "  exportid > 0";
-
-
+                Console.WriteLine(CommandText1);
+                Console.WriteLine(CommandText2);
 
                 if (ChkBxImportExport.Checked == true)
                 {
                     type = "وارد / صادر ";
-                    Dt1 = Search.QuaryExecute(CommandText1);
-                    Dt2 = Search.QuaryExecute(CommandText2);
+                    Dt1 = Search.QueryExecute(CommandText1);
+                    Dt2 = Search.QueryExecute(CommandText2);
                     Dt1.Merge(Dt2);
                     Dt1.DefaultView.Sort = "date DESC,id DESC";
+
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, type);
-                    DgvSearch.DataSource = Dt1;
+                    Console.WriteLine("passed report");
+
+                    //DgvSearch.DataSource = Dt1;
 
                 }
                 else if (ChkBxImport.Checked == true)
                 {
                     type = "وارد";
-                    Dt1 = Search.QuaryExecute(CommandText1);
+                    Dt1 = Search.QueryExecute(CommandText1);
                     Dt1.DefaultView.Sort = "date DESC,id DESC";
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, type);
-                    DgvSearch.DataSource = Dt1;
+                    // DgvSearch.DataSource = Dt1;
                 }
                 else if (ChkBxExport.Checked == true)
                 {
                     type = "صادر";
-                    Dt2 = Search.QuaryExecute(CommandText2);
+                    Dt2 = Search.QueryExecute(CommandText2);
                     Dt2.DefaultView.Sort = "date DESC,id DESC";
                     Dt2 = Dt2.DefaultView.ToTable();
                     ReportViwerData(Dt2, type);
-                    DgvSearch.DataSource = Dt2;
+                    //   DgvSearch.DataSource = Dt2;
 
 
                 }
@@ -425,6 +408,7 @@ namespace archive
             {
                 MessageBox.Show(ex.Message);
             }
+            Console.WriteLine("passed function search");
 
         }
 
@@ -451,7 +435,6 @@ namespace archive
         {
             try
             {
-               // id  = Dt.Rows[e.RowIndex][7].ToString();
                 id = DgvSearch[7, e.RowIndex].Value.ToString();
 
                 if (id.Contains("و"))
@@ -486,10 +469,6 @@ namespace archive
 
 
                 }
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -499,7 +478,7 @@ namespace archive
 
         void SearchFile()
         {
-            if(TxtImportId.Text != "")
+            if (TxtImportId.Text != "")
             {
                 TxtExportId.Text = "";
                 DtSearchFile.Clear();
@@ -531,10 +510,7 @@ namespace archive
                 AxAcroPDF.LoadFile(path);
             }
 
-
-            Init_Dgv();
-
-
+            //Init_Dgv();
 
         }
 
@@ -543,8 +519,91 @@ namespace archive
             if (e.KeyCode == Keys.Enter)
             {
                 SearchNew();
+                Console.WriteLine("passed");
                 SearchFile();
             }
+        }
+
+        private void show_original_correspondence_Click(object sender, EventArgs e)
+        {
+            globalIndex = 0;
+            string connectionKey = get_connection_key();
+            dtCombinedFilesData = get_combined_files_data(connectionKey);//combined files data           
+
+            string id = (string)dtCombinedFilesData.Rows[0]["uniqueID"];
+
+            byte[] pdfsdata = get_pdf_file(id);
+
+            string path = @"C:\Users\Public\Documents\tempfile'" + globalIndex.ToString() + "'.pdf";
+            System.IO.File.WriteAllBytes(path, pdfsdata);
+            AxAcroPDF.Show();
+            Pdf.FileName = path;
+            AxAcroPDF.LoadFile(path);
+
+
+        }
+
+        private string get_connection_key()
+        {
+            string table = (TxtExportId.Text == "") ? "importfile" : "exportfile";
+            string id = (TxtExportId.Text == "") ? TxtImportId.Text : TxtExportId.Text;
+            string query = "select connection from " + table + " where portid = " + id;
+
+            DataTable dt = Search.QueryExecute(query);
+            string return_value = (string)dt.Rows[3][0];
+            //Console.WriteLine(query);
+            Console.WriteLine(return_value);
+            return return_value;
+        }
+
+        private DataTable get_combined_files_data(String connectionKey)
+        {
+            string query = " select  importdata.id as uniqueID, importdate as date,summary,portid,connection," +
+            "orgid,orgname from importdata join importfile on importdata.id = importfile.id " +
+            " having connection =  '" + connectionKey + "'" +
+            " union " +
+
+            " select exportdata.id as uniqueID,exportdate as date,summary,portid,connection," +
+            "orgid,orgname from exportdata join exportfile on exportdata.id = exportfile.id" +
+            " having connection =  '" + connectionKey + "'"
+            + " order by date DESC";
+            //Console.WriteLine(query);
+
+            DataTable dt = Search.QueryExecute(query);
+            Console.WriteLine("row count = " + dt.Rows.Count);
+
+            return dt;
+        }
+
+        private void next_btn_Click(object sender, EventArgs e)
+        {
+            
+            globalIndex++;
+            //checked when out of bounds
+            if (globalIndex == dtCombinedFilesData.Rows.Count)
+                globalIndex = 0;
+            string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
+            byte[] pdfsdata = get_pdf_file(id);
+
+            
+            string path = @"C:\Users\Public\Documents\tempfile'" + globalIndex.ToString() + "'.pdf";
+            System.IO.File.WriteAllBytes(path, pdfsdata);
+            AxAcroPDF.Show();
+            Pdf.FileName = path;
+            AxAcroPDF.LoadFile(path);
+
+        }
+
+        private  byte[] get_pdf_file(string id){
+
+            string query = "select pdffile from importfile where id = '" + id + "'" +
+            " union select pdffile from exportfile where id = '" + id + "'";
+        
+            DataTable temp = Search.QueryExecute(query);
+
+            byte [] result_pdf= temp.Rows[0]["pdffile"] as byte[];
+            return result_pdf;
+
         }
     }
 }

@@ -26,7 +26,7 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + username + "' ";
-            Dt = Reports.QuaryExecute(Quary);
+            Dt = Reports.QueryExecute(Quary);
             job = Dt.Rows[0]["job"].ToString();
         }
         private void FormReports_Load(object sender, EventArgs e)
@@ -80,8 +80,8 @@ namespace archive
                 if (ChkBxImportExport.Checked == true)
                 {
                     type = "وارد / صادر ";
-                    Dt1 = Reports.QuaryExecute(CommandText1);
-                    Dt2 = Reports.QuaryExecute(CommandText2);
+                    Dt1 = Reports.QueryExecute(CommandText1);
+                    Dt2 = Reports.QueryExecute(CommandText2);
                     Dt1.Merge(Dt2);
                     Dt1.DefaultView.Sort = "date ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
@@ -90,7 +90,7 @@ namespace archive
                 else if (ChkBxImport.Checked == true)
                 {
                     type = "وارد";
-                    Dt1 = Reports.QuaryExecute(CommandText1);
+                    Dt1 = Reports.QueryExecute(CommandText1);
                     Dt1.DefaultView.Sort = "date ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, Dates, type);
@@ -98,7 +98,7 @@ namespace archive
                 else if (ChkBxExport.Checked == true)
                 {
                     type = "صادر";
-                    Dt2 = Reports.QuaryExecute(CommandText2);
+                    Dt2 = Reports.QueryExecute(CommandText2);
                     Dt2.DefaultView.Sort = "date ASC,id ASC";
                     Dt2 = Dt2.DefaultView.ToTable();
                     ReportViwerData(Dt2, Dates, type);

@@ -35,8 +35,8 @@ namespace archive
                 CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action , primaryfileid, secondfileid FROM exportdata where id = '" + CmbBxName.Text + "'  ";
                 
                     type = "وارد / صادر ";
-                    Dt1 = Connect.QuaryExecute(CommandText1);
-                    Dt2 = Connect.QuaryExecute(CommandText2);
+                    Dt1 = Connect.QueryExecute(CommandText1);
+                    Dt2 = Connect.QueryExecute(CommandText2);
                     Dt1.Merge(Dt2);
                     Dt1.DefaultView.Sort = "date ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
@@ -227,8 +227,8 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             DataTable Dt1 = new DataTable();
-            Dt = Connect.QuaryExecute("select distinct note from importdata where note != ''");
-            Dt1 = Connect.QuaryExecute("select distinct note from exportdata where note != ''");
+            Dt = Connect.QueryExecute("select distinct note from importdata where note != ''");
+            Dt1 = Connect.QueryExecute("select distinct note from exportdata where note != ''");
             Dt.Merge(Dt1);
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
             {

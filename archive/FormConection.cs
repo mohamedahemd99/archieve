@@ -97,7 +97,7 @@ namespace archive
                 if (ChkBxImport2.Checked == true)
                 {
                     String Quary = "select  connection from importfile where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
-                    Dt = Connect.QuaryExecute(Quary);
+                    Dt = Connect.QueryExecute(Quary);
                     int count = Dt.Rows.Count;
                     if (count == 1)
                     {
@@ -107,7 +107,7 @@ namespace archive
                         {
                             Connection = TxtCon2.Text + "-" + TxtDate2.Text + "-" + type2;
                             String UpdateQuery = "UPDATE importfile SET Connection = '" + Connection + "'where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
-                            Connect.QuaryExecute(UpdateQuery);
+                            Connect.QueryExecute(UpdateQuery);
                         }
                     }
                     else
@@ -123,7 +123,7 @@ namespace archive
                 {
 
                     String Quary = "select connection from exportfile where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
-                    Dt = Connect.QuaryExecute(Quary);
+                    Dt = Connect.QueryExecute(Quary);
                     int count = Dt.Rows.Count;
                     if (count == 1)
                     {
@@ -133,7 +133,7 @@ namespace archive
                         {
                             Connection = TxtCon2.Text + "-" + TxtDate2.Text + "-" + type2;
                             String UpdateQuery = "UPDATE exportfile SET Connection = '" + Connection + "'where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
-                            Connect.QuaryExecute(UpdateQuery);
+                            Connect.QueryExecute(UpdateQuery);
                         }
                     }
                     else

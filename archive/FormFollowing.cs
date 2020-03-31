@@ -39,7 +39,7 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + TxtUser.Text + "' ";
-            Dt = Following.QuaryExecute(Quary);
+            Dt = Following.QueryExecute(Quary);
 
             job = Dt.Rows[0]["job"].ToString();
 
@@ -47,7 +47,7 @@ namespace archive
         void FillCmbBxUserName()
         {
             DataTable Dt = new DataTable();
-            Dt = Following.QuaryExecute("select username from users");
+            Dt = Following.QueryExecute("select username from users");
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
             {
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);
@@ -145,7 +145,7 @@ namespace archive
         private void orgid_OnValueChanged(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
-            Dt = Following.QuaryExecute("select orgname from org where idorg = '" + orgid.Text + "'");
+            Dt = Following.QueryExecute("select orgname from org where idorg = '" + orgid.Text + "'");
             string array = String.Empty;
             if (Dt.Rows.Count > 0)
             {
@@ -156,7 +156,7 @@ namespace archive
         private void orgname_OnValueChanged(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
-            Dt = Following.QuaryExecute("select idorg from org where orgname like '" + orgname.Text + "'");
+            Dt = Following.QueryExecute("select idorg from org where orgname like '" + orgname.Text + "'");
             string array = String.Empty;
             if (Dt.Rows.Count > 0)
             {
@@ -293,8 +293,8 @@ namespace archive
                 if (ChkBxImportExport.Checked == true)
                 {
                     type = "وارد / صادر ";
-                    Dt1 = Following.QuaryExecute(CommandText1);
-                    Dt2 = Following.QuaryExecute(CommandText2);
+                    Dt1 = Following.QueryExecute(CommandText1);
+                    Dt2 = Following.QueryExecute(CommandText2);
                     Dt1.Merge(Dt2);
                     Dt1.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
@@ -303,7 +303,7 @@ namespace archive
                 else if (ChkBxImport.Checked == true)
                 {
                     type = "وارد";
-                    Dt1 = Following.QuaryExecute(CommandText1);
+                    Dt1 = Following.QueryExecute(CommandText1);
                     Dt1.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, Dates, type);
@@ -311,7 +311,7 @@ namespace archive
                 else if (ChkBxExport.Checked == true)
                 {
                     type = "صادر";
-                    Dt2 = Following.QuaryExecute(CommandText2);
+                    Dt2 = Following.QueryExecute(CommandText2);
                     Dt2.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt2 = Dt2.DefaultView.ToTable();
                     ReportViwerData(Dt2, Dates, type);

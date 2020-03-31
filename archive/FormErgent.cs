@@ -47,8 +47,8 @@ namespace archive
                     CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action  FROM exportdata where following = 1 and ";
                     CommandText2 += "   followingdate >= '" + Dates[0] + "' AND followingdate <= '" + Dates[1] + "'  ";
 
-                    Dt1 = Ergernt.QuaryExecute(CommandText1);
-                    Dt2 = Ergernt.QuaryExecute(CommandText2);
+                    Dt1 = Ergernt.QueryExecute(CommandText1);
+                    Dt2 = Ergernt.QueryExecute(CommandText2);
                     Dt1.Merge(Dt2);
                     Dt1.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();

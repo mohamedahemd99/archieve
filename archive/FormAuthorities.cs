@@ -59,7 +59,7 @@ namespace archive
         void FillCmbBxUserName()
         {
             DataTable Dt = new DataTable();
-            Dt = Authorties.QuaryExecute("select username from users");
+            Dt = Authorties.QueryExecute("select username from users");
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
             {
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);
@@ -69,7 +69,7 @@ namespace archive
         }
         void FillMyData()
         {
-            DgvUser.DataSource = Authorties.QuaryExecute("select * from login");
+            DgvUser.DataSource = Authorties.QueryExecute("select * from login");
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

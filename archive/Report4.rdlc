@@ -45,23 +45,11 @@
           <DataField>action</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="primaryfileid">
-          <DataField>primaryfileid</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="secondfileid">
-          <DataField>secondfileid</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="active">
-          <DataField>active</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ReportData</rd:DataSetName>
-        <rd:SchemaPath>F:\Mahmoud ali\Archive\archive2.1\archive\ReportData.xsd</rd:SchemaPath>
-        <rd:TableName>ReportData</rd:TableName>
+        <rd:SchemaPath>C:\Users\Sami\Desktop\copy of projects\Source Code\Archive\archive2.1\archive\ReportData.xsd</rd:SchemaPath>
+        <rd:TableName>searchReport</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -1028,7 +1016,6 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>0cm</Top>
               <Left>0.125in</Left>
               <Height>0.6cm</Height>
               <Width>7.97073cm</Width>
@@ -1077,7 +1064,6 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber1</rd:DefaultName>
-              <Top>0cm</Top>
               <Left>11.29065cm</Left>
               <Height>0.6cm</Height>
               <Width>8.59814cm</Width>
@@ -1109,7 +1095,6 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>UserID</rd:DefaultName>
-              <Top>0cm</Top>
               <Left>21.99785cm</Left>
               <Height>0.6cm</Height>
               <Width>6.02866cm</Width>

@@ -35,7 +35,7 @@ namespace archive
         void FillCmbBxUserName()
         {
             DataTable Dt = new DataTable();
-            Dt = Archieve.QuaryExecute("select name from login ORDER BY number ASC");
+            Dt = Archieve.QueryExecute("select name from login ORDER BY number ASC");
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
             {
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);

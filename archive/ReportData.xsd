@@ -12,7 +12,7 @@
   <xs:element name="ReportData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportData" msprop:Generator_UserDSName="ReportData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ReportData" msprop:Generator_TableClassName="ReportDataDataTable" msprop:Generator_TableVarName="tableReportData" msprop:Generator_RowChangedName="ReportDataRowChanged" msprop:Generator_TablePropName="_ReportData" msprop:Generator_RowDeletingName="ReportDataRowDeleting" msprop:Generator_RowChangingName="ReportDataRowChanging" msprop:Generator_RowEvHandlerName="ReportDataRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportDataRowDeleted" msprop:Generator_RowClassName="ReportDataRow" msprop:Generator_UserTableName="ReportData" msprop:Generator_RowEvArgName="ReportDataRowChangeEvent">
+        <xs:element name="ReportData" msprop:Generator_TableClassName="ReportDataDataTable" msprop:Generator_TableVarName="tableReportData" msprop:Generator_TablePropName="_ReportData" msprop:Generator_RowDeletingName="ReportDataRowDeleting" msprop:Generator_RowChangingName="ReportDataRowChanging" msprop:Generator_RowEvHandlerName="ReportDataRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportDataRowDeleted" msprop:Generator_UserTableName="ReportData" msprop:Generator_RowChangedName="ReportDataRowChanged" msprop:Generator_RowEvArgName="ReportDataRowChangeEvent" msprop:Generator_RowClassName="ReportDataRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -25,6 +25,19 @@
               <xs:element name="primaryfileid" msprop:Generator_ColumnVarNameInTable="columnprimaryfileid" msprop:Generator_ColumnPropNameInRow="primaryfileid" msprop:Generator_ColumnPropNameInTable="primaryfileidColumn" msprop:Generator_UserColumnName="primaryfileid" type="xs:string" minOccurs="0" />
               <xs:element name="secondfileid" msprop:Generator_ColumnVarNameInTable="columnsecondfileid" msprop:Generator_ColumnPropNameInRow="secondfileid" msprop:Generator_ColumnPropNameInTable="secondfileidColumn" msprop:Generator_UserColumnName="secondfileid" type="xs:string" minOccurs="0" />
               <xs:element name="active" msprop:Generator_ColumnVarNameInTable="columnactive" msprop:Generator_ColumnPropNameInRow="active" msprop:Generator_ColumnPropNameInTable="activeColumn" msprop:Generator_UserColumnName="active" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="searchReport" msprop:Generator_TableClassName="searchReportDataTable" msprop:Generator_TableVarName="tablesearchReport" msprop:Generator_TablePropName="searchReport" msprop:Generator_RowDeletingName="searchReportRowDeleting" msprop:Generator_RowChangingName="searchReportRowChanging" msprop:Generator_RowEvHandlerName="searchReportRowChangeEventHandler" msprop:Generator_RowDeletedName="searchReportRowDeleted" msprop:Generator_UserTableName="searchReport" msprop:Generator_RowChangedName="searchReportRowChanged" msprop:Generator_RowEvArgName="searchReportRowChangeEvent" msprop:Generator_RowClassName="searchReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" type="xs:string" minOccurs="0" />
+              <xs:element name="followingdate" msprop:Generator_ColumnVarNameInTable="columnfollowingdate" msprop:Generator_ColumnPropNameInRow="followingdate" msprop:Generator_ColumnPropNameInTable="followingdateColumn" msprop:Generator_UserColumnName="followingdate" type="xs:string" minOccurs="0" />
+              <xs:element name="orgname" msprop:Generator_ColumnVarNameInTable="columnorgname" msprop:Generator_ColumnPropNameInRow="orgname" msprop:Generator_ColumnPropNameInTable="orgnameColumn" msprop:Generator_UserColumnName="orgname" type="xs:string" minOccurs="0" />
+              <xs:element name="summary" msprop:Generator_ColumnVarNameInTable="columnsummary" msprop:Generator_ColumnPropNameInRow="summary" msprop:Generator_ColumnPropNameInTable="summaryColumn" msprop:Generator_UserColumnName="summary" type="xs:string" minOccurs="0" />
+              <xs:element name="action" msprop:Generator_ColumnVarNameInTable="columnaction" msprop:Generator_ColumnPropNameInRow="action" msprop:Generator_ColumnPropNameInTable="actionColumn" msprop:Generator_UserColumnName="action" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

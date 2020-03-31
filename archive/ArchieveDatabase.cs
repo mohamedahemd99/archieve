@@ -29,10 +29,11 @@ namespace archive
            return dt;
        }
 
-        //Function that get data from the database to c# in datatable representation based on quary sent
+        //Function that get data from the database to c# in datatable representation based on query sent
 
-        public DataTable QuaryExecute(String Quary)
+        public DataTable QueryExecute(String query)
         {
+            
             //Create DataTable that return data from function
             DataTable dt = new DataTable();
 
@@ -40,21 +41,12 @@ namespace archive
             {
                 con.Open();
             }
-            MySqlDataAdapter da = new MySqlDataAdapter(Quary, con);
+            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
             da.Fill(dt);
             con.Close();
             return dt;
         }
 
-        //public MySqlDataReader MyExecuteReader(String Query)
-        //{
-        //    con.Open();
-        //    MySqlCommand cmd = new MySqlCommand(Query, con);
-        //    MySqlDataReader dr= cmd.ExecuteReader();
-        //    dr.Read();
-        //    con.Close();
-        //    return dr;
-        //}
         public int MyExecuteNonQuery(String Query)
         {
             if (con.State == ConnectionState.Closed)

@@ -34,12 +34,12 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + nameofuser + "' ";
-            Dt = Org.QuaryExecute(Quary);
+            Dt = Org.QueryExecute(Quary);
             org = Dt.Rows[0]["org"].ToString();
         }
         void FillMyData()
         {
-            DgvOrg.DataSource = Org.QuaryExecute("select * from org");
+            DgvOrg.DataSource = Org.QueryExecute("select * from org");
         }
         void DGV_Headers()
         {
@@ -208,7 +208,7 @@ namespace archive
             try
             {
                 String Quary = "select * from org where idorg = '"  + TxtOrgId.Text + "' ORDER BY idorg";
-                DgvOrg.DataSource = Org.QuaryExecute(Quary);
+                DgvOrg.DataSource = Org.QueryExecute(Quary);
             }
             catch (Exception ex)
             { }
@@ -217,7 +217,7 @@ namespace archive
         private void TxtOrgName_OnValueChanged(object sender, EventArgs e)
         {
             String Quary = "select * from org where orgname like'" + '%' + TxtOrgName.Text + '%' + "' ";
-            DgvOrg.DataSource = Org.QuaryExecute(Quary);
+            DgvOrg.DataSource = Org.QueryExecute(Quary);
         }
     }
 }

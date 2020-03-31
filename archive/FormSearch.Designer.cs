@@ -29,12 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearch));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TxtCon = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtExportId = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CmbBxUserName = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BtnClear = new System.Windows.Forms.Button();
@@ -71,7 +82,6 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Report = new System.Windows.Forms.Button();
             this.ChkBxImportExport = new Bunifu.Framework.UI.BunifuCheckbox();
             this.ChkBxExport = new Bunifu.Framework.UI.BunifuCheckbox();
             this.ChkBxImport = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -83,8 +93,10 @@
             this.ReportSearch = new Microsoft.Reporting.WinForms.ReportViewer();
             this.AxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.DgvSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.TxtExportId = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.show_original_correspondence = new System.Windows.Forms.Button();
+            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.next_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AxAcroPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).BeginInit();
@@ -93,6 +105,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.Controls.Add(this.bunifuCheckbox3);
+            this.panel1.Controls.Add(this.bunifuCheckbox4);
+            this.panel1.Controls.Add(this.bunifuCustomLabel15);
+            this.panel1.Controls.Add(this.bunifuCustomLabel21);
+            this.panel1.Controls.Add(this.bunifuCustomLabel22);
+            this.panel1.Controls.Add(this.TxtDate);
+            this.panel1.Controls.Add(this.TxtCon);
+            this.panel1.Controls.Add(this.bunifuCheckbox1);
+            this.panel1.Controls.Add(this.bunifuCustomLabel23);
+            this.panel1.Controls.Add(this.bunifuCheckbox2);
+            this.panel1.Controls.Add(this.bunifuCustomLabel24);
             this.panel1.Controls.Add(this.TxtExportId);
             this.panel1.Controls.Add(this.bunifuCustomLabel11);
             this.panel1.Controls.Add(this.CmbBxUserName);
@@ -135,9 +158,159 @@
             this.panel1.ForeColor = System.Drawing.Color.Purple;
             this.panel1.Location = new System.Drawing.Point(591, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(761, 342);
+            this.panel1.Size = new System.Drawing.Size(761, 382);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // bunifuCustomLabel15
+            // 
+            this.bunifuCustomLabel15.AutoSize = true;
+            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(314, 316);
+            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
+            this.bunifuCustomLabel15.Size = new System.Drawing.Size(69, 19);
+            this.bunifuCustomLabel15.TabIndex = 88;
+            this.bunifuCustomLabel15.Text = "سنة الوثيقة";
+            // 
+            // bunifuCustomLabel21
+            // 
+            this.bunifuCustomLabel21.AutoSize = true;
+            this.bunifuCustomLabel21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel21.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(474, 316);
+            this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
+            this.bunifuCustomLabel21.Size = new System.Drawing.Size(31, 19);
+            this.bunifuCustomLabel21.TabIndex = 90;
+            this.bunifuCustomLabel21.Text = "رقم ";
+            // 
+            // bunifuCustomLabel22
+            // 
+            this.bunifuCustomLabel22.AutoSize = true;
+            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(655, 318);
+            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(89, 24);
+            this.bunifuCustomLabel22.TabIndex = 87;
+            this.bunifuCustomLabel22.Text = "ربط الوثيقة";
+            // 
+            // TxtDate
+            // 
+            this.TxtDate.BackColor = System.Drawing.Color.FloralWhite;
+            this.TxtDate.BorderColorFocused = System.Drawing.Color.Blue;
+            this.TxtDate.BorderColorIdle = System.Drawing.Color.Crimson;
+            this.TxtDate.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.TxtDate.BorderThickness = 3;
+            this.TxtDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtDate.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.TxtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtDate.isPassword = false;
+            this.TxtDate.Location = new System.Drawing.Point(223, 305);
+            this.TxtDate.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtDate.Name = "TxtDate";
+            this.TxtDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtDate.Size = new System.Drawing.Size(84, 36);
+            this.TxtDate.TabIndex = 84;
+            this.TxtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtCon
+            // 
+            this.TxtCon.BackColor = System.Drawing.Color.FloralWhite;
+            this.TxtCon.BorderColorFocused = System.Drawing.Color.Blue;
+            this.TxtCon.BorderColorIdle = System.Drawing.Color.Crimson;
+            this.TxtCon.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.TxtCon.BorderThickness = 3;
+            this.TxtCon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtCon.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.TxtCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtCon.isPassword = false;
+            this.TxtCon.Location = new System.Drawing.Point(406, 306);
+            this.TxtCon.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCon.Name = "TxtCon";
+            this.TxtCon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtCon.Size = new System.Drawing.Size(61, 34);
+            this.TxtCon.TabIndex = 83;
+            this.TxtCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.Checked = false;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(856, 355);
+            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox1.TabIndex = 86;
+            // 
+            // bunifuCustomLabel23
+            // 
+            this.bunifuCustomLabel23.AutoSize = true;
+            this.bunifuCustomLabel23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel23.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel23.Location = new System.Drawing.Point(586, 297);
+            this.bunifuCustomLabel23.Name = "bunifuCustomLabel23";
+            this.bunifuCustomLabel23.Size = new System.Drawing.Size(54, 19);
+            this.bunifuCustomLabel23.TabIndex = 91;
+            this.bunifuCustomLabel23.Text = "رقم وارد";
+            // 
+            // bunifuCheckbox2
+            // 
+            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox2.Checked = true;
+            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox2.Location = new System.Drawing.Point(856, 316);
+            this.bunifuCheckbox2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
+            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox2.TabIndex = 85;
+            // 
+            // bunifuCustomLabel24
+            // 
+            this.bunifuCustomLabel24.AutoSize = true;
+            this.bunifuCustomLabel24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel24.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel24.Location = new System.Drawing.Point(581, 322);
+            this.bunifuCustomLabel24.Name = "bunifuCustomLabel24";
+            this.bunifuCustomLabel24.Size = new System.Drawing.Size(59, 19);
+            this.bunifuCustomLabel24.TabIndex = 89;
+            this.bunifuCustomLabel24.Text = "رقم صادر";
+            // 
+            // TxtExportId
+            // 
+            this.TxtExportId.BackColor = System.Drawing.Color.Beige;
+            this.TxtExportId.BorderColorFocused = System.Drawing.Color.Blue;
+            this.TxtExportId.BorderColorIdle = System.Drawing.Color.Blue;
+            this.TxtExportId.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.TxtExportId.BorderThickness = 3;
+            this.TxtExportId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtExportId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtExportId.ForeColor = System.Drawing.Color.Black;
+            this.TxtExportId.isPassword = false;
+            this.TxtExportId.Location = new System.Drawing.Point(360, 4);
+            this.TxtExportId.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtExportId.Name = "TxtExportId";
+            this.TxtExportId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtExportId.Size = new System.Drawing.Size(71, 31);
+            this.TxtExportId.TabIndex = 82;
+            this.TxtExportId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtExportId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtExportId_KeyDown);
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(450, 9);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(70, 22);
+            this.bunifuCustomLabel11.TabIndex = 81;
+            this.bunifuCustomLabel11.Text = "رقم صادر";
             // 
             // CmbBxUserName
             // 
@@ -165,7 +338,7 @@
             this.BtnClear.BackColor = System.Drawing.Color.PapayaWhip;
             this.BtnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnClear.BackgroundImage")));
             this.BtnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClear.Location = new System.Drawing.Point(183, 279);
+            this.BtnClear.Location = new System.Drawing.Point(9, 264);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(143, 52);
             this.BtnClear.TabIndex = 78;
@@ -177,7 +350,7 @@
             this.BtnSearch.BackColor = System.Drawing.Color.PapayaWhip;
             this.BtnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnSearch.BackgroundImage")));
             this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSearch.Location = new System.Drawing.Point(454, 281);
+            this.BtnSearch.Location = new System.Drawing.Point(8, 322);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(144, 52);
             this.BtnSearch.TabIndex = 77;
@@ -652,18 +825,6 @@
             this.bunifuCustomLabel6.TabIndex = 4;
             this.bunifuCustomLabel6.Text = "رقم صادر محول";
             // 
-            // Report
-            // 
-            this.Report.BackColor = System.Drawing.Color.PapayaWhip;
-            this.Report.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Report.BackgroundImage")));
-            this.Report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Report.Location = new System.Drawing.Point(29, 1);
-            this.Report.Name = "Report";
-            this.Report.Size = new System.Drawing.Size(144, 48);
-            this.Report.TabIndex = 82;
-            this.Report.UseVisualStyleBackColor = false;
-            this.Report.Visible = false;
-            // 
             // ChkBxImportExport
             // 
             this.ChkBxImportExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -687,7 +848,7 @@
             this.ChkBxExport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.ChkBxExport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ChkBxExport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxExport.Location = new System.Drawing.Point(307, 22);
+            this.ChkBxExport.Location = new System.Drawing.Point(313, 22);
             this.ChkBxExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ChkBxExport.Name = "ChkBxExport";
             this.ChkBxExport.Size = new System.Drawing.Size(20, 20);
@@ -735,7 +896,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(178, 13);
+            this.label2.Location = new System.Drawing.Point(185, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 34);
             this.label2.TabIndex = 80;
@@ -774,7 +935,7 @@
             // 
             this.ReportSearch.AutoScroll = true;
             this.ReportSearch.LocalReport.ReportEmbeddedResource = "archive.Report4.rdlc";
-            this.ReportSearch.Location = new System.Drawing.Point(12, 418);
+            this.ReportSearch.Location = new System.Drawing.Point(12, 446);
             this.ReportSearch.Name = "ReportSearch";
             this.ReportSearch.ServerReport.BearerToken = null;
             this.ReportSearch.Size = new System.Drawing.Size(1331, 30);
@@ -793,110 +954,128 @@
             // 
             this.DgvSearch.AllowUserToAddRows = false;
             this.DgvSearch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.DgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DgvSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvSearch.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.AntiqueWhite;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle8;
             this.DgvSearch.DoubleBuffered = true;
             this.DgvSearch.EnableHeadersVisualStyles = false;
             this.DgvSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DgvSearch.HeaderBgColor = System.Drawing.Color.Maroon;
             this.DgvSearch.HeaderForeColor = System.Drawing.Color.White;
             this.DgvSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DgvSearch.Location = new System.Drawing.Point(6, 454);
+            this.DgvSearch.Location = new System.Drawing.Point(6, 479);
             this.DgvSearch.MultiSelect = false;
             this.DgvSearch.Name = "DgvSearch";
             this.DgvSearch.ReadOnly = true;
             this.DgvSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DgvSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DgvSearch.ShowCellErrors = false;
-            this.DgvSearch.Size = new System.Drawing.Size(1345, 243);
+            this.DgvSearch.Size = new System.Drawing.Size(1345, 218);
             this.DgvSearch.TabIndex = 86;
             this.DgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearch_CellContentClick);
             // 
-            // TxtExportId
+            // show_original_correspondence
             // 
-            this.TxtExportId.BackColor = System.Drawing.Color.Beige;
-            this.TxtExportId.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtExportId.BorderColorIdle = System.Drawing.Color.Blue;
-            this.TxtExportId.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtExportId.BorderThickness = 3;
-            this.TxtExportId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtExportId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtExportId.ForeColor = System.Drawing.Color.Black;
-            this.TxtExportId.isPassword = false;
-            this.TxtExportId.Location = new System.Drawing.Point(360, 4);
-            this.TxtExportId.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtExportId.Name = "TxtExportId";
-            this.TxtExportId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtExportId.Size = new System.Drawing.Size(71, 31);
-            this.TxtExportId.TabIndex = 82;
-            this.TxtExportId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtExportId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtExportId_KeyDown);
+            this.show_original_correspondence.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.show_original_correspondence.Font = new System.Drawing.Font("B Arabic Style", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.show_original_correspondence.Location = new System.Drawing.Point(12, 1);
+            this.show_original_correspondence.Name = "show_original_correspondence";
+            this.show_original_correspondence.Size = new System.Drawing.Size(167, 46);
+            this.show_original_correspondence.TabIndex = 83;
+            this.show_original_correspondence.Text = "عرض أصل الموضوع";
+            this.show_original_correspondence.UseVisualStyleBackColor = false;
+            this.show_original_correspondence.Click += new System.EventHandler(this.show_original_correspondence_Click);
             // 
-            // bunifuCustomLabel11
+            // bunifuCheckbox3
             // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(450, 9);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(70, 22);
-            this.bunifuCustomLabel11.TabIndex = 81;
-            this.bunifuCustomLabel11.Text = "رقم صادر";
+            this.bunifuCheckbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox3.Checked = false;
+            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox3.Location = new System.Drawing.Point(545, 326);
+            this.bunifuCheckbox3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
+            this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox3.TabIndex = 93;
+            // 
+            // bunifuCheckbox4
+            // 
+            this.bunifuCheckbox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox4.Checked = true;
+            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox4.Location = new System.Drawing.Point(545, 287);
+            this.bunifuCheckbox4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
+            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox4.TabIndex = 92;
+            // 
+            // next_btn
+            // 
+            this.next_btn.Location = new System.Drawing.Point(191, 1);
+            this.next_btn.Name = "next_btn";
+            this.next_btn.Size = new System.Drawing.Size(75, 27);
+            this.next_btn.TabIndex = 87;
+            this.next_btn.Text = "Next";
+            this.next_btn.UseVisualStyleBackColor = true;
+            this.next_btn.Click += new System.EventHandler(this.next_btn_Click);
             // 
             // FormSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.next_btn);
+            this.Controls.Add(this.show_original_correspondence);
             this.Controls.Add(this.DgvSearch);
             this.Controls.Add(this.AxAcroPDF);
             this.Controls.Add(this.ReportSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TxtUser);
-            this.Controls.Add(this.Report);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.ChkBxImportExport);
             this.Controls.Add(this.ChkBxExport);
@@ -964,7 +1143,6 @@
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button Report;
         private System.Windows.Forms.ComboBox CmbBxUserName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuMetroTextbox TxtUser;
@@ -973,6 +1151,19 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         private AxAcroPDFLib.AxAcroPDF AxAcroPDF;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DgvSearch;
+        private System.Windows.Forms.Button show_original_correspondence;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TxtDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TxtCon;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
+        private System.Windows.Forms.Button next_btn;
     }
 }
 

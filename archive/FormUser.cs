@@ -36,18 +36,18 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + username + "' ";
-            Dt = Usr.QuaryExecute(Quary);
+            Dt = Usr.QueryExecute(Quary);
             user = Dt.Rows[0]["user"].ToString();
         }
         void FillMyData()
         {
-            DgvUser.DataSource = Usr.QuaryExecute("select * from users");
+            DgvUser.DataSource = Usr.QueryExecute("select * from users");
         }
 
 
         private void TxtSearch_OnValueChanged(object sender, EventArgs e)
         {
-            DgvUser.DataSource = Usr.QuaryExecute("select * from users where username like'" + '%' + TxtSearch.Text + '%' + "' ");
+            DgvUser.DataSource = Usr.QueryExecute("select * from users where username like'" + '%' + TxtSearch.Text + '%' + "' ");
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

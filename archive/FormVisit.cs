@@ -50,14 +50,14 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + username + "' ";
-            Dt = Visit.QuaryExecute(Quary);
+            Dt = Visit.QueryExecute(Quary);
             visit = Dt.Rows[0]["visit"].ToString();
         }
         void FillMyData()
         {
             DataTable Dt = new DataTable();
             string[] Dates = DatesMaker();
-            Dt = Visit.QuaryExecute("select * from Visit where date >= '" + Dates[0] + "' AND date <= '" + Dates[1] + "'  ORDER BY DATE(date) ASC");
+            Dt = Visit.QueryExecute("select * from Visit where date >= '" + Dates[0] + "' AND date <= '" + Dates[1] + "'  ORDER BY DATE(date) ASC");
             DgvVisit.DataSource = Dt;
             ReportViwerData(Dt, Dates);
             //DgvVisit.DataSource = Visit.QuaryExecute("select * from Visit");

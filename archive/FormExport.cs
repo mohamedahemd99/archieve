@@ -25,13 +25,13 @@ namespace archive
         PdfClass MyPdf = new PdfClass();
         //Create Index to exchange between Files 
         int Index = 0;
-        int GlobalPrimId = 0;
-        string Regist;
-        string Edit;
-        string Following;
-        string Remove;
-        string NameOfUser;
-        string ConnectAblity;
+        int globalPrimId = 0;
+        string regist;
+        string edit;
+        string following;
+        string remove;
+        string nameOfUser;
+        string connectAblity;
         string job;
         String ConnectType = "و";
 
@@ -39,7 +39,7 @@ namespace archive
         {
             InitializeComponent();
             TxtUser.Text = Name;
-            NameOfUser = Name;
+            nameOfUser = Name;
             //TxtDate.Text = DateTime.Now.Year.ToString();
         }
 
@@ -61,14 +61,14 @@ namespace archive
         {
             DataTable Dt = new DataTable();
             String Quary = "select * from login where name ='" + TxtUser.Text + "' ";
-            Dt = Export.QuaryExecute(Quary);
-            Regist = Dt.Rows[0]["register"].ToString();
-            Edit = Dt.Rows[0]["edit"].ToString();
-            Following = Dt.Rows[0]["following"].ToString();
-            Remove = Dt.Rows[0]["remov"].ToString();
+            Dt = Export.QueryExecute(Quary);
+            regist = Dt.Rows[0]["register"].ToString();
+            edit = Dt.Rows[0]["edit"].ToString();
+            following = Dt.Rows[0]["following"].ToString();
+            remove = Dt.Rows[0]["remov"].ToString();
             job = Dt.Rows[0]["job"].ToString();
-            ConnectAblity = Dt.Rows[0]["con"].ToString();
-            if (Following=="0")
+            connectAblity = Dt.Rows[0]["con"].ToString();
+            if (following=="0")
             {
                 CkbxFollowing.Checked = false;
             }
@@ -82,11 +82,11 @@ namespace archive
 
         void FillMydata()
         {
-            DgvOrg.DataSource = Export.QuaryExecute("SELECT * FROM org ");
-            DgvFile.DataSource = Export.QuaryExecute("SELECT * FROM primfile ORDER BY primfileid ");
-            GlobalPrimId = Int32.Parse(DgvFile[0, 0].Value.ToString());
-            String Quary = "SELECT scndfileid,scndfilename FROM scndfile WHERE primfileid = '" + GlobalPrimId.ToString() + "'ORDER BY scndfileid";
-            DgvSubFile.DataSource = Export.QuaryExecute(Quary);
+            DgvOrg.DataSource = Export.QueryExecute("SELECT * FROM org ");
+            DgvFile.DataSource = Export.QueryExecute("SELECT * FROM primfile ORDER BY primfileid ");
+            globalPrimId = Int32.Parse(DgvFile[0, 0].Value.ToString());
+            String Quary = "SELECT scndfileid,scndfilename FROM scndfile WHERE primfileid = '" + globalPrimId.ToString() + "'ORDER BY scndfileid";
+            DgvSubFile.DataSource = Export.QueryExecute(Quary);
         }
 
         void typechange()
@@ -164,7 +164,7 @@ namespace archive
         void FillCmbBxUserName()
         {
             DataTable Dt = new DataTable();
-            Dt = Export.QuaryExecute("select username from users");
+            Dt = Export.QueryExecute("select username from users");
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
             {
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);
@@ -207,14 +207,14 @@ namespace archive
         {
             try
             {
-                string Rowdata = DgvOrg[0, e.RowIndex].Value.ToString();
-                string Clmdata = DgvOrg[1, e.RowIndex].Value.ToString();
+                string rowData = DgvOrg[0, e.RowIndex].Value.ToString();
+                string clmData = DgvOrg[1, e.RowIndex].Value.ToString();
 
-                if (!(LstBxOrgId.Items.Contains(Rowdata)))
+                if (!(LstBxOrgId.Items.Contains(rowData)))
                 {
 
-                    LstBxOrgId.Items.Add(Rowdata);
-                    LstBxOrg.Items.Add(Clmdata);
+                    LstBxOrgId.Items.Add(rowData);
+                    LstBxOrg.Items.Add(clmData);
                 }
             }
             catch (Exception ex)
@@ -227,7 +227,7 @@ namespace archive
             try
             {
                 String Query = "select * from org where idorg like '" + '%' + TxtOrgId.Text + '%' + "' ";
-                DgvOrg.DataSource = Export.QuaryExecute(Query);
+                DgvOrg.DataSource = Export.QueryExecute(Query);
             }
             catch (Exception ex)
             { }
@@ -245,7 +245,7 @@ namespace archive
         private void TxtFileName_OnValueChanged(object sender, EventArgs e)
         {
             string Quary = "select * from primfile where primfilename like'" + '%' + TxtFileName.Text + '%' + "' or primfileid like'" + '%' + TxtFileId.Text + '%' + "' ORDER BY primfileid ";
-            DgvFile.DataSource = Export.QuaryExecute(Quary);
+            DgvFile.DataSource = Export.QueryExecute(Quary);
         }
 
         private void DgvSubFile_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -264,9 +264,9 @@ namespace archive
             {
                 TxtFileId.Text = DgvFile[0, e.RowIndex].Value.ToString();
                 TxtFileName.Text = DgvFile[1, e.RowIndex].Value.ToString();
-                GlobalPrimId = int.Parse(DgvFile[0, e.RowIndex].Value.ToString());
-                String Quary = "select scndfileid , scndfilename  from scndfile where primfileid = '" + GlobalPrimId.ToString() + "'ORDER BY scndfileid";
-                DgvSubFile.DataSource = Export.QuaryExecute(Quary);
+                globalPrimId = int.Parse(DgvFile[0, e.RowIndex].Value.ToString());
+                String Quary = "select scndfileid , scndfilename  from scndfile where primfileid = '" + globalPrimId.ToString() + "'ORDER BY scndfileid";
+                DgvSubFile.DataSource = Export.QueryExecute(Quary);
                 TxtSubFileName.ResetText();
                 TxtSubFileId.ResetText();
             }
@@ -278,7 +278,7 @@ namespace archive
             try
             {
                 String Quary = "select * from primfile where primfileid like '" + '%' + TxtFileId.Text + '%' + "'ORDER BY primfileid ";
-                DgvFile.DataSource = Export.QuaryExecute(Quary);
+                DgvFile.DataSource = Export.QueryExecute(Quary);
             }
             catch (Exception ex)
             { }
@@ -294,7 +294,7 @@ namespace archive
         private void TxtOrgName_OnValueChanged(object sender, EventArgs e)
         {
             String Quary = "select * from org where orgname like'" + '%' + TxtOrgName.Text + '%' + "' ";
-            DgvOrg.DataSource = Export.QuaryExecute(Quary);
+            DgvOrg.DataSource = Export.QueryExecute(Quary);
         }
 
         private void TxtImportId_KeyDown(object sender, KeyEventArgs e)
@@ -370,7 +370,7 @@ namespace archive
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (Remove == "1")
+            if (remove == "1")
             {
                 try
                 {
@@ -436,37 +436,11 @@ namespace archive
             string Quary = "select * from exportfile where id= '" + TxtExportId.Text + '-' + DateExport.Value.Year + '-' + "ص" + "' ";
             MySqlDataAdapter da = new MySqlDataAdapter(Quary, Export.con);
             da.Fill(DtSearchFile);
-
+            Console.WriteLine(DtSearchFile.Rows.Count);
             if (DtSearchFile.Rows.Count != 0)
             {
                 DisplayDataFile(0);
             }
-            else
-            {
-               
-            }
-
-
-        }
-
-        String StringNewSearchForm(String Data)
-        {
-            int IndexString;
-            StringBuilder NewFormat = new StringBuilder(Data);
-
-            for (IndexString = 0; IndexString < Data.Length; IndexString++)
-            {
-                //    if (Data[IndexString] == 'أ' || Data[IndexString] == 'ا' || Data[IndexString] == 'إ' || Data[IndexString] == 'آ' || Data[IndexString] == 'ي' || Data[IndexString] == 'ى' || Data[IndexString] == 'ه' || Data[IndexString] == 'ة' || Data[IndexString] == ' ')
-
-                //if(Data[IndexString] == ' ')
-                //{
-                //    NewFormat.Insert(IndexString + 1, "% ");
-                // //   IndexString = IndexString + 2;
-                //    //NewFormat[IndexString].a
-                //    //NewFormat[IndexString] = '% ';
-                //}
-            }
-            return NewFormat.ToString();
         }
 
         void DisplayDataFile(int index)
@@ -474,6 +448,7 @@ namespace archive
             int FileIndex = index;
             //FilesFound.Text = " العثور على عدد " + (index + 1).ToString() + "/" + DtSearchFile.Rows.Count.ToString() + " من الوثائق";
             ConnectKey = DtSearchFile.Rows[FileIndex]["connection"].ToString();
+            //Console.WriteLine(ConnectKey);
             if (ConnectKey !="")
             {
                 string[] ConnectId = DtSearchFile.Rows[FileIndex]["connection"].ToString().Split('-');
@@ -495,6 +470,7 @@ namespace archive
 
             byte[] pdfsdata = DtSearchFile.Rows[FileIndex]["pdffile"] as byte[];
             string path = @"C:\Users\Public\Documents\tempfile'" + "'.pdf";
+            //Console.WriteLine(path);
             System.IO.File.WriteAllBytes(path, pdfsdata);
             AxAcroPDF.Show();
             Pdf.FileName = path;
@@ -693,7 +669,7 @@ namespace archive
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (Regist == "1")
+            if (regist == "1")
             {
                 SaveData();
                 SaveFile();
@@ -797,7 +773,7 @@ namespace archive
   
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (Edit == "1")
+            if (edit == "1")
             {
                 try
                 {
@@ -839,18 +815,20 @@ namespace archive
                 {
                     CommandText1 = "SELECT id FROM exportfile  where connection = '" + ConnectKey + "'";
                     CommandText2 = "SELECT id FROM importfile  where connection = '" + ConnectKey + "'";
-                    Dt1 = Export.QuaryExecute(CommandText1);
-                    Dt2 = Export.QuaryExecute(CommandText2);
+                    Dt1 = Export.QueryExecute(CommandText1);
+                    Dt2 = Export.QueryExecute(CommandText2);
                     foreach (DataRow dtRow in Dt1.Rows)
                     {
                         string id = "select pdffile,date,portid from exportfile where id= '" + dtRow[0].ToString() + "'";
-                        Dt3 = Export.QuaryExecute(id);
+                        Console.WriteLine("Query for exportfile table : " + id);
+                        Dt3 = Export.QueryExecute(id);
                         Dtlong.Merge(Dt3);
+                        //Console.WriteLine(Dtlong.Rows.Count);
                     }
                     foreach (DataRow dtRow in Dt2.Rows)
                     {
                         string id = "select pdffile,date,portid from importfile where id= '" + dtRow[0].ToString() + "' ";
-                        Dt4 = Export.QuaryExecute(id);
+                        Dt4 = Export.QueryExecute(id);
                         Dtlongall.Merge(Dt4);
                     }
                     Dtlongall.Merge(Dtlong);
@@ -858,11 +836,16 @@ namespace archive
                     Dtlongall = Dtlongall.DefaultView.ToTable();
                     FinalPath = MyPdf.CreatePdfs(Dtlongall);
                     AxAcroPDF.src = FinalPath;
+                    //just print columns
+                    foreach (DataColumn column in Dtlongall.Columns)
+                    {
+                        Console.WriteLine(column.ColumnName);
+                    }
                 }
                 else
                 {
                     CommandText = "select pdffile from exportfile where id= '" + TxtExportId.Text + '-' + DateExport.Value.Year + '-' + "ص" + "' ";
-                    Dtlongall = Export.QuaryExecute(CommandText);
+                    Dtlongall = Export.QueryExecute(CommandText);
                     FinalPath = MyPdf.CreatePdfs(Dtlongall);
                     AxAcroPDF.src = FinalPath;
                 }
@@ -875,7 +858,7 @@ namespace archive
 
         private void BtnConnect_Click(object sender, EventArgs e)
         {
-            if (ConnectAblity == "1")
+            if (connectAblity == "1")
             {
                 FormConection MyFormConnection = new FormConection(TxtUser.Text);
                 MyFormConnection.Show();
@@ -895,7 +878,7 @@ namespace archive
                 if (ChkBxImport.Checked == true)
                 {
                     String Quary = "select  connection from importfile where id = '" + TxtCon.Text + '-' + TxtDate.Text + '-' + ConnectType + "'";
-                    Dt = Export.QuaryExecute(Quary);
+                    Dt = Export.QueryExecute(Quary);
                     int count = Dt.Rows.Count;
                     if (count == 1)
                     {
@@ -905,7 +888,7 @@ namespace archive
                         {
                             ConnectKey = TxtCon.Text + "-" + TxtDate.Text + "-" + ConnectType[0];
                             String UpdateQuery = "UPDATE importfile SET Connection = '" + ConnectKey + "'where id = '" + TxtCon.Text + '-' + TxtDate.Text + '-' + ConnectType + "'";
-                            Export.QuaryExecute(UpdateQuery);
+                            Export.QueryExecute(UpdateQuery);
                         }
                     }
                     else
@@ -921,7 +904,7 @@ namespace archive
                 {
 
                     String Quary = "select connection from exportfile where id = '" + TxtCon.Text + '-' + TxtDate.Text + '-' + ConnectType + "'";
-                    Dt = Export.QuaryExecute(Quary);
+                    Dt = Export.QueryExecute(Quary);
                     int count = Dt.Rows.Count;
                     if (count == 1)
                     {
@@ -931,7 +914,7 @@ namespace archive
                         {
                             ConnectKey = TxtCon.Text + "-" + TxtDate.Text + "-" + ConnectType;
                             String UpdateQuery = "UPDATE exportfile SET Connection = '" + ConnectKey + "'where id = '" + TxtCon.Text + '-' + TxtDate.Text + '-' + ConnectType + "'";
-                            Export.QuaryExecute(UpdateQuery);
+                            Export.QueryExecute(UpdateQuery);
                         }
                     }
                     else
@@ -953,11 +936,11 @@ namespace archive
         {
             Clear();
             --Index;
-            if ((Index > DtSearch.Rows.Count - 1))
+            if (Index > DtSearch.Rows.Count - 1)
             {
                 Index = 0;
             }
-            else if ((Index < 0))
+            else if (Index < 0)
             {
                 Index = DtSearch.Rows.Count - 1;
             }
@@ -997,7 +980,7 @@ namespace archive
             try
             {
                 String Quary = "select scndfileid,scndfilename from scndfile where scndfileid ='" + TxtSubFileId.Text + "'and  primfileid = '" + TxtFileId.Text + "'ORDER BY scndfileid ";
-                DgvSubFile.DataSource = Export.QuaryExecute(Quary);
+                DgvSubFile.DataSource = Export.QueryExecute(Quary);
             }
             catch (Exception ex)
             { }
@@ -1077,5 +1060,96 @@ namespace archive
             splayer.Play();
             // MessageBox.Show(text);
         }
+
+        private void get_next_correspondence()
+        {
+            Clear();
+            ++Index;
+            if ((Index > DtSearch.Rows.Count - 1))
+            {
+                Index = 0;
+            }
+            else if ((Index < 0))
+            {
+                Index = DtSearch.Rows.Count - 1;
+            }
+            if (DtSearch.Rows.Count != 0)
+            {
+                DisplayData(Index);
+            }
+            SearchFile();
+        }
+        private void get_summary_details()
+        {
+            String FinalPath = System.String.Empty;
+            String CommandText = System.String.Empty;
+            String CommandText1 = System.String.Empty;
+            String CommandText2 = System.String.Empty;
+            try
+            {
+                DataTable Dtlong = new DataTable();
+                DataTable Dtlongall = new DataTable();
+                DataTable Dt1 = new DataTable();
+                DataTable Dt2 = new DataTable();
+                DataTable Dt3 = new DataTable();
+                DataTable Dt4 = new DataTable();
+
+
+                if (ConnectKey != "")
+                {
+                    /*
+                    CommandText1 = "SELECT id FROM exportfile  where connection = '" + ConnectKey + "'";
+                    CommandText2 = "SELECT id FROM importfile  where connection = '" + ConnectKey + "'";
+                    Dt1 = Export.QuaryExecute(CommandText1);
+                    Dt2 = Export.QuaryExecute(CommandText2);
+                    foreach (DataRow dtRow in Dt1.Rows)
+                    {
+                        // modify query to get all fields like search function
+
+                        string id = "select * from exportfile where id= '" + dtRow[0].ToString() + "'";
+                        Console.WriteLine("Query for exportfile table : " + id);
+                        Dt3 = Export.QuaryExecute(id);
+                        Dtlong.Merge(Dt3);
+                    }
+                    foreach (DataRow dtRow in Dt2.Rows)
+                    {
+                        string id = "select pdffile,date,portid from importfile where id= '" + dtRow[0].ToString() + "' ";
+                        Dt4 = Export.QuaryExecute(id);
+                        Dtlongall.Merge(Dt4);
+                    }
+                    */
+
+                    string query = "select importdata.id as uniqueID, importdate as date,summary,portid,connection,orgid,orgname"+
+                            "from importdata join importfile on importdata.id = importfile.id having connection = '3795-2019-ص' union" +
+
+                               "select exportdata.id as uniqueID,exportdate as date,summary,portid,connection, orgid,orgname"+
+                            "from exportdata join exportfile on exportdata.id = exportfile.id having connection = '3795-2019-و'";
+
+             
+                    Dtlongall = Export.QueryExecute(query);
+                    //Dtlongall.Merge(Dtlong);
+                    Dtlongall.DefaultView.Sort = "date DESC, portid DESC";
+                    Dtlongall = Dtlongall.DefaultView.ToTable();
+
+
+                    FinalPath = MyPdf.CreatePdfs(Dtlongall);
+                    AxAcroPDF.src = FinalPath;
+                    
+                }
+                else
+                {
+                    CommandText = "select pdffile from exportfile where id= '" + TxtExportId.Text + '-' + DateExport.Value.Year + '-' + "ص" + "' ";
+                    Dtlongall = Export.QueryExecute(CommandText);
+                    FinalPath = MyPdf.CreatePdfs(Dtlongall);
+                    AxAcroPDF.src = FinalPath;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
+
 }

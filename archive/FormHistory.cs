@@ -25,7 +25,7 @@ namespace archive
         }
         void FillMyData()
         {
-            DgvHistory.DataSource = Hist.QuaryExecute("select * from history");
+            DgvHistory.DataSource = Hist.QueryExecute("select * from history");
             DgvHistory.Columns[0].HeaderText = "الفعل";
             DgvHistory.Columns[1].HeaderText = " رقم الوثيقة";
             DgvHistory.Columns[2].HeaderText = "اسم المستخدم";
@@ -35,7 +35,7 @@ namespace archive
 
         private void TxtId_OnValueChanged(object sender, EventArgs e)
         {
-            DgvHistory.DataSource = Hist.QuaryExecute("select * from history where id ='"  + TxtId.Text  + "'");
+            DgvHistory.DataSource = Hist.QueryExecute("select * from history where id ='"  + TxtId.Text  + "'");
     
         }
 

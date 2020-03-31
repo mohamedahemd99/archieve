@@ -68,7 +68,7 @@ namespace archive
 
         void FillMydata()
         {
-            DgvOrg.DataSource = FollowingOrgsDb.QuaryExecute("SELECT * FROM org ");
+            DgvOrg.DataSource = FollowingOrgsDb.QueryExecute("SELECT * FROM org ");
         }
 
         void DGV_Headers()
@@ -100,7 +100,7 @@ namespace archive
             try
             {
                 String Query = "select * from org where idorg like '" + '%' + TxtOrgId.Text + '%' + "' ";
-                DgvOrg.DataSource = FollowingOrgsDb.QuaryExecute(Query);
+                DgvOrg.DataSource = FollowingOrgsDb.QueryExecute(Query);
             }
             catch (Exception ex)
             { }
@@ -110,7 +110,7 @@ namespace archive
         private void TxtOrgName_OnValueChanged(object sender, EventArgs e)
         {
             String Quary = "select * from org where orgname like'" + '%' + TxtOrgName.Text + '%' + "' ";
-            DgvOrg.DataSource = FollowingOrgsDb.QuaryExecute(Quary);
+            DgvOrg.DataSource = FollowingOrgsDb.QueryExecute(Quary);
         }
 
         private void DgvOrg_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,7 +161,7 @@ namespace archive
                 }
 
                 String DeleteQuery = "DELETE FROM Followingorgs WHERE importid='" + int.Parse(TxtImportId.Text) + "'and type ='" + type + "' and importdate='" + ImportDate + "'";
-                FollowingOrgsDb.QuaryExecute(DeleteQuery);
+                FollowingOrgsDb.QueryExecute(DeleteQuery);
 
                 foreach (DataGridViewRow row in Dgv1.Rows)
                 {
@@ -178,7 +178,7 @@ namespace archive
                    // MessageBox.Show(row.Cells[0].Value.ToString());
 
                     string InsertQuery = "INSERT INTO Followingorgs(importid , importdate , type , orgid , orgname , active  ) VALUES ('" + TxtImportId.Text + "','" + ImportDate + "','" + type + "' , '" + row.Cells[1].Value.ToString() + "' ,'" + row.Cells[2].Value.ToString() + "','" + checkbx + "') ";
-                    FollowingOrgsDb.QuaryExecute(InsertQuery);
+                    FollowingOrgsDb.QueryExecute(InsertQuery);
                 }
 
 
@@ -200,7 +200,7 @@ namespace archive
                     }
 
                     string UpdateQuery = "UPDATE import SET   following='" + chkbx + "',followingdate= '"+ followingdate + "'  , action='" + TxtAction.Text + "' WHERE importid ='" + TxtImportId.Text + "' and type = '"+ type + "' and importdate = '" + importdate + "' ";
-                    FollowingOrgsDb.QuaryExecute(UpdateQuery);
+                    FollowingOrgsDb.QueryExecute(UpdateQuery);
                 ClearInputs();
 
                 MessageBox.Show("تم ادخال البيانات ");
@@ -236,7 +236,7 @@ namespace archive
             }
             string Quary = "select * from import where type = '"+type+"' and importid = '" +TxtImportId.Text+"' ";
             Quary += " ORDER BY importdate DESC ";
-            DtSearch = FollowingOrgsDb.QuaryExecute(Quary);
+            DtSearch = FollowingOrgsDb.QueryExecute(Quary);
             if (DtSearch.Rows.Count != 0)
             {
                 DisplayData(0);
@@ -267,7 +267,7 @@ namespace archive
             DateImport.Value = Convert.ToDateTime(DtSearch.Rows[FileIndex][1]);
 
             string Quary = "select active,orgid,orgname from FollowingOrgs where type = '" + type + "' and importid = '" + TxtImportId.Text + "' and importdate = '" + Convert.ToDateTime(DateImport.Value).ToString("yyyy-MM-dd") + "'";
-            DataTable Dt = FollowingOrgsDb.QuaryExecute(Quary); ;
+            DataTable Dt = FollowingOrgsDb.QueryExecute(Quary); ;
             String Active = "تم الرد";
             for (int i =0 ; i< Dt.Rows.Count; i++)
             {
