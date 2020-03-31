@@ -29,17 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearch));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.prev_btn = new System.Windows.Forms.Button();
+            this.next_btn = new System.Windows.Forms.Button();
+            this.expCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.impCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.TxtCon = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtConDate = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtConNum = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -94,9 +98,6 @@
             this.AxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.DgvSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.show_original_correspondence = new System.Windows.Forms.Button();
-            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.next_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AxAcroPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).BeginInit();
@@ -105,13 +106,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.bunifuCheckbox3);
-            this.panel1.Controls.Add(this.bunifuCheckbox4);
+            this.panel1.Controls.Add(this.prev_btn);
+            this.panel1.Controls.Add(this.next_btn);
+            this.panel1.Controls.Add(this.expCheckbox);
+            this.panel1.Controls.Add(this.impCheckbox);
             this.panel1.Controls.Add(this.bunifuCustomLabel15);
             this.panel1.Controls.Add(this.bunifuCustomLabel21);
             this.panel1.Controls.Add(this.bunifuCustomLabel22);
-            this.panel1.Controls.Add(this.TxtDate);
-            this.panel1.Controls.Add(this.TxtCon);
+            this.panel1.Controls.Add(this.txtConDate);
+            this.panel1.Controls.Add(this.txtConNum);
             this.panel1.Controls.Add(this.bunifuCheckbox1);
             this.panel1.Controls.Add(this.bunifuCustomLabel23);
             this.panel1.Controls.Add(this.bunifuCheckbox2);
@@ -158,9 +161,55 @@
             this.panel1.ForeColor = System.Drawing.Color.Purple;
             this.panel1.Location = new System.Drawing.Point(591, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(761, 382);
+            this.panel1.Size = new System.Drawing.Size(761, 442);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // prev_btn
+            // 
+            this.prev_btn.Location = new System.Drawing.Point(24, 415);
+            this.prev_btn.Name = "prev_btn";
+            this.prev_btn.Size = new System.Drawing.Size(75, 27);
+            this.prev_btn.TabIndex = 94;
+            this.prev_btn.Text = "السابق";
+            this.prev_btn.UseVisualStyleBackColor = true;
+            this.prev_btn.Click += new System.EventHandler(this.prev_btn_Click);
+            // 
+            // next_btn
+            // 
+            this.next_btn.Location = new System.Drawing.Point(24, 382);
+            this.next_btn.Name = "next_btn";
+            this.next_btn.Size = new System.Drawing.Size(75, 27);
+            this.next_btn.TabIndex = 87;
+            this.next_btn.Text = "التالي";
+            this.next_btn.UseVisualStyleBackColor = true;
+            this.next_btn.Click += new System.EventHandler(this.next_btn_Click);
+            // 
+            // expCheckbox
+            // 
+            this.expCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.expCheckbox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.expCheckbox.Checked = false;
+            this.expCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.expCheckbox.ForeColor = System.Drawing.Color.White;
+            this.expCheckbox.Location = new System.Drawing.Point(545, 326);
+            this.expCheckbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.expCheckbox.Name = "expCheckbox";
+            this.expCheckbox.Size = new System.Drawing.Size(20, 20);
+            this.expCheckbox.TabIndex = 93;
+            // 
+            // impCheckbox
+            // 
+            this.impCheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.impCheckbox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.impCheckbox.Checked = true;
+            this.impCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.impCheckbox.ForeColor = System.Drawing.Color.White;
+            this.impCheckbox.Location = new System.Drawing.Point(545, 287);
+            this.impCheckbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.impCheckbox.Name = "impCheckbox";
+            this.impCheckbox.Size = new System.Drawing.Size(20, 20);
+            this.impCheckbox.TabIndex = 92;
             // 
             // bunifuCustomLabel15
             // 
@@ -195,43 +244,43 @@
             this.bunifuCustomLabel22.TabIndex = 87;
             this.bunifuCustomLabel22.Text = "ربط الوثيقة";
             // 
-            // TxtDate
+            // txtConDate
             // 
-            this.TxtDate.BackColor = System.Drawing.Color.FloralWhite;
-            this.TxtDate.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtDate.BorderColorIdle = System.Drawing.Color.Crimson;
-            this.TxtDate.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtDate.BorderThickness = 3;
-            this.TxtDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtDate.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.TxtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtDate.isPassword = false;
-            this.TxtDate.Location = new System.Drawing.Point(223, 305);
-            this.TxtDate.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtDate.Name = "TxtDate";
-            this.TxtDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtDate.Size = new System.Drawing.Size(84, 36);
-            this.TxtDate.TabIndex = 84;
-            this.TxtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtConDate.BackColor = System.Drawing.Color.FloralWhite;
+            this.txtConDate.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtConDate.BorderColorIdle = System.Drawing.Color.Crimson;
+            this.txtConDate.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtConDate.BorderThickness = 3;
+            this.txtConDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtConDate.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtConDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtConDate.isPassword = false;
+            this.txtConDate.Location = new System.Drawing.Point(223, 305);
+            this.txtConDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConDate.Name = "txtConDate";
+            this.txtConDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtConDate.Size = new System.Drawing.Size(84, 36);
+            this.txtConDate.TabIndex = 84;
+            this.txtConDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TxtCon
+            // txtConNum
             // 
-            this.TxtCon.BackColor = System.Drawing.Color.FloralWhite;
-            this.TxtCon.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtCon.BorderColorIdle = System.Drawing.Color.Crimson;
-            this.TxtCon.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtCon.BorderThickness = 3;
-            this.TxtCon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtCon.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.TxtCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtCon.isPassword = false;
-            this.TxtCon.Location = new System.Drawing.Point(406, 306);
-            this.TxtCon.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtCon.Name = "TxtCon";
-            this.TxtCon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtCon.Size = new System.Drawing.Size(61, 34);
-            this.TxtCon.TabIndex = 83;
-            this.TxtCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtConNum.BackColor = System.Drawing.Color.FloralWhite;
+            this.txtConNum.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtConNum.BorderColorIdle = System.Drawing.Color.Crimson;
+            this.txtConNum.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtConNum.BorderThickness = 3;
+            this.txtConNum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtConNum.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtConNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtConNum.isPassword = false;
+            this.txtConNum.Location = new System.Drawing.Point(406, 306);
+            this.txtConNum.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConNum.Name = "txtConNum";
+            this.txtConNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtConNum.Size = new System.Drawing.Size(61, 34);
+            this.txtConNum.TabIndex = 83;
+            this.txtConNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCheckbox1
             // 
@@ -338,9 +387,9 @@
             this.BtnClear.BackColor = System.Drawing.Color.PapayaWhip;
             this.BtnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnClear.BackgroundImage")));
             this.BtnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClear.Location = new System.Drawing.Point(9, 264);
+            this.BtnClear.Location = new System.Drawing.Point(25, 264);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(143, 52);
+            this.BtnClear.Size = new System.Drawing.Size(130, 43);
             this.BtnClear.TabIndex = 78;
             this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -350,9 +399,9 @@
             this.BtnSearch.BackColor = System.Drawing.Color.PapayaWhip;
             this.BtnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnSearch.BackgroundImage")));
             this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSearch.Location = new System.Drawing.Point(8, 322);
+            this.BtnSearch.Location = new System.Drawing.Point(25, 321);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(144, 52);
+            this.BtnSearch.Size = new System.Drawing.Size(130, 39);
             this.BtnSearch.TabIndex = 77;
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
@@ -382,7 +431,7 @@
             this.txtnumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnumber.ForeColor = System.Drawing.Color.Black;
             this.txtnumber.isPassword = false;
-            this.txtnumber.Location = new System.Drawing.Point(9, 224);
+            this.txtnumber.Location = new System.Drawing.Point(24, 224);
             this.txtnumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtnumber.Name = "txtnumber";
             this.txtnumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -396,7 +445,7 @@
             this.bunifuCustomLabel17.AutoSize = true;
             this.bunifuCustomLabel17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.bunifuCustomLabel17.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel17.Location = new System.Drawing.Point(87, 229);
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(100, 229);
             this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
             this.bunifuCustomLabel17.Size = new System.Drawing.Size(124, 22);
             this.bunifuCustomLabel17.TabIndex = 32;
@@ -567,11 +616,11 @@
             this.orgname.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orgname.ForeColor = System.Drawing.Color.Black;
             this.orgname.isPassword = false;
-            this.orgname.Location = new System.Drawing.Point(223, 221);
+            this.orgname.Location = new System.Drawing.Point(251, 221);
             this.orgname.Margin = new System.Windows.Forms.Padding(4);
             this.orgname.Name = "orgname";
             this.orgname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.orgname.Size = new System.Drawing.Size(234, 36);
+            this.orgname.Size = new System.Drawing.Size(206, 36);
             this.orgname.TabIndex = 17;
             this.orgname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.orgname.OnValueChanged += new System.EventHandler(this.orgname_OnValueChanged);
@@ -629,7 +678,7 @@
             this.txtexportchange.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtexportchange.ForeColor = System.Drawing.Color.Black;
             this.txtexportchange.isPassword = false;
-            this.txtexportchange.Location = new System.Drawing.Point(9, 181);
+            this.txtexportchange.Location = new System.Drawing.Point(30, 180);
             this.txtexportchange.Margin = new System.Windows.Forms.Padding(4);
             this.txtexportchange.Name = "txtexportchange";
             this.txtexportchange.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -819,7 +868,7 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(87, 181);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(123, 182);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(111, 22);
             this.bunifuCustomLabel6.TabIndex = 4;
@@ -935,7 +984,7 @@
             // 
             this.ReportSearch.AutoScroll = true;
             this.ReportSearch.LocalReport.ReportEmbeddedResource = "archive.Report4.rdlc";
-            this.ReportSearch.Location = new System.Drawing.Point(12, 446);
+            this.ReportSearch.Location = new System.Drawing.Point(-1, 512);
             this.ReportSearch.Name = "ReportSearch";
             this.ReportSearch.ServerReport.BearerToken = null;
             this.ReportSearch.Size = new System.Drawing.Size(1331, 30);
@@ -947,72 +996,72 @@
             this.AxAcroPDF.Location = new System.Drawing.Point(12, 49);
             this.AxAcroPDF.Name = "AxAcroPDF";
             this.AxAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("AxAcroPDF.OcxState")));
-            this.AxAcroPDF.Size = new System.Drawing.Size(573, 361);
+            this.AxAcroPDF.Size = new System.Drawing.Size(582, 461);
             this.AxAcroPDF.TabIndex = 85;
             // 
             // DgvSearch
             // 
             this.DgvSearch.AllowUserToAddRows = false;
             this.DgvSearch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.DgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DgvSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvSearch.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AntiqueWhite;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvSearch.DoubleBuffered = true;
             this.DgvSearch.EnableHeadersVisualStyles = false;
             this.DgvSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DgvSearch.HeaderBgColor = System.Drawing.Color.Maroon;
             this.DgvSearch.HeaderForeColor = System.Drawing.Color.White;
             this.DgvSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DgvSearch.Location = new System.Drawing.Point(6, 479);
+            this.DgvSearch.Location = new System.Drawing.Point(-1, 544);
             this.DgvSearch.MultiSelect = false;
             this.DgvSearch.Name = "DgvSearch";
             this.DgvSearch.ReadOnly = true;
             this.DgvSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DgvSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvSearch.ShowCellErrors = false;
-            this.DgvSearch.Size = new System.Drawing.Size(1345, 218);
+            this.DgvSearch.Size = new System.Drawing.Size(1345, 189);
             this.DgvSearch.TabIndex = 86;
             this.DgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearch_CellContentClick);
             // 
@@ -1028,48 +1077,11 @@
             this.show_original_correspondence.UseVisualStyleBackColor = false;
             this.show_original_correspondence.Click += new System.EventHandler(this.show_original_correspondence_Click);
             // 
-            // bunifuCheckbox3
-            // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox3.Checked = false;
-            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(545, 326);
-            this.bunifuCheckbox3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
-            this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox3.TabIndex = 93;
-            // 
-            // bunifuCheckbox4
-            // 
-            this.bunifuCheckbox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox4.Checked = true;
-            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox4.Location = new System.Drawing.Point(545, 287);
-            this.bunifuCheckbox4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
-            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox4.TabIndex = 92;
-            // 
-            // next_btn
-            // 
-            this.next_btn.Location = new System.Drawing.Point(191, 1);
-            this.next_btn.Name = "next_btn";
-            this.next_btn.Size = new System.Drawing.Size(75, 27);
-            this.next_btn.TabIndex = 87;
-            this.next_btn.Text = "Next";
-            this.next_btn.UseVisualStyleBackColor = true;
-            this.next_btn.Click += new System.EventHandler(this.next_btn_Click);
-            // 
             // FormSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
-            this.Controls.Add(this.next_btn);
             this.Controls.Add(this.show_original_correspondence);
             this.Controls.Add(this.DgvSearch);
             this.Controls.Add(this.AxAcroPDF);
@@ -1155,15 +1167,16 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtDate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtCon;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtConDate;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtConNum;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
+        private Bunifu.Framework.UI.BunifuCheckbox expCheckbox;
+        private Bunifu.Framework.UI.BunifuCheckbox impCheckbox;
         private System.Windows.Forms.Button next_btn;
+        private System.Windows.Forms.Button prev_btn;
     }
 }
 

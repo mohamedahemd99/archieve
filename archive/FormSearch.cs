@@ -34,7 +34,7 @@ namespace archive
         }
         private void FormSearch_Load(object sender, EventArgs e)
         {
-            FillCmbBxUserName();
+            initCmbBxUserName();
             Authority();
             ImportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             OrgExportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
@@ -44,10 +44,8 @@ namespace archive
             FollowingDate2.Value = DateTime.Now;
             //  SearchNew();
         }
-        void FillCmbBxUserName()
+        void initCmbBxUserName()
         {
-
-
             DataTable Dt = new DataTable();
             Dt = Search.QueryExecute("select username from users");
             for (int Index = 0; Index < Dt.Rows.Count; Index++)
@@ -57,6 +55,14 @@ namespace archive
 
             //CmbBxUserName.Sorted = true;
         }
+        void fillCmbBxUserName(string [] names)
+        {
+            CmbBxUserName.Items.Clear();
+            CmbBxUserName.Items.AddRange(names);
+            CmbBxUserName.SelectedIndex = 0;
+
+        }
+
         void Authority()
         {
             DataTable Dt = new DataTable();
@@ -184,6 +190,7 @@ namespace archive
             {
                 if (ChkBxImport.Checked == true)
                 {
+                    ChkBxExport.Checked = false;
                     ChkBxExport.Checked = false;
                 }
                 else
@@ -343,21 +350,13 @@ namespace archive
                 }
 
                 if (CmbBxUserName.Text != "اختر مختص")
-                {
                     CommandText2 += " username like'" + '%' + CmbBxUserName.Text + '%' + "' and ";
-                }
 
                 if (CkBxImportDate.Checked == true)
-                {
                     CommandText2 += "   exportdate >= '" + Dates[0] + "' AND exportdate <= '" + Dates[1] + "'and  ";
 
-                }
-
                 if (ChkBxFollowing.Checked == true)
-                {
                     CommandText2 += "   followingdate >= '" + Dates[4] + "' AND followingdate <= '" + Dates[5] + "' and ";
-
-                }
 
                 if (txtexportorg.Text != "" || txtexportchange.Text != "" || CkBxImportDate.Checked == true)
                 {
@@ -399,7 +398,7 @@ namespace archive
                     Dt2.DefaultView.Sort = "date DESC,id DESC";
                     Dt2 = Dt2.DefaultView.ToTable();
                     ReportViwerData(Dt2, type);
-                    //   DgvSearch.DataSource = Dt2;
+                   //DgvSearch.DataSource = Dt2;
 
 
                 }
@@ -445,11 +444,7 @@ namespace archive
                     da.Fill(DtSearchFile);
 
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
-                    string path = @"C:\Users\Public\Documents\tempfile'" + "'.pdf";
-                    System.IO.File.WriteAllBytes(path, pdfsdata);
-                    AxAcroPDF.Show();
-                    Pdf.FileName = path;
-                    AxAcroPDF.LoadFile(path);
+                    showPdf(pdfsdata);
 
                 }
                 if (id.Contains("ص"))
@@ -459,14 +454,8 @@ namespace archive
                     string Quary = "select * from exportfile where id= '" + id + "' ";
                     MySqlDataAdapter da = new MySqlDataAdapter(Quary, Search.con);
                     da.Fill(DtSearchFile);
-
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
-                    string path = @"C:\Users\Public\Documents\tempfile'" + "'.pdf";
-                    System.IO.File.WriteAllBytes(path, pdfsdata);
-                    AxAcroPDF.Show();
-                    Pdf.FileName = path;
-                    AxAcroPDF.LoadFile(path);
-
+                    showPdf(pdfsdata);
 
                 }
             }
@@ -485,13 +474,8 @@ namespace archive
                 string Quary = "select * from importfile where id= '" + TxtImportId.Text + '-' + ImportDate1.Value.Year + '-' + "و" + "' ";
                 MySqlDataAdapter da = new MySqlDataAdapter(Quary, Search.con);
                 da.Fill(DtSearchFile);
-
                 byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
-                string path = @"C:\Users\Public\Documents\tempfile'" + "'.pdf";
-                System.IO.File.WriteAllBytes(path, pdfsdata);
-                AxAcroPDF.Show();
-                Pdf.FileName = path;
-                AxAcroPDF.LoadFile(path);
+                showPdf(pdfsdata);
             }
             if (TxtExportId.Text != "")
             {
@@ -503,11 +487,7 @@ namespace archive
                 da.Fill(DtSearchFile);
 
                 byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
-                string path = @"C:\Users\Public\Documents\tempfile'" + "'.pdf";
-                System.IO.File.WriteAllBytes(path, pdfsdata);
-                AxAcroPDF.Show();
-                Pdf.FileName = path;
-                AxAcroPDF.LoadFile(path);
+                showPdf(pdfsdata);
             }
 
             //Init_Dgv();
@@ -528,50 +508,39 @@ namespace archive
         {
             globalIndex = 0;
             string connectionKey = get_connection_key();
-            dtCombinedFilesData = get_combined_files_data(connectionKey);//combined files data           
+            dtCombinedFilesData = get_combined_files_data(connectionKey);
 
             string id = (string)dtCombinedFilesData.Rows[0]["uniqueID"];
-
+            display_data();
             byte[] pdfsdata = get_pdf_file(id);
-
-            string path = @"C:\Users\Public\Documents\tempfile'" + globalIndex.ToString() + "'.pdf";
-            System.IO.File.WriteAllBytes(path, pdfsdata);
-            AxAcroPDF.Show();
-            Pdf.FileName = path;
-            AxAcroPDF.LoadFile(path);
-
-
+            showPdf(pdfsdata);
         }
 
         private string get_connection_key()
         {
             string table = (TxtExportId.Text == "") ? "importfile" : "exportfile";
             string id = (TxtExportId.Text == "") ? TxtImportId.Text : TxtExportId.Text;
-            string query = "select connection from " + table + " where portid = " + id;
+            string query = "select connection from " + table + " where portid = " + id + " order by date DESC";
 
             DataTable dt = Search.QueryExecute(query);
-            string return_value = (string)dt.Rows[3][0];
-            //Console.WriteLine(query);
-            Console.WriteLine(return_value);
+            string return_value = (string)dt.Rows[0][0];
             return return_value;
         }
 
         private DataTable get_combined_files_data(String connectionKey)
         {
-            string query = " select  importdata.id as uniqueID, importdate as date,summary,portid,connection," +
+            string query = " select  importdata.id as uniqueID, importdate as date,summary,portid,connection,username, " +
             "orgid,orgname from importdata join importfile on importdata.id = importfile.id " +
             " having connection =  '" + connectionKey + "'" +
             " union " +
 
-            " select exportdata.id as uniqueID,exportdate as date,summary,portid,connection," +
+            " select exportdata.id as uniqueID,exportdate as date,summary,portid,connection,username, " +
             "orgid,orgname from exportdata join exportfile on exportdata.id = exportfile.id" +
-            " having connection =  '" + connectionKey + "'"
-            + " order by date DESC";
-            //Console.WriteLine(query);
-
+            " having connection =  '" + connectionKey + "'" + 
+             " order by date DESC";
             DataTable dt = Search.QueryExecute(query);
             Console.WriteLine("row count = " + dt.Rows.Count);
-
+    
             return dt;
         }
 
@@ -583,27 +552,101 @@ namespace archive
             if (globalIndex == dtCombinedFilesData.Rows.Count)
                 globalIndex = 0;
             string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
+
             byte[] pdfsdata = get_pdf_file(id);
-
-            
-            string path = @"C:\Users\Public\Documents\tempfile'" + globalIndex.ToString() + "'.pdf";
-            System.IO.File.WriteAllBytes(path, pdfsdata);
-            AxAcroPDF.Show();
-            Pdf.FileName = path;
-            AxAcroPDF.LoadFile(path);
-
+            display_data();
+            showPdf(pdfsdata);
         }
 
-        private  byte[] get_pdf_file(string id){
+        private void prev_btn_Click(object sender, EventArgs e)
+        {
+            globalIndex--;
+            //checked when out of bounds
+            if (globalIndex == -1)
+                globalIndex = dtCombinedFilesData.Rows.Count-1;
+            string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
+
+            byte[] pdfsdata = get_pdf_file(id);
+            display_data();
+            showPdf(pdfsdata);
+        }
+
+
+        private byte[] get_pdf_file(string id){
 
             string query = "select pdffile from importfile where id = '" + id + "'" +
             " union select pdffile from exportfile where id = '" + id + "'";
         
             DataTable temp = Search.QueryExecute(query);
-
             byte [] result_pdf= temp.Rows[0]["pdffile"] as byte[];
             return result_pdf;
+        }
+        private void display_data()
+        {
 
+            txtsummary.Text = (string)dtCombinedFilesData.Rows[globalIndex]["summary"];
+            orgname.Text = (string)dtCombinedFilesData.Rows[globalIndex]["orgname"];
+            string[] usernames = ((string)dtCombinedFilesData.Rows[globalIndex]["username"]).Split(',');
+            fillCmbBxUserName(usernames);
+
+            string [] id = ((string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"]).Split('-');
+
+            if (id[id.Length-1] == "ص")
+            {
+                TxtImportId.Text = String.Empty;
+                TxtExportId.Text = (string)dtCombinedFilesData.Rows[globalIndex]["portid"];
+            }else
+            {
+                TxtExportId.Text = String.Empty;
+                TxtImportId.Text = (string)dtCombinedFilesData.Rows[globalIndex]["portid"];
+            }
+            string[] connection = ((string)dtCombinedFilesData.Rows[globalIndex]["connection"]).Split('-');
+
+            if (connection.Length > 0)
+            {
+                if (connection[connection.Length - 1] == "ص")
+                {
+                    //expCheckbox.Checked = true;
+                    //impCheckbox.Checked = false;
+                    txtConNum.Text = connection[0];
+                    txtConDate.Text = connection[1];
+
+                }
+                else if (connection[connection.Length - 1] == "و")
+                {
+                    //sth wrong with checkboxes
+
+                    //expCheckbox.Checked = false;
+                    //impCheckbox.Checked = true;
+
+                    txtConNum.Text = connection[0];
+                    txtConDate.Text = connection[1];
+                }
+            }
+
+            // FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            /*
+            string followDate = (string) dtCombinedFilesData.Rows[globalIndex]["followingdate"];
+            if (!followDate.Equals(string.Empty)){
+                FollowingDate1.Value = Convert.ToDateTime(followDate);
+            }
+            */
+
+        }
+
+        //reset form to initial search form
+        private void reset_to_default()
+        {
+
+        }
+        //get show the pdf file from byte array
+        private void showPdf(byte [] file)
+        {
+            string path = @"C:\Users\Public\Documents\tempfile'" + globalIndex.ToString() + "'.pdf";
+            System.IO.File.WriteAllBytes(path, file);
+            AxAcroPDF.Show();
+            Pdf.FileName = path;
+            AxAcroPDF.LoadFile(path);
         }
     }
 }
