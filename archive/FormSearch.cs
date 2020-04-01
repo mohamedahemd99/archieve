@@ -42,6 +42,8 @@ namespace archive
             ImportDate2.Value = DateTime.Now;
             OrgExportDate2.Value = DateTime.Now;
             FollowingDate2.Value = DateTime.Now;
+            next_btn.Visible = false;
+            prev_btn.Visible = false;
             //  SearchNew();
         }
         void initCmbBxUserName()
@@ -425,11 +427,6 @@ namespace archive
             this.ReportSearch.ZoomPercent = 120;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void DgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -514,6 +511,9 @@ namespace archive
             display_data();
             byte[] pdfsdata = get_pdf_file(id);
             showPdf(pdfsdata);
+            next_btn.Visible = true;
+            prev_btn.Visible = true;
+
         }
 
         private string get_connection_key()
@@ -530,12 +530,12 @@ namespace archive
         private DataTable get_combined_files_data(String connectionKey)
         {
             string query = " select  importdata.id as uniqueID, importdate as date,summary,portid,connection,username, " +
-            "orgid,orgname from importdata join importfile on importdata.id = importfile.id " +
+            "orgid,orgname, primaryfile, secondfile, primaryfileid, secondfileid,following,followingdate from importdata join importfile on importdata.id = importfile.id " +
             " having connection =  '" + connectionKey + "'" +
             " union " +
 
             " select exportdata.id as uniqueID,exportdate as date,summary,portid,connection,username, " +
-            "orgid,orgname from exportdata join exportfile on exportdata.id = exportfile.id" +
+            "orgid,orgname, primaryfile, secondfile, primaryfileid, secondfileid,following,followingdate from exportdata join exportfile on exportdata.id = exportfile.id" +
             " having connection =  '" + connectionKey + "'" + 
              " order by date DESC";
             DataTable dt = Search.QueryExecute(query);
@@ -550,7 +550,13 @@ namespace archive
             globalIndex++;
             //checked when out of bounds
             if (globalIndex == dtCombinedFilesData.Rows.Count)
-                globalIndex = 0;
+            {
+                globalIndex = dtCombinedFilesData.Rows.Count - 1;
+                MessageBox.Show("لا يوجد مكاتبة أخرى");
+                return;
+            }
+            
+
             string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
 
             byte[] pdfsdata = get_pdf_file(id);
@@ -563,7 +569,12 @@ namespace archive
             globalIndex--;
             //checked when out of bounds
             if (globalIndex == -1)
-                globalIndex = dtCombinedFilesData.Rows.Count-1;
+            {
+                MessageBox.Show("لا يوجد مكاتبة أخرى");
+                globalIndex = 0;
+                return;
+            }
+                
             string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
 
             byte[] pdfsdata = get_pdf_file(id);
@@ -599,6 +610,11 @@ namespace archive
             {
                 TxtExportId.Text = String.Empty;
                 TxtImportId.Text = (string)dtCombinedFilesData.Rows[globalIndex]["portid"];
+                string query = "select exportorg,exportorgdate,exportchange from importdata " +
+                    "where id = '" + (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"] +"'";
+                DataTable tempDt = Search.QueryExecute(query);
+                txtexportchange.Text =(string) tempDt.Rows[0]["exportchange"];
+                txtexportorg.Text = (string)tempDt.Rows[0]["exportorg"];
             }
             string[] connection = ((string)dtCombinedFilesData.Rows[globalIndex]["connection"]).Split('-');
 
@@ -606,23 +622,27 @@ namespace archive
             {
                 if (connection[connection.Length - 1] == "ص")
                 {
-                    //expCheckbox.Checked = true;
-                    //impCheckbox.Checked = false;
+                    expCheckbox.Checked = true;
+                    impCheckbox.Checked = false;
                     txtConNum.Text = connection[0];
                     txtConDate.Text = connection[1];
 
                 }
                 else if (connection[connection.Length - 1] == "و")
                 {
-                    //sth wrong with checkboxes
 
-                    //expCheckbox.Checked = false;
-                    //impCheckbox.Checked = true;
+                    expCheckbox.Checked = false;
+                    impCheckbox.Checked = true;
 
                     txtConNum.Text = connection[0];
                     txtConDate.Text = connection[1];
                 }
             }
+
+            txt_prim_file_code.Text = (string)dtCombinedFilesData.Rows[globalIndex]["primaryfileid"];
+            txt_prim_file_name.Text = (string)dtCombinedFilesData.Rows[globalIndex]["primaryfile"];
+            txt_sec_file_code.Text = (string)dtCombinedFilesData.Rows[globalIndex]["secondfileid"];
+            txt_sec_file_name.Text = (string)dtCombinedFilesData.Rows[globalIndex]["secondfile"];
 
             // FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             /*
