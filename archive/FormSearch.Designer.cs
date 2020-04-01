@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearch));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_sec_file_code = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -89,15 +89,8 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ChkBxImportExport = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.ChkBxExport = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.ChkBxImport = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.TxtUser = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.ReportSearch = new Microsoft.Reporting.WinForms.ReportViewer();
             this.AxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.DgvSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.show_original_correspondence = new System.Windows.Forms.Button();
@@ -122,8 +115,6 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txt_sec_file_code);
             this.panel1.Controls.Add(this.txt_prim_file_code);
-            this.panel1.Controls.Add(this.prev_btn);
-            this.panel1.Controls.Add(this.next_btn);
             this.panel1.Controls.Add(this.expCheckbox);
             this.panel1.Controls.Add(this.impCheckbox);
             this.panel1.Controls.Add(this.bunifuCustomLabel15);
@@ -201,7 +192,7 @@
             this.txt_sec_file_code.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txt_sec_file_code.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_sec_file_code.isPassword = false;
-            this.txt_sec_file_code.Location = new System.Drawing.Point(555, 403);
+            this.txt_sec_file_code.Location = new System.Drawing.Point(555, 384);
             this.txt_sec_file_code.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sec_file_code.Name = "txt_sec_file_code";
             this.txt_sec_file_code.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -230,7 +221,7 @@
             // 
             // prev_btn
             // 
-            this.prev_btn.Location = new System.Drawing.Point(24, 415);
+            this.prev_btn.Location = new System.Drawing.Point(63, 15);
             this.prev_btn.Name = "prev_btn";
             this.prev_btn.Size = new System.Drawing.Size(75, 27);
             this.prev_btn.TabIndex = 94;
@@ -240,7 +231,7 @@
             // 
             // next_btn
             // 
-            this.next_btn.Location = new System.Drawing.Point(24, 382);
+            this.next_btn.Location = new System.Drawing.Point(418, 15);
             this.next_btn.Name = "next_btn";
             this.next_btn.Size = new System.Drawing.Size(75, 27);
             this.next_btn.TabIndex = 87;
@@ -937,89 +928,6 @@
             this.bunifuCustomLabel6.TabIndex = 4;
             this.bunifuCustomLabel6.Text = "رقم صادر محول";
             // 
-            // ChkBxImportExport
-            // 
-            this.ChkBxImportExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxImportExport.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxImportExport.Checked = false;
-            this.ChkBxImportExport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.ChkBxImportExport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ChkBxImportExport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxImportExport.Location = new System.Drawing.Point(661, 22);
-            this.ChkBxImportExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ChkBxImportExport.Name = "ChkBxImportExport";
-            this.ChkBxImportExport.Size = new System.Drawing.Size(20, 20);
-            this.ChkBxImportExport.TabIndex = 75;
-            this.ChkBxImportExport.Visible = false;
-            this.ChkBxImportExport.OnChange += new System.EventHandler(this.ChkBxImportExport_OnChange);
-            // 
-            // ChkBxExport
-            // 
-            this.ChkBxExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxExport.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxExport.Checked = false;
-            this.ChkBxExport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.ChkBxExport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ChkBxExport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxExport.Location = new System.Drawing.Point(313, 22);
-            this.ChkBxExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ChkBxExport.Name = "ChkBxExport";
-            this.ChkBxExport.Size = new System.Drawing.Size(20, 20);
-            this.ChkBxExport.TabIndex = 76;
-            this.ChkBxExport.Visible = false;
-            this.ChkBxExport.OnChange += new System.EventHandler(this.ChkBxExport_OnChange);
-            // 
-            // ChkBxImport
-            // 
-            this.ChkBxImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxImport.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxImport.Checked = false;
-            this.ChkBxImport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.ChkBxImport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ChkBxImport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxImport.Location = new System.Drawing.Point(479, 21);
-            this.ChkBxImport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ChkBxImport.Name = "ChkBxImport";
-            this.ChkBxImport.Size = new System.Drawing.Size(20, 20);
-            this.ChkBxImport.TabIndex = 77;
-            this.ChkBxImport.Visible = false;
-            this.ChkBxImport.OnChange += new System.EventHandler(this.ChkBxImport_OnChange);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(353, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 34);
-            this.label3.TabIndex = 78;
-            this.label3.Text = "مكاتبات وارد فقط";
-            this.label3.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(515, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 34);
-            this.label1.TabIndex = 79;
-            this.label1.Text = "مكاتبات وارد / صادر ";
-            this.label1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(185, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 34);
-            this.label2.TabIndex = 80;
-            this.label2.Text = "مكاتبات صادر فقط";
-            this.label2.Visible = false;
-            // 
             // panel4
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
@@ -1049,16 +957,6 @@
             this.TxtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtUser.Visible = false;
             // 
-            // ReportSearch
-            // 
-            this.ReportSearch.AutoScroll = true;
-            this.ReportSearch.LocalReport.ReportEmbeddedResource = "archive.Report4.rdlc";
-            this.ReportSearch.Location = new System.Drawing.Point(-1, 512);
-            this.ReportSearch.Name = "ReportSearch";
-            this.ReportSearch.ServerReport.BearerToken = null;
-            this.ReportSearch.Size = new System.Drawing.Size(1331, 30);
-            this.ReportSearch.TabIndex = 84;
-            // 
             // AxAcroPDF
             // 
             this.AxAcroPDF.Enabled = true;
@@ -1072,67 +970,66 @@
             // 
             this.DgvSearch.AllowUserToAddRows = false;
             this.DgvSearch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.DgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DgvSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.DgvSearch.ColumnHeadersHeight = 40;
-            this.DgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.AntiqueWhite;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.DgvSearch.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle8;
             this.DgvSearch.DoubleBuffered = true;
             this.DgvSearch.EnableHeadersVisualStyles = false;
             this.DgvSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.DgvSearch.HeaderBgColor = System.Drawing.Color.Maroon;
             this.DgvSearch.HeaderForeColor = System.Drawing.Color.White;
             this.DgvSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DgvSearch.Location = new System.Drawing.Point(-1, 544);
+            this.DgvSearch.Location = new System.Drawing.Point(12, 530);
             this.DgvSearch.MultiSelect = false;
             this.DgvSearch.Name = "DgvSearch";
             this.DgvSearch.ReadOnly = true;
             this.DgvSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DgvSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DgvSearch.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DgvSearch.ShowCellErrors = false;
-            this.DgvSearch.Size = new System.Drawing.Size(1345, 189);
+            this.DgvSearch.Size = new System.Drawing.Size(1337, 216);
             this.DgvSearch.TabIndex = 86;
             this.DgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearch_CellContentClick);
             // 
@@ -1140,7 +1037,7 @@
             // 
             this.show_original_correspondence.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.show_original_correspondence.Font = new System.Drawing.Font("B Arabic Style", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.show_original_correspondence.Location = new System.Drawing.Point(12, 1);
+            this.show_original_correspondence.Location = new System.Drawing.Point(203, 2);
             this.show_original_correspondence.Name = "show_original_correspondence";
             this.show_original_correspondence.Size = new System.Drawing.Size(167, 46);
             this.show_original_correspondence.TabIndex = 83;
@@ -1152,7 +1049,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(623, 415);
+            this.label6.Location = new System.Drawing.Point(623, 394);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 22);
             this.label6.TabIndex = 99;
@@ -1188,7 +1085,7 @@
             this.txt_sec_file_name.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sec_file_name.ForeColor = System.Drawing.Color.Black;
             this.txt_sec_file_name.isPassword = false;
-            this.txt_sec_file_name.Location = new System.Drawing.Point(166, 401);
+            this.txt_sec_file_name.Location = new System.Drawing.Point(166, 382);
             this.txt_sec_file_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sec_file_name.Name = "txt_sec_file_name";
             this.txt_sec_file_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1200,7 +1097,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(401, 353);
+            this.label5.Location = new System.Drawing.Point(401, 350);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 22);
             this.label5.TabIndex = 102;
@@ -1210,7 +1107,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(400, 415);
+            this.label7.Location = new System.Drawing.Point(400, 393);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 22);
             this.label7.TabIndex = 103;
@@ -1224,16 +1121,11 @@
             this.Controls.Add(this.show_original_correspondence);
             this.Controls.Add(this.DgvSearch);
             this.Controls.Add(this.AxAcroPDF);
-            this.Controls.Add(this.ReportSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TxtUser);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.ChkBxImportExport);
-            this.Controls.Add(this.ChkBxExport);
-            this.Controls.Add(this.ChkBxImport);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.next_btn);
+            this.Controls.Add(this.prev_btn);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormSearch";
@@ -1246,7 +1138,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AxAcroPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1285,19 +1176,12 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtnumber;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
         private Bunifu.Framework.UI.BunifuCheckbox CkBxImportDate;
-        private Bunifu.Framework.UI.BunifuCheckbox ChkBxImportExport;
-        private Bunifu.Framework.UI.BunifuCheckbox ChkBxExport;
-        private Bunifu.Framework.UI.BunifuCheckbox ChkBxImport;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox CmbBxUserName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuMetroTextbox TxtUser;
-        private Microsoft.Reporting.WinForms.ReportViewer ReportSearch;
         private Bunifu.Framework.UI.BunifuMetroTextbox TxtExportId;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         private AxAcroPDFLib.AxAcroPDF AxAcroPDF;

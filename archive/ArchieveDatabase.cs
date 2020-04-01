@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace archive
 {
@@ -36,14 +37,20 @@ namespace archive
             
             //Create DataTable that return data from function
             DataTable dt = new DataTable();
-
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                MySqlDataAdapter da = new MySqlDataAdapter(query, con);
+                da.Fill(dt);
+                con.Close();
+
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
-            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
-            da.Fill(dt);
-            con.Close();
             return dt;
         }
 
