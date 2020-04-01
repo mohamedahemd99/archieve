@@ -44,7 +44,7 @@ namespace archive
             FollowingDate2.Value = DateTime.Now;
             next_btn.Visible = false;
             prev_btn.Visible = false;
-            //  SearchNew();
+              //SearchNew();
         }
         void initCmbBxUserName()
         {
@@ -304,7 +304,7 @@ namespace archive
                 {
                     CommandText1 += "  summary like'" + '%' + txtsummary.Text + '%' + "'and";
                 }
-
+                
                 if (orgname.Text != "")
                 {
                     CommandText1 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
@@ -333,8 +333,9 @@ namespace archive
                     CommandText1 += "   followingdate >= '" + Dates[4] + "' AND followingdate <= '" + Dates[5] + "' and ";
 
                 }
+                
                 CommandText1 += "  importid > 0";
-
+                
                 CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action ,id as mah FROM exportdata where  ";
 
                 if (TxtExportId.Text != "")
@@ -369,22 +370,12 @@ namespace archive
                 Console.WriteLine(CommandText1);
                 Console.WriteLine(CommandText2);
 
-                if (ChkBxImportExport.Checked == true)
+                if(TxtImportId.Text != string.Empty && TxtExportId.Text != string.Empty)
                 {
-                    type = "وارد / صادر ";
-                    Dt1 = Search.QueryExecute(CommandText1);
-                    Dt2 = Search.QueryExecute(CommandText2);
-                    Dt1.Merge(Dt2);
-                    Dt1.DefaultView.Sort = "date DESC,id DESC";
-
-                    Dt1 = Dt1.DefaultView.ToTable();
-                    ReportViwerData(Dt1, type);
-                    Console.WriteLine("passed report");
-
-                    //DgvSearch.DataSource = Dt1;
+                    MessageBox.Show("لا يمكن البحث برقم صادر و وارد.");
 
                 }
-                else if (ChkBxImport.Checked == true)
+                else if (TxtImportId.Text != string.Empty)
                 {
                     type = "وارد";
                     Dt1 = Search.QueryExecute(CommandText1);
@@ -392,19 +383,38 @@ namespace archive
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, type);
                     // DgvSearch.DataSource = Dt1;
+                    try
+                    {
+                        DgvSearch.DataSource = Dt1;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+
                 }
-                else if (ChkBxExport.Checked == true)
+                else if (TxtExportId.Text != string.Empty)
                 {
                     type = "صادر";
                     Dt2 = Search.QueryExecute(CommandText2);
                     Dt2.DefaultView.Sort = "date DESC,id DESC";
                     Dt2 = Dt2.DefaultView.ToTable();
                     ReportViwerData(Dt2, type);
-                   //DgvSearch.DataSource = Dt2;
-
+                    //DgvSearch.DataSource = Dt2;
+                    try
+                    {
+                        DgvSearch.DataSource = Dt2;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
 
                 }
+
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
