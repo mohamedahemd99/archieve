@@ -82,6 +82,8 @@ namespace archive
         {
             FormSearch Formsearch = new FormSearch(txtname.Text, txtpassword.Text);
             Formsearch.Show();
+            Formsearch.BringToFront();
+           // this.SendToBack();
         }
 
         private void bunifuThinButton27_Click(object sender, EventArgs e)

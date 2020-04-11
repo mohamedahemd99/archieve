@@ -83,7 +83,7 @@ namespace archive
             {
                 DgvSearch.Columns[i].HeaderText = DgvHeaders[i];
             }
-
+            
             DgvSearch.Columns[0].Width = 55;
             DgvSearch.Columns[1].Width = 75;
             DgvSearch.Columns[2].Width = 200;
@@ -92,13 +92,14 @@ namespace archive
             DgvSearch.Columns[5].Width = 300;
             DgvSearch.Columns[6].Width = 200;
             DgvSearch.Columns[7].Visible = false;
-
+            
             ImportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             OrgExportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             ImportDate2.Value = DateTime.Now;
             OrgExportDate2.Value = DateTime.Now;
             FollowingDate2.Value = DateTime.Now;
+            
         }
 
 
@@ -119,14 +120,27 @@ namespace archive
             txt_prim_file_code.Text = string.Empty;
             txt_prim_file_name.Text = string.Empty;
             txt_sec_file_code.Text = string.Empty;
-            txt_sec_file_name.Text = string.Empty; 
-        
+            txt_sec_file_name.Text = string.Empty;
+            documentDate.Visible = false;
+            documentDateLabel.Visible = false;
+            AxAcroPDF.LoadFile("not found");
+            documentDateLabel.Visible = false;
+            CkBxImportDate.Checked = false;
+            ChkBxFollowing.Checked = false;
+            CkBxExportOrg.Checked = false;
+            DgvSearch.DataSource = null;
+            DgvSearch.Refresh();
+            CkBxImportId_OnChange(null, null);
+            ChkBxFollowing_OnChange(null, null);
+            CkBxExportOrg_OnChange(null, null);
+
+
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             SearchNew();
-            SearchFile();
+            //SearchFile();
         }
 
         private void ChkBxFollowing_OnChange(object sender, EventArgs e)
@@ -171,7 +185,6 @@ namespace archive
             if (e.KeyCode == Keys.Enter)
             {
                 SearchNew();
-                SearchFile();
             }
         }
         private void CkBxImportId_OnChange(object sender, EventArgs e)
@@ -229,14 +242,16 @@ namespace archive
 
         void SearchNew()
         {
+            
             string[] Temp = new string[3];
             string[] Field = new string[3];
             String type = "وارد / صادر ";
-            String CommandText1 = System.String.Empty;
-            String CommandText2 = System.String.Empty;
-            if (TxtImportId.Text == string.Empty && TxtExportId.Text == string.Empty)
+            string CommandText1 = string.Empty;
+            string CommandText2 = string.Empty;
+
+            if (isEmptySearch())
             {
-                MessageBox.Show("ادخل رقم صادر أو وارد للبحث");
+                MessageBox.Show("لا يوجد بيانات للبحث بها");
             }
             else
             {
@@ -319,13 +334,11 @@ namespace archive
 
                     if (txtexportorg.Text != "" || txtexportchange.Text != "" || CkBxImportDate.Checked == true)
                     {
-                        CommandText2 += "  exportid < 0 and";
+                        //CommandText2 += "  exportid < 0 and";
 
                     }
                     CommandText2 += "  exportid > 0";
-                    Console.WriteLine(CommandText1);
-                    Console.WriteLine(CommandText2);
-
+                    //need modification : check if all fields are empty not just IDs
                     if (TxtImportId.Text != string.Empty && TxtExportId.Text != string.Empty)
                     {
                         MessageBox.Show("لا يمكن البحث برقم صادر و وارد.");
@@ -337,14 +350,22 @@ namespace archive
                         Dt1 = Search.QueryExecute(CommandText1);
                         Dt1.DefaultView.Sort = "date DESC,id DESC";
                         Dt1 = Dt1.DefaultView.ToTable();
+                        
+                        documentDateLabel.Visible = true;
+                        documentDate.Visible = true;
+                        documentDate.Value = (DateTime)Dt1.Rows[0]["date"];
+                        
+
                         // DgvSearch.DataSource = Dt1;
                         try
                         {
                             DgvSearch.DataSource = Dt1;
+                            SearchFile();
                         }
                         catch (Exception e)
                         {
-                            MessageBox.Show(e.Message);
+                            Console.WriteLine("here "+e.Message);
+                            MessageBox.Show("here " + e.Message);
                         }
 
 
@@ -355,16 +376,54 @@ namespace archive
                         Dt2 = Search.QueryExecute(CommandText2);
                         Dt2.DefaultView.Sort = "date DESC,id DESC";
                         Dt2 = Dt2.DefaultView.ToTable();
+                        Console.WriteLine("rows count  " + Dt2.Rows.Count);
+
+                        Console.WriteLine(CommandText2);
+
                         //DgvSearch.DataSource = Dt2;
+                        
+                        documentDateLabel.Visible = true;
+                        documentDate.Visible = true;
+                        documentDate.Value = (DateTime)Dt2.Rows[0]["date"];
+                        
                         try
                         {
                             DgvSearch.DataSource = Dt2;
+                            SearchFile();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message +"   txtexportid");
+                            MessageBox.Show(e.Message);
+                        }
+                    }
+                    else 
+                    {
+                        Dt1 = Search.QueryExecute(CommandText1);
+                        Dt2 = Search.QueryExecute(CommandText2);
+                        DataTable dtMerged = new DataTable();
+                        dtMerged.Merge(Dt1);
+                        dtMerged.Merge(Dt2);
+                        dtMerged.DefaultView.Sort = "date DESC,id DESC";
+                        dtMerged = dtMerged.DefaultView.ToTable();
+                       
+
+                        documentDateLabel.Visible = true;
+                        documentDate.Visible = true;
+                        documentDate.Value = (DateTime)Dt2.Rows[0]["date"];
+
+                        try
+                        {
+                            Console.WriteLine("rows count  merged " + dtMerged.Rows.Count);
+                            DgvSearch.DataSource = dtMerged;
+                            SearchFile();
                         }
                         catch (Exception e)
                         {
                             MessageBox.Show(e.Message);
                         }
                     }
+
                 }
 
                 catch (Exception ex)
@@ -372,7 +431,6 @@ namespace archive
                     MessageBox.Show(ex.Message);
                 }
             }
-            Console.WriteLine("passed function search");
 
         }
 
@@ -381,13 +439,17 @@ namespace archive
         {
             try
             {
-                id = DgvSearch[7, e.RowIndex].Value.ToString();
-
+                id = DgvSearch[7, e.RowIndex].Value.ToString(); //to get id of clicked cell
+                Console.WriteLine(id);
+                documentDate.Value = (DateTime)DgvSearch[1, e.RowIndex].Value;
                 if (id.Contains("و"))
                 {
                     DtSearchFile.Clear();
-                    string Quary = "select * from importfile where id= '" + id + "' ";
-                    MySqlDataAdapter da = new MySqlDataAdapter(Quary, Search.con);
+                    string idNum = id.Split('-')[0];
+                    TxtImportId.Text = idNum;
+                    TxtExportId.Text = string.Empty;
+                    string Query = "select * from importfile where id= '" + id + "' ";
+                    MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
                     da.Fill(DtSearchFile);
 
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
@@ -397,7 +459,10 @@ namespace archive
                 if (id.Contains("ص"))
                 {
                     DtSearchFile.Clear();
-
+                    TxtImportId.Text = string.Empty;
+                    string idNum = id.Split('-')[0];
+                    TxtExportId.Text = idNum;
+                    
                     string Quary = "select * from exportfile where id= '" + id + "' ";
                     MySqlDataAdapter da = new MySqlDataAdapter(Quary, Search.con);
                     da.Fill(DtSearchFile);
@@ -420,8 +485,8 @@ namespace archive
                 {
                     TxtExportId.Text = "";
                     DtSearchFile.Clear();
-                    string Quary = "select * from importfile where id= '" + TxtImportId.Text + '-' + ImportDate1.Value.Year + '-' + "و" + "' ";
-                    MySqlDataAdapter da = new MySqlDataAdapter(Quary, Search.con);
+                    string Query = "select * from importfile where portid= '" + TxtImportId.Text + "' order by date";
+                    MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
                     da.Fill(DtSearchFile);
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
                     showPdf(pdfsdata);
@@ -429,16 +494,15 @@ namespace archive
                 if (TxtExportId.Text != "")
                 {
                     TxtImportId.Text = "";
-
                     DtSearchFile.Clear();
-                    string Quary = "select * from exportfile where id= '" + TxtExportId.Text + '-' + ImportDate1.Value.Year + '-' + "ص" + "' ";
-                    MySqlDataAdapter da = new MySqlDataAdapter(Quary, Search.con);
+                    string Query = "select * from exportfile where portid= '" + TxtExportId.Text + "' order by date ";
+                    MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
+
                     da.Fill(DtSearchFile);
 
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
                     showPdf(pdfsdata);
                 }
-
                 Init_Dgv();
             }
             catch (Exception e)
@@ -454,8 +518,6 @@ namespace archive
             if (e.KeyCode == Keys.Enter)
             {
                 SearchNew();
-                Console.WriteLine("passed");
-                SearchFile();
             }
         }
 
@@ -469,6 +531,11 @@ namespace archive
             else
             {
                 string connectionKey = get_connection_key();
+                if(connectionKey == string.Empty)
+                {
+                    MessageBox.Show("لا يوجد أصل موضوع لهذة الوثيقة");
+                    return;
+                }
                 dtCombinedFilesData = get_combined_files_data(connectionKey);
 
                 string id = (string)dtCombinedFilesData.Rows[0]["uniqueID"];
@@ -482,12 +549,17 @@ namespace archive
 
         private string get_connection_key()
         {
+            String docDate = Convert.ToDateTime(documentDate.Value).ToString("yyyy-MM-dd");
             string table = (TxtExportId.Text == "") ? "importfile" : "exportfile";
             string id = (TxtExportId.Text == "") ? TxtImportId.Text : TxtExportId.Text;
-            string query = "select connection from " + table + " where portid = " + id + " order by date DESC";
-
+            string query = "select connection from " + table + " where portid = " + id +" and date = '" +docDate +"'  order by date DESC";
+            Console.WriteLine(query);
             DataTable dt = Search.QueryExecute(query);
-            string return_value = (string)dt.Rows[0][0];
+            string return_value = "";
+            if (dt.Rows.Count > 0)
+            {
+                return_value = (string)dt.Rows[0][0];
+            }
             return return_value;
         }
 
@@ -519,8 +591,6 @@ namespace archive
                 MessageBox.Show("لا يوجد مكاتبة أخرى");
                 return;
             }
-            
-
             string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
 
             byte[] pdfsdata = get_pdf_file(id);
@@ -562,8 +632,9 @@ namespace archive
             orgname.Text = (string)dtCombinedFilesData.Rows[globalIndex]["orgname"];
             string[] usernames = ((string)dtCombinedFilesData.Rows[globalIndex]["username"]).Split(',');
             fillCmbBxUserName(usernames);
+            documentDate.Value = (DateTime)dtCombinedFilesData.Rows[globalIndex]["date"];
 
-            string [] id = ((string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"]).Split('-');
+            string[] id = ((string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"]).Split('-');
 
             if (id[id.Length-1] == "ص")
             {
@@ -615,6 +686,28 @@ namespace archive
             AxAcroPDF.Show();
             Pdf.FileName = path;
             AxAcroPDF.LoadFile(path);
+        }
+
+        private Boolean isEmptySearch()
+        {
+            string[] Temp = new string[7] { TxtExportId.Text,TxtImportId.Text, txtexportorg.Text, txtexportchange.Text,
+                txtsummary.Text,orgname.Text,job };
+
+            for(int i = 0; i < Temp.Length; i++)
+            {
+                if (Temp[i] != string.Empty)
+                    return false;
+            }
+            if (CmbBxUserName.SelectedIndex>=0)
+                return false;
+            if (CkBxImportDate.Checked == true)
+                return false;
+            if (CkBxExportOrg.Checked == true)
+                return false;
+            if (ChkBxFollowing.Checked == true)
+                return false;
+
+            return true;
         }
     }
 }
