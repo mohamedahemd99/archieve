@@ -799,10 +799,10 @@ namespace archive
 
         private void BtnConnection_Click(object sender, EventArgs e)
         {
-            String FinalPath = System.String.Empty;
-            String CommandText = System.String.Empty;
-            String CommandText1 = System.String.Empty;
-            String CommandText2 = System.String.Empty;
+            String FinalPath = string.Empty;
+            String CommandText = string.Empty;
+            String CommandText1 = string.Empty;
+            String CommandText2 = string.Empty;
             try
             {
                 DataTable Dtlong = new DataTable();
@@ -813,10 +813,24 @@ namespace archive
                 DataTable Dt4 = new DataTable();
                 if (ConnectKey != "")
                 {
-                    CommandText1 = "SELECT id FROM exportfile  where connection = '" + ConnectKey + "'";
-                    CommandText2 = "SELECT id FROM importfile  where connection = '" + ConnectKey + "'";
-                    Dt1 = Export.QueryExecute(CommandText1);
-                    Dt2 = Export.QueryExecute(CommandText2);
+                    string queryExport = "select pdffile,date,portid from exportfile where id in (SELECT id FROM exportfile  where connection = '" + ConnectKey + "')";
+                    string queryImport = "select pdffile,date,portid from importfile where id in (SELECT id FROM importfile  where connection = '" + ConnectKey + "')";
+                    Dt1 = Export.QueryExecute(queryExport);
+                    Dt2 = Export.QueryExecute(queryImport);
+                    Dtlongall.Merge(Dt1);
+                    Dtlongall.Merge(Dt2);
+                    Dtlongall.DefaultView.Sort = "date DESC, portid DESC";
+                    Dtlongall = Dtlongall.DefaultView.ToTable();
+                    FinalPath = MyPdf.CreatePdfs(Dtlongall);
+                    AxAcroPDF.src = FinalPath;
+
+                    Console.WriteLine(queryExport);
+                    Console.WriteLine(queryImport);
+                    /*
+                     CommandText1 = "SELECT id FROM exportfile  where connection = '" + ConnectKey + "'";
+                     CommandText2 = "SELECT id FROM importfile  where connection = '" + ConnectKey + "'";
+                     Dt1 = Export.QueryExecute(CommandText1);
+                     Dt2 = Export.QueryExecute(CommandText2);
                     foreach (DataRow dtRow in Dt1.Rows)
                     {
                         string id = "select pdffile,date,portid from exportfile where id= '" + dtRow[0].ToString() + "'";
@@ -831,16 +845,13 @@ namespace archive
                         Dt4 = Export.QueryExecute(id);
                         Dtlongall.Merge(Dt4);
                     }
+
                     Dtlongall.Merge(Dtlong);
                     Dtlongall.DefaultView.Sort = "date DESC, portid DESC";
                     Dtlongall = Dtlongall.DefaultView.ToTable();
                     FinalPath = MyPdf.CreatePdfs(Dtlongall);
                     AxAcroPDF.src = FinalPath;
-                    //just print columns
-                    foreach (DataColumn column in Dtlongall.Columns)
-                    {
-                        Console.WriteLine(column.ColumnName);
-                    }
+                    */
                 }
                 else
                 {

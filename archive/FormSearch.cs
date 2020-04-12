@@ -485,7 +485,7 @@ namespace archive
                 {
                     TxtExportId.Text = "";
                     DtSearchFile.Clear();
-                    string Query = "select * from importfile where portid= '" + TxtImportId.Text + "' order by date";
+                    string Query = "select * from importfile where portid= '" + TxtImportId.Text + "' order by date DESC";
                     MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
                     da.Fill(DtSearchFile);
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
@@ -495,7 +495,7 @@ namespace archive
                 {
                     TxtImportId.Text = "";
                     DtSearchFile.Clear();
-                    string Query = "select * from exportfile where portid= '" + TxtExportId.Text + "' order by date ";
+                    string Query = "select * from exportfile where portid= '" + TxtExportId.Text + "' order by date DESC";
                     MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
 
                     da.Fill(DtSearchFile);
