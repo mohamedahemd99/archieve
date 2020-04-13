@@ -247,6 +247,7 @@ namespace archive
                 DataTable Dt4 = new DataTable();
                 if (ConnectKey != "")
                 {
+                    /*
                     CommandText1 = "SELECT id FROM exportfile  where connection = '" + ConnectKey + "'";
                     CommandText2 = "SELECT id FROM importfile  where connection = '" + ConnectKey + "'";
                     Dt1 = Archive.QueryExecute(CommandText1);
@@ -268,6 +269,18 @@ namespace archive
                     Dtlongall = Dtlongall.DefaultView.ToTable();
                     FinalPath = MyPdf.CreatePdfs(Dtlongall);
                     AxAcroPDF.src = FinalPath;
+                    */
+                    string queryExport = "select pdffile,date,portid from exportfile where id in (SELECT id FROM exportfile  where connection = '" + ConnectKey + "')";
+                    string queryImport = "select pdffile,date,portid from importfile where id in (SELECT id FROM importfile  where connection = '" + ConnectKey + "')";
+                    Dt1 = Archive.QueryExecute(queryExport);
+                    Dt2 = Archive.QueryExecute(queryImport);
+                    Dtlongall.Merge(Dt1);
+                    Dtlongall.Merge(Dt2);
+                    Dtlongall.DefaultView.Sort = "date DESC, portid DESC";
+                    Dtlongall = Dtlongall.DefaultView.ToTable();
+                    FinalPath = MyPdf.CreatePdfs(Dtlongall);
+                    AxAcroPDF.src = FinalPath;
+
                 }
                 else
                 {
