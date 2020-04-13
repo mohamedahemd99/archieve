@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFollowing));
             this.ReportData = new archive.ReportData();
             this.ReportDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,6 +51,8 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CmbBxUserName = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DatepickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.DatepickerStart = new System.Windows.Forms.DateTimePicker();
             this.BothActive = new Bunifu.Framework.UI.BunifuCheckbox();
             this.NotActive = new Bunifu.Framework.UI.BunifuCheckbox();
             this.Active = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -61,8 +62,6 @@
             this.lstBxUsers = new System.Windows.Forms.ListBox();
             this.TxtUser = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.button1 = new System.Windows.Forms.Button();
-            this.DatepickerStart = new System.Windows.Forms.DateTimePicker();
-            this.DatepickerEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ReportData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -80,10 +79,7 @@
             // 
             // ReportViewerFollowing
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = null;
-            this.ReportViewerFollowing.LocalReport.DataSources.Add(reportDataSource1);
-            this.ReportViewerFollowing.LocalReport.ReportEmbeddedResource = "archive.Report1.rdlc";
+            this.ReportViewerFollowing.LocalReport.ReportEmbeddedResource = "archive.ReportFollowing.rdlc";
             this.ReportViewerFollowing.Location = new System.Drawing.Point(3, 215);
             this.ReportViewerFollowing.Name = "ReportViewerFollowing";
             this.ReportViewerFollowing.ServerReport.BearerToken = null;
@@ -337,6 +333,36 @@
             this.panel1.Size = new System.Drawing.Size(1353, 144);
             this.panel1.TabIndex = 68;
             // 
+            // DatepickerEnd
+            // 
+            this.DatepickerEnd.CalendarForeColor = System.Drawing.Color.Blue;
+            this.DatepickerEnd.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
+            this.DatepickerEnd.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.DatepickerEnd.CustomFormat = "dd/MM/yyyy";
+            this.DatepickerEnd.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatepickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DatepickerEnd.Location = new System.Drawing.Point(445, 8);
+            this.DatepickerEnd.Name = "DatepickerEnd";
+            this.DatepickerEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DatepickerEnd.RightToLeftLayout = true;
+            this.DatepickerEnd.Size = new System.Drawing.Size(189, 29);
+            this.DatepickerEnd.TabIndex = 77;
+            // 
+            // DatepickerStart
+            // 
+            this.DatepickerStart.CalendarForeColor = System.Drawing.Color.Blue;
+            this.DatepickerStart.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
+            this.DatepickerStart.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.DatepickerStart.CustomFormat = "dd/MM/yyyy";
+            this.DatepickerStart.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatepickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DatepickerStart.Location = new System.Drawing.Point(702, 11);
+            this.DatepickerStart.Name = "DatepickerStart";
+            this.DatepickerStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DatepickerStart.RightToLeftLayout = true;
+            this.DatepickerStart.Size = new System.Drawing.Size(189, 29);
+            this.DatepickerStart.TabIndex = 76;
+            // 
             // BothActive
             // 
             this.BothActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -467,36 +493,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // DatepickerStart
-            // 
-            this.DatepickerStart.CalendarForeColor = System.Drawing.Color.Blue;
-            this.DatepickerStart.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
-            this.DatepickerStart.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.DatepickerStart.CustomFormat = "dd/MM/yyyy";
-            this.DatepickerStart.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatepickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatepickerStart.Location = new System.Drawing.Point(702, 11);
-            this.DatepickerStart.Name = "DatepickerStart";
-            this.DatepickerStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DatepickerStart.RightToLeftLayout = true;
-            this.DatepickerStart.Size = new System.Drawing.Size(189, 29);
-            this.DatepickerStart.TabIndex = 76;
-            // 
-            // DatepickerEnd
-            // 
-            this.DatepickerEnd.CalendarForeColor = System.Drawing.Color.Blue;
-            this.DatepickerEnd.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
-            this.DatepickerEnd.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.DatepickerEnd.CustomFormat = "dd/MM/yyyy";
-            this.DatepickerEnd.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatepickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatepickerEnd.Location = new System.Drawing.Point(445, 8);
-            this.DatepickerEnd.Name = "DatepickerEnd";
-            this.DatepickerEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DatepickerEnd.RightToLeftLayout = true;
-            this.DatepickerEnd.Size = new System.Drawing.Size(189, 29);
-            this.DatepickerEnd.TabIndex = 77;
             // 
             // FormFollowing
             // 

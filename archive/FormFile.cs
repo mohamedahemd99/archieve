@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace archive
 {
@@ -36,8 +29,8 @@ namespace archive
         void Authority()
         {
             DataTable Dt = new DataTable();
-            String Quary = "select * from login where name ='" + username + "' ";
-            Dt = Files.QueryExecute(Quary);
+            String Query = "select * from login where name ='" + username + "' ";
+            Dt = Files.QueryExecute(Query);
             files = Dt.Rows[0]["files"].ToString();
 
         }
@@ -45,8 +38,8 @@ namespace archive
         {
             DgvFile.DataSource = Files.QueryExecute("select * from primfile ORDER BY primfileid ");
             GlobalPrimId = Int32.Parse(DgvFile[0, 0].Value.ToString());
-            String Quary = "select * from scndfile where primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid ";
-            DgvFileSub.DataSource = Files.QueryExecute(Quary);
+            String Query = "select * from scndfile where primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid ";
+            DgvFileSub.DataSource = Files.QueryExecute(Query);
         }
         void DGV_Headers()
         {
@@ -68,8 +61,8 @@ namespace archive
                 TxtFileId.Text = DgvFile[0, e.RowIndex].Value.ToString();
                 TxtFileName.Text = DgvFile[1, e.RowIndex].Value.ToString();
                 GlobalPrimId = int.Parse(DgvFile[0, e.RowIndex].Value.ToString());
-                String Quary ="select * from scndfile where primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
-                DgvFileSub.DataSource = Files.QueryExecute(Quary);
+                String Query ="select * from scndfile where primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
+                DgvFileSub.DataSource = Files.QueryExecute(Query);
                 TxtFileNameSub.ResetText();
                 TxtFileidSub.ResetText();
                 NameOfFiles = TxtFileName.Text;
@@ -96,8 +89,8 @@ namespace archive
 
         private void TxtSearch_OnValueChanged(object sender, EventArgs e)
         {
-            string Quary = "select * from primfile where primfilename like'" + '%' + TxtSearch.Text + '%' + "' or primfileid like'" + '%' + TxtSearch.Text + '%' + "' ";
-            DgvFile.DataSource = Files.QueryExecute(Quary);
+            string Query = "select * from primfile where primfilename like'" + '%' + TxtSearch.Text + '%' + "' or primfileid like'" + '%' + TxtSearch.Text + '%' + "' ";
+            DgvFile.DataSource = Files.QueryExecute(Query);
         }
 
         private void BtnAddFile_Click(object sender, EventArgs e)
@@ -233,8 +226,8 @@ namespace archive
 
         private void TxtSearchSub_OnValueChanged(object sender, EventArgs e)
         {
-            string Quary = "select scndfilename,scndfileid from scndfile where scndfilename like'" + '%' + TxtSearchSub.Text + '%' + "' or scndfileid like'" + '%' + TxtSearchSub.Text + '%' + "' ";
-            DgvFileSub.DataSource = Files.QueryExecute(Quary);
+            string Query = "select scndfilename,scndfileid from scndfile where scndfilename like'" + '%' + TxtSearchSub.Text + '%' + "' or scndfileid like'" + '%' + TxtSearchSub.Text + '%' + "' ";
+            DgvFileSub.DataSource = Files.QueryExecute(Query);
         }
 
         private void BtnAddFileSub_Click(object sender, EventArgs e)
@@ -249,8 +242,8 @@ namespace archive
                     int Test = Files.MyExecuteNonQuery(InsertQuery);
                     if (Test == 1)
                     {
-                        string Quary = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
-                        DgvFileSub.DataSource = Files.QueryExecute(Quary);
+                        string Query = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
+                        DgvFileSub.DataSource = Files.QueryExecute(Query);
                         MessageBox.Show("تم ادخال البيانات بنجاح");
                     }
                     else
@@ -296,8 +289,8 @@ namespace archive
                     {
                         int Test = Files.MyExecuteNonQuery("UPDATE import SET secondfile =REPLACE(secondfile,'" + NameOfSecondFiles + "','" + TxtFileNameSub.Text + "') ");
                         if (Test == 1) { }
-                        string Quary = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
-                        DgvFileSub.DataSource = Files.QueryExecute(Quary);
+                        string Query = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
+                        DgvFileSub.DataSource = Files.QueryExecute(Query);
                         MessageBox.Show("تم تعديل البيانات بنجاح");
                     }
                     else
@@ -339,8 +332,8 @@ namespace archive
                 int Test = Files.MyExecuteNonQuery(DeleteQuery);
                 if (Test == 1)
                 {
-                    string Quary = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "'ORDER BY scndfileid";
-                    DgvFileSub.DataSource = Files.QueryExecute(Quary);
+                    string Query = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "'ORDER BY scndfileid";
+                    DgvFileSub.DataSource = Files.QueryExecute(Query);
                     TxtFileNameSub.ResetText();
                     TxtFileidSub.ResetText();
                     MessageBox.Show("تم حذف البيانات بنجاح");
@@ -372,8 +365,8 @@ namespace archive
         {
             try
             {
-                String Quary = "select * from primfile where primfileid like '" + '%' + TxtFileId.Text + '%' + "'ORDER BY primfileid ";
-                DgvFile.DataSource = Files.QueryExecute(Quary);
+                String Query = "select * from primfile where primfileid like '" + '%' + TxtFileId.Text + '%' + "'ORDER BY primfileid ";
+                DgvFile.DataSource = Files.QueryExecute(Query);
             }
             catch (Exception ex)
             { }
@@ -381,8 +374,8 @@ namespace archive
 
         private void TxtFileName_OnValueChanged(object sender, EventArgs e)
         {
-            string Quary = "select * from primfile where primfilename like'" + '%' + TxtFileName.Text + '%' + "' or primfileid like'" + '%' + TxtFileId.Text + '%' + "' ORDER BY primfileid ";
-            DgvFile.DataSource = Files.QueryExecute(Quary);
+            string Query = "select * from primfile where primfilename like'" + '%' + TxtFileName.Text + '%' + "' or primfileid like'" + '%' + TxtFileId.Text + '%' + "' ORDER BY primfileid ";
+            DgvFile.DataSource = Files.QueryExecute(Query);
         }
     }
 }

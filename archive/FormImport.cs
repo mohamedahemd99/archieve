@@ -301,6 +301,9 @@ namespace archive
             {
                 Search();
                 SearchFile();
+            }else if(e.KeyCode == Keys.Escape)
+            {
+                ClearInputs();
             }
         }
 
