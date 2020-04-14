@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace archive
 {
     public partial class FormErgent : Form
     {
-        ArchieveDatabase Ergernt = new ArchieveDatabase();
+        ArchieveDatabase Urgernt = new ArchieveDatabase();
         string nameofuser;
         public FormErgent(string name)
         {
@@ -29,8 +23,8 @@ namespace archive
       
         void FillDgv()
         {
-            String CommandText1 = System.String.Empty;
-            String CommandText2 = System.String.Empty;
+            String CommandText1 = string.Empty;
+            String CommandText2 = string.Empty;
             try
             {
                 DataTable dt = new DataTable();
@@ -47,8 +41,8 @@ namespace archive
                     CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action  FROM exportdata where following = 1 and ";
                     CommandText2 += "   followingdate >= '" + Dates[0] + "' AND followingdate <= '" + Dates[1] + "'  ";
 
-                    Dt1 = Ergernt.QueryExecute(CommandText1);
-                    Dt2 = Ergernt.QueryExecute(CommandText2);
+                    Dt1 = Urgernt.QueryExecute(CommandText1);
+                    Dt2 = Urgernt.QueryExecute(CommandText2);
                     Dt1.Merge(Dt2);
                     Dt1.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();

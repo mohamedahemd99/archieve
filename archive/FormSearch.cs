@@ -18,17 +18,23 @@ namespace archive
         String type = "وارد / صادر ";
         string job;
         int globalIndex = 0;
-        public FormSearch(string name, string password)
+        Utils utils = new Utils();
+        public FormSearch(string name, string password,string[] followingParams )
         {
 
             InitializeComponent();
             TxtUser.Text = name;
+            if(followingParams != null)
+            {
+                FillFollowingParams(followingParams);
+                SearchNew();
+            }
 
         }
         private void FormSearch_Load(object sender, EventArgs e)
         {
             initCmbBxUserName();
-            Authority();
+            //Authority();
             ImportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             OrgExportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
             FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
@@ -49,13 +55,6 @@ namespace archive
             {
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);
             }
-
-        }
-        void fillCmbBxUserName(string[] names)
-        {
-            CmbBxUserName.Items.Clear();
-            CmbBxUserName.Items.AddRange(names);
-            CmbBxUserName.SelectedIndex = 0;
 
         }
 
@@ -270,11 +269,12 @@ namespace archive
                     {
                         CommandText1 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
                     }
-
+                    /*
                     if (job != "")
                     {
                         CommandText1 += "username like'" + '%' + job + '%' + "' and ";
                     }
+                    */
 
                     if (CmbBxUserName.Text != "اختر مختص")
                     {
@@ -313,12 +313,12 @@ namespace archive
                     {
                         CommandText2 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
                     }
-
+                    /*
                     if (job != "")
                     {
                         CommandText2 += " username like'" + '%' + job + '%' + "' and ";
                     }
-
+                    */
                     if (CmbBxUserName.Text != "اختر مختص")
                     {
                         CommandText2 += " username like'" + '%' + CmbBxUserName.Text + '%' + "' and ";
@@ -340,7 +340,8 @@ namespace archive
 
                     }
                     CommandText2 += "  exportid > 0";
-
+                    Console.WriteLine("first command: " + CommandText1);
+                    Console.WriteLine("second command: " + CommandText2);
                     if (TxtImportId.Text != string.Empty && TxtExportId.Text != string.Empty)
                     {
                         MessageBox.Show("لا يمكن البحث برقم صادر و وارد.");
@@ -356,7 +357,7 @@ namespace archive
                         documentDate.Visible = true;
                         documentDate.Value = (DateTime)Dt1.Rows[0]["date"];
 
-
+                        
                         try
                         {
                             DgvSearch.DataSource = Dt1;
@@ -472,11 +473,15 @@ namespace archive
         {
             try
             {
+                // string docDate = Convert.ToDateTime(documentDate.Value).ToString("yyyy-MM-dd");
+                string docDate = "2019-02-15";
                 if (TxtImportId.Text != "")
                 {
                     TxtExportId.Text = "";
                     DtSearchFile.Clear();
-                    string Query = "select * from importfile where portid= '" + TxtImportId.Text + "' order by date DESC";
+                    //string Query = "select * from importfile where portid= '" + TxtImportId.Text + "' and date = '" + docDate +"' " + " order by date DESC";
+                    string Query = "select * from importfile where portid= '" + TxtImportId.Text + "' " + " order by date DESC";
+
                     MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
                     da.Fill(DtSearchFile);
                     byte[] pdfsdata = DtSearchFile.Rows[0]["pdffile"] as byte[];
@@ -486,7 +491,9 @@ namespace archive
                 {
                     TxtImportId.Text = "";
                     DtSearchFile.Clear();
-                    string Query = "select * from exportfile where portid= '" + TxtExportId.Text + "' order by date DESC";
+                    //string Query = "select * from exportfile where portid= '" + TxtExportId.Text + "' and date = '" + docDate + "' " + " order by date DESC";
+                    string Query = "select * from exportfile where portid= '" + TxtExportId.Text + "' " + " order by date DESC";
+
                     MySqlDataAdapter da = new MySqlDataAdapter(Query, Search.con);
 
                     da.Fill(DtSearchFile);
@@ -537,7 +544,10 @@ namespace archive
                 prev_btn.Visible = true;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private string get_connection_key()
         {
             String docDate = Convert.ToDateTime(documentDate.Value).ToString("yyyy-MM-dd");
@@ -620,7 +630,9 @@ namespace archive
             txtsummary.Text = (string)dtCombinedFilesData.Rows[globalIndex]["summary"];
             orgname.Text = (string)dtCombinedFilesData.Rows[globalIndex]["orgname"];
             string[] usernames = ((string)dtCombinedFilesData.Rows[globalIndex]["username"]).Split(',');
-            fillCmbBxUserName(usernames);
+            utils.FillComoBox(CmbBxUserName, usernames);
+
+            //fillCmbBxUserName(usernames);
             documentDate.Value = (DateTime)dtCombinedFilesData.Rows[globalIndex]["date"];
 
             string[] id = ((string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"]).Split('-');
@@ -676,6 +688,7 @@ namespace archive
             AxAcroPDF.LoadFile(path);
         }
 
+        //Check if the user has entered any field to search with
         private Boolean isEmptySearch()
         {
             string[] Temp = new string[7] { TxtExportId.Text,TxtImportId.Text, txtexportorg.Text, txtexportchange.Text,
@@ -709,6 +722,21 @@ namespace archive
             }
 
             return true;
+        }
+
+        private void FillFollowingParams(string [] parameters)
+        {
+            // fill import or export text box
+            if(parameters[0] == "import")
+            {
+                TxtImportId.Text = parameters[1];
+            }
+            else
+            {
+                TxtExportId.Text = parameters[1];
+            }
+            txtsummary.Text = parameters[2];
+          
         }
     }
 }

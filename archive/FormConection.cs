@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace archive
 {
     public partial class FormConection : Form
     {
         ArchieveDatabase Connect = new ArchieveDatabase();
-        String Connection = "";
+        string Connection = "";
         string type1 = "و";
         string type2 = "و";
         string nameofuser;

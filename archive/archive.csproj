@@ -251,6 +251,7 @@
       <DependentUpon>ReportData.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="FollowingOrgs.resx">
       <DependentUpon>FollowingOrgs.cs</DependentUpon>
     </EmbeddedResource>

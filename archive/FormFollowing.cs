@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using Microsoft.Reporting.WinForms;
 
 namespace archive
 {
@@ -16,10 +10,12 @@ namespace archive
     {
         ArchieveDatabase Following = new ArchieveDatabase();
         string job;
+        string pw;
         public FormFollowing(string Name, string password)
         {
             InitializeComponent();
             TxtUser.Text = Name;
+            pw = password;
         }
         private void FormFollowing_Load(object sender, EventArgs e)
         {
@@ -28,12 +24,12 @@ namespace archive
                 bunifuCustomLabel1.Visible = false;
                 CmbBxUserName.Visible = false;
             }
-            Authority();
+            //Authority();
             DatepickerStart.Value = DateTime.Now;
             DatepickerEnd.Value = DateTime.Now;
             Search();
             FillCmbBxUserName();
-           
+
         }
         void Authority()
         {
@@ -59,7 +55,7 @@ namespace archive
         {
             Search();
         }
-        public void ReportViwerData(DataTable dt, string[] Dates , String type)
+        public void ReportViwerData(DataTable dt, string[] Dates, String type)
         {
             ReportDataSource rprtDTSource = new ReportDataSource("ReportData", dt);
             ReportParameterCollection ReportParameters = new ReportParameterCollection();
@@ -99,29 +95,29 @@ namespace archive
                 }
                 else
                 {
-                ChkBxExport.Checked = true;
+                    ChkBxExport.Checked = true;
                 }
             }
         }
         private void ChkBxImport_OnChange(object sender, EventArgs e)
         {
-                if (ChkBxImport.Checked == true)
+            if (ChkBxImport.Checked == true)
+            {
+                ChkBxImportExport.Checked = false;
+                ChkBxExport.Checked = false;
+            }
+            else
+            {
+                if (ChkBxExport.Checked == true)
                 {
                     ChkBxImportExport.Checked = false;
-                    ChkBxExport.Checked = false;
                 }
                 else
                 {
-                    if (ChkBxExport.Checked == true)
-                    {
-                         ChkBxImportExport.Checked = false;
-                    }
-                    else
-                    {
-                           ChkBxImportExport.Checked = true;
-                    }
+                    ChkBxImportExport.Checked = true;
                 }
-            
+            }
+
         }
         private void ChkBxExport_OnChange(object sender, EventArgs e)
         {
@@ -152,6 +148,7 @@ namespace archive
                 array = Dt.Rows[0]["orgname"].ToString();
             }
             orgname.Text = array;
+
         }
         private void orgname_OnValueChanged(object sender, EventArgs e)
         {
@@ -249,15 +246,15 @@ namespace archive
         }
         void Search()
         {
-            String type = "وارد / صادر ";
-            String CommandText1 = System.String.Empty;
-            String CommandText2 = System.String.Empty;
+            string type = "وارد / صادر ";
+            string CommandText1 = string.Empty;
+            string CommandText2 = string.Empty;
             try
             {
                 string[] Dates = DatesMaker();
                 DataTable Dt1 = new DataTable();
                 DataTable Dt2 = new DataTable();
-                CommandText1 = "select importid as id , importdate as date, orgname , username , followingdate , summary , action , primaryfileid, secondfileid FROM importdata where following = 1 and ";
+                CommandText1 = "select importid as id , importdate as date, orgname ,summary , username , followingdate  , primaryfileid, secondfileid,  action,importdata.id as uniqueId FROM importdata where following = 1 and ";
                 if (orgname.Text != "")
                 {
                     CommandText1 += " orgname like'" + '%' + StringNewSearchForm(orgname.Text) + '%' + "' and ";
@@ -271,10 +268,10 @@ namespace archive
                 {
                     CommandText1 += " username like'" + '%' + StringNewSearchForm(CmbBxUserName.Text) + '%' + "' and ";
                 }
-                   CommandText1 += " followingdate >= '" + Dates[0] + "' AND followingdate <= '" + Dates[1] + "'";
+                CommandText1 += " followingdate >= '" + Dates[0] + "' AND followingdate <= '" + Dates[1] + "'";
 
 
-                    CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action , primaryfileid, secondfileid FROM exportdata where following = 1 and ";
+                CommandText2 = "select exportid as id , exportdate as date , orgname ,summary , username , followingdate  , primaryfileid, secondfileid,  action ,exportdata.id as uniqueId FROM exportdata where following = 1 and ";
                 if (orgname.Text != "")
                 {
                     CommandText2 += " orgname like'" + '%' + StringNewSearchForm(orgname.Text) + '%' + "' and ";
@@ -288,7 +285,7 @@ namespace archive
                 {
                     CommandText2 += " username like'" + '%' + StringNewSearchForm(CmbBxUserName.Text) + '%' + "' and ";
                 }
-                    CommandText2 += " followingdate >= '" + Dates[0] + "' AND followingdate <= '" + Dates[1] + "'";
+                CommandText2 += " followingdate >= '" + Dates[0] + "' AND followingdate <= '" + Dates[1] + "'";
 
                 if (ChkBxImportExport.Checked == true)
                 {
@@ -299,6 +296,7 @@ namespace archive
                     Dt1.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, Dates, type);
+                    dataGridView.DataSource = Dt1;
                 }
                 else if (ChkBxImport.Checked == true)
                 {
@@ -307,6 +305,7 @@ namespace archive
                     Dt1.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt1 = Dt1.DefaultView.ToTable();
                     ReportViwerData(Dt1, Dates, type);
+                    dataGridView.DataSource = Dt1;
                 }
                 else if (ChkBxExport.Checked == true)
                 {
@@ -315,12 +314,54 @@ namespace archive
                     Dt2.DefaultView.Sort = "followingdate ASC,id ASC";
                     Dt2 = Dt2.DefaultView.ToTable();
                     ReportViwerData(Dt2, Dates, type);
+                    dataGridView.DataSource = Dt2;
                 }
+                Init_Dgv();
+             
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        void Init_Dgv()
+        {
+            String[] DgvHeaders = { "رقم المكانبة ", "تاريخ المكاتبة ", "اسم الجهة", " ملخص الموضوع", "المختصون ", "تاريخ المتابعة ","ملف" ,"ك", "اجراء متخذ" };
+            for (int i = 0; i < DgvHeaders.Length; i++)
+            {
+                dataGridView.Columns[i].HeaderText = DgvHeaders[i];
+            }
+
+            dataGridView.Columns[0].Width = 55;
+            dataGridView.Columns[1].Width = 75;
+            dataGridView.Columns[2].Width = 150;
+            dataGridView.Columns[3].Width = 500;
+            dataGridView.Columns[4].Width = 75;
+            dataGridView.Columns[5].Width = 75;
+            dataGridView.Columns[6].Width = 75;
+            dataGridView.Columns[7].Width = 75;
+            dataGridView.Columns[8].Width = 75;
+            dataGridView.Columns[9].Visible = false;
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = dataGridView[9, e.RowIndex].Value.ToString(); //to get id of clicked cell
+            string summary = dataGridView[3, e.RowIndex].Value.ToString();
+            string[] splittedID = id.Split('-');
+            string[] correspondenceData = new string[3];
+            correspondenceData[0] = (splittedID[2] == "ص") ? "export" : "import";
+            correspondenceData[1] = splittedID[0];
+            correspondenceData[2] = summary;
+            FormSearch Formsearch = new FormSearch(" " + TxtUser.Text, pw, correspondenceData);
+            Formsearch.Show();
+            Formsearch.BringToFront();
+            Console.WriteLine(correspondenceData[0]);
+            Console.WriteLine(correspondenceData[1]);
+            Console.WriteLine(correspondenceData[2]);
+
+        }
+
     }
 }

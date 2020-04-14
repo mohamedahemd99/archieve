@@ -80,7 +80,7 @@ namespace archive
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            FormSearch Formsearch = new FormSearch(txtname.Text, txtpassword.Text);
+            FormSearch Formsearch = new FormSearch(txtname.Text, txtpassword.Text,null);
             Formsearch.Show();
             Formsearch.BringToFront();
            // this.SendToBack();
@@ -134,7 +134,7 @@ namespace archive
         private void bunifuThinButton26_Click(object sender, EventArgs e)
         {
                 FormFollowing formFollowing = new FormFollowing(txtname.Text, txtpassword.Text);
-                formFollowing.Show();
+            formFollowing.Show();
 
         }
 

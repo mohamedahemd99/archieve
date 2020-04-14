@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
@@ -13,7 +7,7 @@ namespace archive
 {
     public partial class FormSearchReports : Form
     {
-        public FormSearchReports(DataTable dt ,String type)
+        public FormSearchReports(DataTable dt ,string type)
         {
             InitializeComponent();
             ReportViwerData(dt, type);
@@ -21,13 +15,10 @@ namespace archive
 
         private void FormSearchReports_Load(object sender, EventArgs e)
         {
-
             this.ReportSearch.RefreshReport();
-
-
         }
 
-        public void ReportViwerData(DataTable dt,String type)
+        public void ReportViwerData(DataTable dt,string type)
         {
             ReportDataSource rprtDTSource = new ReportDataSource("ReportData", dt);
             ReportParameterCollection ReportParameters = new ReportParameterCollection();
