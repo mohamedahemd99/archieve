@@ -101,6 +101,9 @@
             this.AxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.DgvSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.show_original_correspondence = new System.Windows.Forms.Button();
+            this.last_btn = new System.Windows.Forms.Button();
+            this.first_btn = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AxAcroPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).BeginInit();
@@ -498,10 +501,10 @@
             // 
             this.CmbBxUserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbBxUserName.FormattingEnabled = true;
-            this.CmbBxUserName.Location = new System.Drawing.Point(63, 139);
+            this.CmbBxUserName.Location = new System.Drawing.Point(27, 139);
             this.CmbBxUserName.Name = "CmbBxUserName";
             this.CmbBxUserName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.CmbBxUserName.Size = new System.Drawing.Size(195, 27);
+            this.CmbBxUserName.Size = new System.Drawing.Size(151, 27);
             this.CmbBxUserName.TabIndex = 79;
             // 
             // bunifuCustomLabel1
@@ -509,7 +512,7 @@
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(280, 141);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(187, 140);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(75, 22);
             this.bunifuCustomLabel1.TabIndex = 80;
@@ -770,11 +773,11 @@
             this.txtsummary.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtsummary.ForeColor = System.Drawing.Color.Black;
             this.txtsummary.isPassword = false;
-            this.txtsummary.Location = new System.Drawing.Point(371, 131);
+            this.txtsummary.Location = new System.Drawing.Point(271, 131);
             this.txtsummary.Margin = new System.Windows.Forms.Padding(4);
             this.txtsummary.Name = "txtsummary";
             this.txtsummary.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtsummary.Size = new System.Drawing.Size(269, 35);
+            this.txtsummary.Size = new System.Drawing.Size(369, 35);
             this.txtsummary.TabIndex = 15;
             this.txtsummary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtsummary.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtImportId_KeyDown);
@@ -1009,7 +1012,7 @@
             // 
             // prev_btn
             // 
-            this.prev_btn.Location = new System.Drawing.Point(63, 15);
+            this.prev_btn.Location = new System.Drawing.Point(105, 15);
             this.prev_btn.Name = "prev_btn";
             this.prev_btn.Size = new System.Drawing.Size(75, 27);
             this.prev_btn.TabIndex = 94;
@@ -1019,7 +1022,7 @@
             // 
             // next_btn
             // 
-            this.next_btn.Location = new System.Drawing.Point(418, 15);
+            this.next_btn.Location = new System.Drawing.Point(387, 15);
             this.next_btn.Name = "next_btn";
             this.next_btn.Size = new System.Drawing.Size(75, 27);
             this.next_btn.TabIndex = 87;
@@ -1090,7 +1093,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvSearch.ColumnHeadersHeight = 30;
+            this.DgvSearch.ColumnHeadersHeight = 50;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1127,7 +1130,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.DgvSearch.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvSearch.ShowCellErrors = false;
-            this.DgvSearch.Size = new System.Drawing.Size(1337, 191);
+            this.DgvSearch.Size = new System.Drawing.Size(1337, 178);
             this.DgvSearch.TabIndex = 86;
             this.DgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearch_CellContentClick);
             // 
@@ -1143,11 +1146,43 @@
             this.show_original_correspondence.UseVisualStyleBackColor = false;
             this.show_original_correspondence.Click += new System.EventHandler(this.show_original_correspondence_Click);
             // 
+            // last_btn
+            // 
+            this.last_btn.Location = new System.Drawing.Point(486, 16);
+            this.last_btn.Name = "last_btn";
+            this.last_btn.Size = new System.Drawing.Size(75, 27);
+            this.last_btn.TabIndex = 95;
+            this.last_btn.Text = "الأخير";
+            this.last_btn.UseVisualStyleBackColor = true;
+            this.last_btn.Click += new System.EventHandler(this.last_btn_Click);
+            // 
+            // first_btn
+            // 
+            this.first_btn.Location = new System.Drawing.Point(12, 15);
+            this.first_btn.Name = "first_btn";
+            this.first_btn.Size = new System.Drawing.Size(75, 27);
+            this.first_btn.TabIndex = 96;
+            this.first_btn.Text = "الأول";
+            this.first_btn.UseVisualStyleBackColor = true;
+            this.first_btn.Click += new System.EventHandler(this.first_btn_Click);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "archive.Report_Search.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 501);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1337, 24);
+            this.reportViewer1.TabIndex = 97;
+            // 
             // FormSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.first_btn);
+            this.Controls.Add(this.last_btn);
             this.Controls.Add(this.show_original_correspondence);
             this.Controls.Add(this.DgvSearch);
             this.Controls.Add(this.AxAcroPDF);
@@ -1240,6 +1275,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker documentDate;
         private Bunifu.Framework.UI.BunifuCustomLabel documentDateLabel;
+        private System.Windows.Forms.Button last_btn;
+        private System.Windows.Forms.Button first_btn;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
 

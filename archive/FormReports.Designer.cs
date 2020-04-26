@@ -47,6 +47,8 @@
             this.ReportViewerFollowing = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
+            this.CmbBxOrgName = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportData)).BeginInit();
             this.SuspendLayout();
@@ -238,11 +240,34 @@
             this.btnReport.TabIndex = 92;
             this.btnReport.UseVisualStyleBackColor = false;
             // 
+            // CmbBxUserName
+            // 
+            this.CmbBxOrgName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CmbBxOrgName.FormattingEnabled = true;
+            this.CmbBxOrgName.Location = new System.Drawing.Point(983, 119);
+            this.CmbBxOrgName.Name = "CmbBxUserName";
+            this.CmbBxOrgName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CmbBxOrgName.Size = new System.Drawing.Size(179, 27);
+            this.CmbBxOrgName.TabIndex = 93;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(1185, 120);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(73, 22);
+            this.bunifuCustomLabel3.TabIndex = 94;
+            this.bunifuCustomLabel3.Text = "اسم الجهة";
+            // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 741);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.CmbBxOrgName);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.ReportViewerFollowing);
@@ -287,5 +312,7 @@
         private ReportData ReportData;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.ComboBox CmbBxOrgName;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

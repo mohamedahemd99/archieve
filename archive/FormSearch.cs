@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Reporting.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -43,7 +44,10 @@ namespace archive
             FollowingDate2.Value = DateTime.Now;
             next_btn.Visible = false;
             prev_btn.Visible = false;
+            last_btn.Visible = false;
+            first_btn.Visible = false;
             //SearchNew();
+            this.reportViewer1.RefreshReport();
         }
         void initCmbBxUserName()
         {
@@ -58,15 +62,6 @@ namespace archive
 
         }
 
-        void Authority()
-        {
-            DataTable Dt = new DataTable();
-            string Query = "select * from login where name ='" + TxtUser.Text + "' ";
-            Dt = Search.QueryExecute(Query);
-
-            job = Dt.Rows[0]["job"].ToString();
-
-        }
         void Init_Dgv()
         {
             String[] DgvHeaders = { "رقم المكانبة ", "تاريخ المكاتبة ", "اسم الجهة", "المختصون", "تاريخ المتابعة ", "ملخص الموضوع ", " اجراء متخذ" };
@@ -106,6 +101,8 @@ namespace archive
             TxtExportId.Text = string.Empty;
             next_btn.Visible = false;
             prev_btn.Visible = false;
+            last_btn.Visible = false;
+            first_btn.Visible = false;
             txtConDate.Text = string.Empty;
             txtConNum.Text = string.Empty;
             txt_prim_file_code.Text = string.Empty;
@@ -249,6 +246,7 @@ namespace archive
                     string[] Dates = DatesMaker();
                     DataTable Dt1 = new DataTable();
                     DataTable Dt2 = new DataTable();
+                    
                     CommandText1 = "select  importid as id , importdate as date, orgname , username , followingdate , summary , action ,id as mah FROM importdata where ";
 
                     Field = new string[3] { "importid", "exportorg", "exportchange" };
@@ -339,6 +337,10 @@ namespace archive
                         //CommandText2 += "  exportid < 0 and";
 
                     }
+                    if (txtexportorg.Text != "")
+                    {
+                        //CommandText2 += "";
+                    }
                     CommandText2 += "  exportid > 0";
                     Console.WriteLine("first command: " + CommandText1);
                     Console.WriteLine("second command: " + CommandText2);
@@ -347,12 +349,12 @@ namespace archive
                         MessageBox.Show("لا يمكن البحث برقم صادر و وارد.");
 
                     }
-                    else if (TxtImportId.Text != string.Empty)
+                    else if (TxtImportId.Text != string.Empty || txtexportorg.Text != string.Empty || CkBxExportOrg.Checked)
                     {
                         Dt1 = Search.QueryExecute(CommandText1);
                         Dt1.DefaultView.Sort = "date DESC,id DESC";
                         Dt1 = Dt1.DefaultView.ToTable();
-
+                        ReportViwerData(Dt1);
                         documentDateLabel.Visible = true;
                         documentDate.Visible = true;
                         documentDate.Value = (DateTime)Dt1.Rows[0]["date"];
@@ -382,7 +384,7 @@ namespace archive
                         documentDateLabel.Visible = true;
                         documentDate.Visible = true;
                         documentDate.Value = (DateTime)Dt2.Rows[0]["date"];
-
+                        ReportViwerData(Dt2);
                         try
                         {
                             DgvSearch.DataSource = Dt2;
@@ -406,7 +408,7 @@ namespace archive
                         documentDateLabel.Visible = true;
                         documentDate.Visible = true;
                         documentDate.Value = (DateTime)Dt2.Rows[0]["date"];
-
+                        ReportViwerData(dtMerged);
                         try
                         {
                             Console.WriteLine("rows count  merged " + dtMerged.Rows.Count);
@@ -542,6 +544,8 @@ namespace archive
                 showPdf(pdfsdata);
                 next_btn.Visible = true;
                 prev_btn.Visible = true;
+                first_btn.Visible = true;
+                last_btn.Visible = true;
             }
         }
         /// <summary>
@@ -738,5 +742,37 @@ namespace archive
             txtsummary.Text = parameters[2];
           
         }
+
+        private void first_btn_Click(object sender, EventArgs e)
+        {
+            globalIndex = 0;
+            string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
+
+            byte[] pdfsdata = get_pdf_file(id);
+            display_data();
+            showPdf(pdfsdata);
+
+        }
+
+        private void last_btn_Click(object sender, EventArgs e)
+        {
+            globalIndex = dtCombinedFilesData.Rows.Count - 1;
+            string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
+
+            byte[] pdfsdata = get_pdf_file(id);
+            display_data();
+            showPdf(pdfsdata);
+
+        }
+        public void ReportViwerData(DataTable dt)
+        {
+            ReportDataSource rprtDTSource = new ReportDataSource("ReportData", dt);
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(rprtDTSource);
+            this.reportViewer1.LocalReport.Refresh();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.ZoomPercent = 125;
+        }
+
     }
 }

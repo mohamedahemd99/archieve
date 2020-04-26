@@ -20,6 +20,7 @@ namespace archive
         {
             InitializeComponent();
             username = name;
+            initCmbBxOrgName();
         }
 
         void Authority()
@@ -57,7 +58,9 @@ namespace archive
                 DataTable Dt1 = new DataTable();
                 DataTable Dt2 = new DataTable();
                 CommandText1 = "select importid as id , importdate as date, orgname  , summary  , primaryfileid, secondfileid FROM importdata where ";
-                
+
+                CommandText1 += " orgname like'" + '%' + CmbBxOrgName.Text + '%' + "' and ";
+
                 if (job != "")
                 {
                     CommandText1 += "username like'" + '%' + job + '%' + "' and ";
@@ -73,8 +76,10 @@ namespace archive
                 {
                     CommandText2 += "username like'" + '%' + job + '%' + "' and ";
                 }
+                CommandText2 += " orgname like'" + '%' + CmbBxOrgName.Text + '%' + "' and ";
+                
 
-               
+
                 CommandText2 += "exportdate >= '" + Dates[0] + "' AND exportdate <= '" + Dates[1] + "'";
 
                 if (ChkBxImportExport.Checked == true)
@@ -196,5 +201,19 @@ namespace archive
                 }
             }
         }
+
+        void initCmbBxOrgName()
+        {
+            DataTable Dt = new DataTable();
+            CmbBxOrgName.Items.Clear();
+            CmbBxOrgName.Text = "";
+            Dt = Reports.QueryExecute("select orgname from org order by orgname");
+            for (int Index = 0; Index < Dt.Rows.Count; Index++)
+            {
+                CmbBxOrgName.Items.Add(Dt.Rows[Index][0]);
+            }
+
+        }
+
     }
 }

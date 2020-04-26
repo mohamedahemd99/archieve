@@ -321,6 +321,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report_Search.rdlc" />
     <EmbeddedResource Include="ReportFollowing.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />

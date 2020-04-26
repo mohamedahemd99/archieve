@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using Microsoft.Reporting.WinForms;
 
 namespace archive
@@ -36,10 +29,9 @@ namespace archive
             DateStartVisit.Value = DateTime.Now;
             DateEndVisit.Value = DateTime.Now;
             DatepickerStart.Value = DateTime.Now;
-            orgdate.Value= DateTime.Now;
             DatepickerEnd.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-12-31");
-            DgvVisit.Columns[0].HeaderText = " صادر الجهة";
-            DgvVisit.Columns[1].HeaderText = "الجهة الوارد " ;
+            DgvVisit.Columns[0].HeaderText = " رقم الوارد";
+            DgvVisit.Columns[1].HeaderText = "جهة الوارد " ;
             DgvVisit.Columns[2].HeaderText = "الموضوع" ;
             DgvVisit.Columns[3].HeaderText = " جهة الزيارة" ;
             DgvVisit.Columns[4].HeaderText = " بداية الزيارة" ;
@@ -85,7 +77,7 @@ namespace archive
 
                     String VisitDate = Convert.ToDateTime(DateStartVisit.Value).ToString("yyyy-MM-dd");
                     String EndVisitDate = Convert.ToDateTime(DateEndVisit.Value).ToString("yyyy-MM-dd");
-                    int Test = Visit.MyExecuteNonQuery("INSERT INTO Visit (subject,orgvisit,date,enddate,org,exportorg) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtOrg.Text + "','" + TxtExportOrg.Text + "')");
+                    int Test = Visit.MyExecuteNonQuery("INSERT INTO Visit (subject,orgvisit,date,enddate,org,importid) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtOrg.Text + "','" + TxtImportID.Text + "')");
                     if (Test == 1)
                     {
                         FillMyData();
@@ -97,7 +89,7 @@ namespace archive
                     }
                     Txtsubject.ResetText();
                     TxtorgVisit.ResetText();
-                    TxtExportOrg.ResetText();
+                    TxtImportID.ResetText();
                     TxtOrg.ResetText();
                     DateStartVisit.ResetText();
                     DateEndVisit.ResetText();
@@ -130,8 +122,8 @@ namespace archive
 
                     String VisitDate = Convert.ToDateTime(DateStartVisit.Value).ToString("yyyy-MM-dd");
                 String EndVisitDate = Convert.ToDateTime(DateEndVisit.Value).ToString("yyyy-MM-dd");
-                String DeleteQuery = "DELETE FROM  Visit  WHERE exportorg= '" + TxtExportOrg.Text + "' ";
-                String InsertQuery = "INSERT INTO Visit (subject,orgvisit,date,enddate,org,exportorg) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtOrg.Text + "','" + TxtExportOrg.Text + "')";
+                String DeleteQuery = "DELETE FROM  Visit  WHERE importid= '" + TxtImportID.Text + "' ";
+                String InsertQuery = "INSERT INTO Visit (subject,orgvisit,date,enddate,org,importid) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtOrg.Text + "','" + TxtImportID.Text + "')";
                 int Test1 = Visit.MyExecuteNonQuery(DeleteQuery);
                 int Test2 = Visit.MyExecuteNonQuery(InsertQuery);
                 if (Test1 == 1 && Test2 == 1)
@@ -145,7 +137,7 @@ namespace archive
                 }
                 Txtsubject.ResetText();
                 TxtorgVisit.ResetText();
-                TxtExportOrg.ResetText();
+                TxtImportID.ResetText();
                 TxtOrg.ResetText();
                 DateStartVisit.ResetText();
                 DateEndVisit.ResetText();
@@ -170,7 +162,7 @@ namespace archive
                 if (visit == "1")
                 {
 
-                    String DeleteQuery = "DELETE FROM  Visit  WHERE exportorg= '" + TxtExportOrg.Text + "' ";
+                    String DeleteQuery = "DELETE FROM  Visit  WHERE importid= '" + TxtImportID.Text + "' ";
                 int Test = Visit.MyExecuteNonQuery(DeleteQuery);
                 if (Test == 1)
                 {
@@ -183,7 +175,7 @@ namespace archive
                 }
                 Txtsubject.ResetText();
                 TxtorgVisit.ResetText();
-                TxtExportOrg.ResetText();
+                TxtImportID.ResetText();
                 TxtOrg.ResetText();
                 DateStartVisit.ResetText();
                 DateEndVisit.ResetText();
@@ -208,7 +200,7 @@ namespace archive
                 Txtsubject.Text = DgvVisit[2, e.RowIndex].Value.ToString();
                 TxtOrg.Text = DgvVisit[1, e.RowIndex].Value.ToString();  
                 TxtorgVisit.Text = DgvVisit[3, e.RowIndex].Value.ToString();
-                TxtExportOrg.Text = DgvVisit[0, e.RowIndex].Value.ToString();
+                TxtImportID.Text = DgvVisit[0, e.RowIndex].Value.ToString();
                 DateStartVisit.Value = Convert.ToDateTime(DgvVisit[4, e.RowIndex].Value.ToString());
                 DateEndVisit.Value = Convert.ToDateTime(DgvVisit[5, e.RowIndex].Value.ToString());
 
@@ -284,6 +276,26 @@ namespace archive
         private void TxtExportOrg_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtImportID_OnValueChanged(object sender, EventArgs e)
+        {
+            DataTable Dt = new DataTable();
+            Dt = Visit.QueryExecute("select orgname,summary from importdata where importid = '" + TxtImportID.Text + "' order by importdate DESC");
+            string array = String.Empty;
+            if (Dt.Rows.Count > 0)
+            {
+                TxtOrg.Text = Dt.Rows[0]["orgname"].ToString();
+                Txtsubject.Text = Dt.Rows[0]["summary"].ToString();
+            }
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            Txtsubject.Text = string.Empty;
+            TxtorgVisit.Text = string.Empty;
+            TxtImportID.Text = string.Empty;
+            TxtOrg.Text = string.Empty;
         }
     }
 }

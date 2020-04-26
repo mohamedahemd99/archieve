@@ -541,7 +541,7 @@
             this.dataGridView.HeaderBgColor = System.Drawing.Color.Maroon;
             this.dataGridView.HeaderForeColor = System.Drawing.Color.White;
             this.dataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView.Location = new System.Drawing.Point(19, 527);
+            this.dataGridView.Location = new System.Drawing.Point(3, 527);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -563,7 +563,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ShowCellErrors = false;
-            this.dataGridView.Size = new System.Drawing.Size(1337, 194);
+            this.dataGridView.Size = new System.Drawing.Size(1353, 194);
             this.dataGridView.TabIndex = 87;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
