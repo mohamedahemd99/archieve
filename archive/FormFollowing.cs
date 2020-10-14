@@ -11,22 +11,25 @@ namespace archive
         ArchieveDatabase Following = new ArchieveDatabase();
         string job;
         string pw;
-        public FormFollowing(string Name, string password)
+        public FormFollowing(string Name, string password, DateTime start, DateTime end)
         {
             InitializeComponent();
+            DatepickerStart.Value = start;
+            DatepickerEnd.Value = end;
             TxtUser.Text = Name;
             pw = password;
         }
         private void FormFollowing_Load(object sender, EventArgs e)
         {
+            
             if (job != null)
             {
                 bunifuCustomLabel1.Visible = false;
                 CmbBxUserName.Visible = false;
             }
+            
             //Authority();
-            DatepickerStart.Value = DateTime.Now;
-            DatepickerEnd.Value = DateTime.Now;
+            
             Search();
             FillCmbBxUserName();
 
@@ -363,5 +366,9 @@ namespace archive
 
         }
 
+        private void show_report_btn_Click(object sender, EventArgs e)
+        {
+            dataGridView.Visible = !dataGridView.Visible;
+        }
     }
 }

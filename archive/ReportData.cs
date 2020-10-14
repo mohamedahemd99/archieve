@@ -4,8 +4,6 @@
 
     partial class ReportData
     {
-        partial class ReportDataDataTable
-        {
-        }
+
     }
 }

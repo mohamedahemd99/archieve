@@ -49,6 +49,10 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.CmbBxOrgName = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtFilter = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtIdFilter = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportData)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +75,7 @@
             this.ChkBxImportExport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.ChkBxImportExport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ChkBxImportExport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxImportExport.Location = new System.Drawing.Point(1329, 84);
+            this.ChkBxImportExport.Location = new System.Drawing.Point(1329, 70);
             this.ChkBxImportExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ChkBxImportExport.Name = "ChkBxImportExport";
             this.ChkBxImportExport.Size = new System.Drawing.Size(20, 20);
@@ -86,7 +90,7 @@
             this.ChkBxExport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.ChkBxExport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ChkBxExport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxExport.Location = new System.Drawing.Point(970, 83);
+            this.ChkBxExport.Location = new System.Drawing.Point(970, 69);
             this.ChkBxExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ChkBxExport.Name = "ChkBxExport";
             this.ChkBxExport.Size = new System.Drawing.Size(20, 20);
@@ -101,7 +105,7 @@
             this.ChkBxImport.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.ChkBxImport.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ChkBxImport.ForeColor = System.Drawing.Color.White;
-            this.ChkBxImport.Location = new System.Drawing.Point(1142, 82);
+            this.ChkBxImport.Location = new System.Drawing.Point(1142, 68);
             this.ChkBxImport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ChkBxImport.Name = "ChkBxImport";
             this.ChkBxImport.Size = new System.Drawing.Size(20, 20);
@@ -113,7 +117,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(1016, 74);
+            this.label3.Location = new System.Drawing.Point(1016, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 34);
             this.label3.TabIndex = 72;
@@ -124,7 +128,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(1178, 74);
+            this.label1.Location = new System.Drawing.Point(1178, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 34);
             this.label1.TabIndex = 73;
@@ -134,7 +138,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("B Arabic Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(841, 74);
+            this.label2.Location = new System.Drawing.Point(841, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 34);
             this.label2.TabIndex = 74;
@@ -222,7 +226,7 @@
             this.BtnSearch.BackColor = System.Drawing.Color.PapayaWhip;
             this.BtnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnSearch.BackgroundImage")));
             this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSearch.Location = new System.Drawing.Point(602, 111);
+            this.BtnSearch.Location = new System.Drawing.Point(139, 111);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(246, 42);
             this.BtnSearch.TabIndex = 76;
@@ -240,14 +244,14 @@
             this.btnReport.TabIndex = 92;
             this.btnReport.UseVisualStyleBackColor = false;
             // 
-            // CmbBxUserName
+            // CmbBxOrgName
             // 
             this.CmbBxOrgName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbBxOrgName.FormattingEnabled = true;
-            this.CmbBxOrgName.Location = new System.Drawing.Point(983, 119);
-            this.CmbBxOrgName.Name = "CmbBxUserName";
+            this.CmbBxOrgName.Location = new System.Drawing.Point(391, 119);
+            this.CmbBxOrgName.Name = "CmbBxOrgName";
             this.CmbBxOrgName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.CmbBxOrgName.Size = new System.Drawing.Size(179, 27);
+            this.CmbBxOrgName.Size = new System.Drawing.Size(316, 27);
             this.CmbBxOrgName.TabIndex = 93;
             // 
             // bunifuCustomLabel3
@@ -255,17 +259,83 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(1185, 120);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(713, 124);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(73, 22);
             this.bunifuCustomLabel3.TabIndex = 94;
             this.bunifuCustomLabel3.Text = "اسم الجهة";
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFilter.BorderColorFocused = System.Drawing.Color.Black;
+            this.txtFilter.BorderColorIdle = System.Drawing.Color.Black;
+            this.txtFilter.BorderColorMouseHover = System.Drawing.Color.Black;
+            this.txtFilter.BorderThickness = 3;
+            this.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilter.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilter.ForeColor = System.Drawing.Color.Black;
+            this.txtFilter.isPassword = false;
+            this.txtFilter.Location = new System.Drawing.Point(1011, 119);
+            this.txtFilter.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtFilter.Size = new System.Drawing.Size(187, 31);
+            this.txtFilter.TabIndex = 95;
+            this.txtFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFilter.OnValueChanged += new System.EventHandler(this.txtFilter_OnValueChanged);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(1050, 94);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(122, 22);
+            this.bunifuCustomLabel1.TabIndex = 96;
+            this.bunifuCustomLabel1.Text = "بحث ب اسم الجهة";
+            // 
+            // txtIdFilter
+            // 
+            this.txtIdFilter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtIdFilter.BorderColorFocused = System.Drawing.Color.Black;
+            this.txtIdFilter.BorderColorIdle = System.Drawing.Color.Black;
+            this.txtIdFilter.BorderColorMouseHover = System.Drawing.Color.Black;
+            this.txtIdFilter.BorderThickness = 3;
+            this.txtIdFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdFilter.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdFilter.ForeColor = System.Drawing.Color.Black;
+            this.txtIdFilter.isPassword = false;
+            this.txtIdFilter.Location = new System.Drawing.Point(822, 119);
+            this.txtIdFilter.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtIdFilter.Name = "txtIdFilter";
+            this.txtIdFilter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtIdFilter.Size = new System.Drawing.Size(108, 31);
+            this.txtIdFilter.TabIndex = 95;
+            this.txtIdFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdFilter.OnValueChanged += new System.EventHandler(this.txtIdFilter_OnValueChanged);
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(818, 94);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(122, 22);
+            this.bunifuCustomLabel2.TabIndex = 96;
+            this.bunifuCustomLabel2.Text = "بحث ب كود الجهة";
             // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 741);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.txtIdFilter);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.CmbBxOrgName);
             this.Controls.Add(this.btnReport);
@@ -314,5 +384,9 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.ComboBox CmbBxOrgName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtFilter;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtIdFilter;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
     }
 }

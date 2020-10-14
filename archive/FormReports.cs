@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
@@ -60,27 +54,29 @@ namespace archive
                 CommandText1 = "select importid as id , importdate as date, orgname  , summary  , primaryfileid, secondfileid FROM importdata where ";
 
                 CommandText1 += " orgname like'" + '%' + CmbBxOrgName.Text + '%' + "' and ";
-
+/*
                 if (job != "")
                 {
                     CommandText1 += "username like'" + '%' + job + '%' + "' and ";
                 }
-
-
+*/
                 CommandText1 += "importdate >= '" + Dates[0] + "' AND importdate <= '" + Dates[1] + "'";
 
 
-                CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action , primaryfileid, secondfileid FROM exportdata where following = 1 and ";
-               
+                CommandText2 = "select exportid as id , exportdate as date , orgname , username , followingdate , summary , action , primaryfileid, secondfileid FROM exportdata where ";
+/*               
                 if (job != "")
                 {
                     CommandText2 += "username like'" + '%' + job + '%' + "' and ";
                 }
+*/
                 CommandText2 += " orgname like'" + '%' + CmbBxOrgName.Text + '%' + "' and ";
-                
 
 
                 CommandText2 += "exportdate >= '" + Dates[0] + "' AND exportdate <= '" + Dates[1] + "'";
+                Console.WriteLine("first command: " + CommandText1);
+                Console.WriteLine("second command: " + CommandText2);
+
 
                 if (ChkBxImportExport.Checked == true)
                 {
@@ -215,5 +211,40 @@ namespace archive
 
         }
 
+        private void txtFilter_OnValueChanged(object sender, EventArgs e)
+        {
+            DataTable Dt = new DataTable();
+            Dt = Reports.QueryExecute("select orgname from org where orgname like'" + '%' + txtFilter.Text + '%' + "' order by orgname ");
+            if (Dt.Rows.Count > 0)
+            {
+                CmbBxOrgName.Items.Clear();
+                CmbBxOrgName.Text = "";
+                for (int Index = 0; Index < Dt.Rows.Count; Index++)
+                {
+                    CmbBxOrgName.Items.Add(Dt.Rows[Index][0]);
+                }
+                CmbBxOrgName.SelectedIndex = 0;
+
+            }
+
+        }
+
+        private void txtIdFilter_OnValueChanged(object sender, EventArgs e)
+        {
+            DataTable Dt = new DataTable();
+            Dt = Reports.QueryExecute("select orgname from org where idorg like'" + '%' + txtIdFilter.Text + '%' + "'  ");
+            if (Dt.Rows.Count > 0)
+            {
+                CmbBxOrgName.Items.Clear();
+                CmbBxOrgName.Text = "";
+                for (int Index = 0; Index < Dt.Rows.Count; Index++)
+                {
+                    CmbBxOrgName.Items.Add(Dt.Rows[Index][0]);
+                }
+                CmbBxOrgName.SelectedIndex = 0;
+
+            }
+
+        }
     }
 }

@@ -197,6 +197,18 @@
     <Compile Include="FormOrg.Designer.cs">
       <DependentUpon>FormOrg.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReminders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReminders.Designer.cs">
+      <DependentUpon>FormReminders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRemindersReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRemindersReport.Designer.cs">
+      <DependentUpon>FormRemindersReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +262,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ShowRemindersDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRemindersDetails.Designer.cs">
+      <DependentUpon>ShowRemindersDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="FollowingOrgs.resx">
@@ -291,6 +309,12 @@
     <EmbeddedResource Include="FormOrg.resx">
       <DependentUpon>FormOrg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReminders.resx">
+      <DependentUpon>FormReminders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRemindersReport.resx">
+      <DependentUpon>FormRemindersReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReportItem.resx">
       <DependentUpon>FormReportItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +345,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportReminders.rdlc" />
     <EmbeddedResource Include="Report_Search.rdlc" />
     <EmbeddedResource Include="ReportFollowing.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
@@ -330,6 +355,9 @@
     <EmbeddedResource Include="Report6.rdlc" />
     <EmbeddedResource Include="Report7.rdlc" />
     <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="ShowRemindersDetails.resx">
+      <DependentUpon>ShowRemindersDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSetReportVisit.xsc">
       <DependentUpon>DataSetReportVisit.xsd</DependentUpon>
     </None>

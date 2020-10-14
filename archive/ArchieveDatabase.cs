@@ -11,7 +11,7 @@ namespace archive
 
         public ArchieveDatabase()
         {
-         //con = new MySqlConnection("Server = 192.168.0.1 ; Database = archieve ; uid = developer ; pwd =developer ; SslMode=None ");
+        //con = new MySqlConnection("Server = 192.168.0.1 ; Database = archieve ; uid = developer ; pwd =developer ; SslMode=None ");
         con = new MySqlConnection("Server = localhost; Database = archieve ; uid = developer ; pwd =developer ; SslMode=None");
 
         }
@@ -30,7 +30,7 @@ namespace archive
 
         public DataTable QueryExecute(String query)
         {
-            
+            Console.WriteLine("Query : " + query);
             //Create DataTable that return data from function
             DataTable dt = new DataTable();
             try

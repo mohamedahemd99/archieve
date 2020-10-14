@@ -48,6 +48,13 @@ namespace archive
             first_btn.Visible = false;
             //SearchNew();
             this.reportViewer1.RefreshReport();
+            ImportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            OrgExportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            ImportDate2.Value = DateTime.Now;
+            OrgExportDate2.Value = DateTime.Now;
+            FollowingDate2.Value = DateTime.Now;
+
         }
         void initCmbBxUserName()
         {
@@ -79,12 +86,6 @@ namespace archive
             DgvSearch.Columns[6].Width = 200;
             DgvSearch.Columns[7].Visible = false;
 
-            ImportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
-            OrgExportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
-            FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
-            ImportDate2.Value = DateTime.Now;
-            OrgExportDate2.Value = DateTime.Now;
-            FollowingDate2.Value = DateTime.Now;
 
         }
 
@@ -121,6 +122,18 @@ namespace archive
             CkBxImportId_OnChange(null, null);
             ChkBxFollowing_OnChange(null, null);
             CkBxExportOrg_OnChange(null, null);
+            ImportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            OrgExportDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            FollowingDate1.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
+            ImportDate2.Value = DateTime.Now;
+            OrgExportDate2.Value = DateTime.Now;
+            FollowingDate2.Value = DateTime.Now;
+            counterIndicatorTextBox.Text = "";
+            jumpToLabel.Visible = false;
+            jumpToTextBox.Visible = false;
+            jumpToTextBox.Text = "";
+            counterIndicatorLabel.Visible = false;
+            counterIndicatorTextBox.Visible = false;
 
 
         }
@@ -267,6 +280,22 @@ namespace archive
                     {
                         CommandText1 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
                     }
+                    if (txt_prim_file_code.Text != "")
+                    {
+                        CommandText1 += " primaryfileid ='" + txt_prim_file_code.Text  + "' and ";
+                    }
+                    if (txt_prim_file_name.Text != "")
+                    {
+                        CommandText1 += " primaryfile like'" + '%' + txt_prim_file_name.Text + '%' + "' and ";
+                    }
+                    if (txt_sec_file_code.Text != "" && txt_prim_file_code.Text != "")
+                    {
+                        CommandText1 += " secondfileid ='" + txt_sec_file_code.Text  + "' and ";
+                    }
+                    if (txt_sec_file_name.Text != "" && txt_prim_file_name.Text != "")
+                    {
+                        CommandText1 += " secondfile like'" + '%' + txt_sec_file_name.Text + '%' + "' and ";
+                    }
                     /*
                     if (job != "")
                     {
@@ -311,6 +340,23 @@ namespace archive
                     {
                         CommandText2 += " orgname like'" + '%' + orgname.Text + '%' + "' and ";
                     }
+                    if (txt_prim_file_code.Text != "")
+                    {
+                        CommandText2 += " primaryfileid ='" + txt_prim_file_code.Text + "' and ";
+                    }
+                    if (txt_prim_file_name.Text != "")
+                    {
+                        CommandText2 += " primaryfile like'" + '%' + txt_prim_file_name.Text + '%' + "' and ";
+                    }
+                    if (txt_sec_file_code.Text != "" && txt_prim_file_code.Text != "")
+                    {
+                        CommandText2 += " secondfileid ='" + txt_sec_file_code.Text +  "' and ";
+                    }
+                    if (txt_sec_file_name.Text != "" && txt_prim_file_name.Text != "")
+                    {
+                        CommandText2 += " secondfile like'" + '%' + txt_sec_file_name.Text + '%' + "' and ";
+                    }
+
                     /*
                     if (job != "")
                     {
@@ -393,7 +439,9 @@ namespace archive
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "   txtexportid");
-                            MessageBox.Show(e.Message);
+                            MessageBox.Show("لا يوجد مكاتبة بهذه البيانات");
+                            documentDate.Visible = false;
+                            documentDateLabel.Visible = false;
                         }
                     }
                     else
@@ -407,7 +455,7 @@ namespace archive
                         dtMerged = dtMerged.DefaultView.ToTable();
                         documentDateLabel.Visible = true;
                         documentDate.Visible = true;
-                        documentDate.Value = (DateTime)Dt2.Rows[0]["date"];
+                        documentDate.Value = (DateTime)dtMerged.Rows[0]["date"];
                         ReportViwerData(dtMerged);
                         try
                         {
@@ -417,7 +465,10 @@ namespace archive
                         }
                         catch (Exception e)
                         {
-                            MessageBox.Show(e.Message);
+                            MessageBox.Show("لا يوجد مكاتبة بهذه البيانات");
+                            documentDate.Visible = false;
+                            documentDateLabel.Visible = false;
+
                         }
                     }
 
@@ -425,7 +476,10 @@ namespace archive
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("لا يوجد مكاتبة بهذه البيانات");
+                    documentDate.Visible = false;
+                    documentDateLabel.Visible = false;
+
                 }
             }
         }
@@ -476,7 +530,6 @@ namespace archive
             try
             {
                 // string docDate = Convert.ToDateTime(documentDate.Value).ToString("yyyy-MM-dd");
-                string docDate = "2019-02-15";
                 if (TxtImportId.Text != "")
                 {
                     TxtExportId.Text = "";
@@ -546,6 +599,11 @@ namespace archive
                 prev_btn.Visible = true;
                 first_btn.Visible = true;
                 last_btn.Visible = true;
+                jumpToLabel.Visible = true;
+                jumpToTextBox.Visible = true;
+                counterIndicatorLabel.Visible = true;
+                counterIndicatorTextBox.Visible = true;
+                formatCounterText(1, dtCombinedFilesData.Rows.Count);
             }
         }
         /// <summary>
@@ -600,6 +658,7 @@ namespace archive
             byte[] pdfsdata = get_pdf_file(id);
             display_data();
             showPdf(pdfsdata);
+            formatCounterText(globalIndex + 1, dtCombinedFilesData.Rows.Count);
         }
 
         private void prev_btn_Click(object sender, EventArgs e)
@@ -616,6 +675,7 @@ namespace archive
             byte[] pdfsdata = get_pdf_file(id);
             display_data();
             showPdf(pdfsdata);
+            formatCounterText(globalIndex + 1, dtCombinedFilesData.Rows.Count);
         }
 
 
@@ -695,8 +755,8 @@ namespace archive
         //Check if the user has entered any field to search with
         private Boolean isEmptySearch()
         {
-            string[] Temp = new string[7] { TxtExportId.Text,TxtImportId.Text, txtexportorg.Text, txtexportchange.Text,
-                txtsummary.Text,orgname.Text,job };
+            string[] Temp = new string[11] { TxtExportId.Text,TxtImportId.Text, txtexportorg.Text, txtexportchange.Text,
+                txtsummary.Text,orgname.Text,job,txt_prim_file_code.Text,txt_sec_file_code.Text,txt_prim_file_name.Text,txt_sec_file_name.Text };
 
             for (int i = 0; i < Temp.Length; i++)
             {
@@ -751,6 +811,7 @@ namespace archive
             byte[] pdfsdata = get_pdf_file(id);
             display_data();
             showPdf(pdfsdata);
+            formatCounterText(1,dtCombinedFilesData.Rows.Count);
 
         }
 
@@ -762,6 +823,8 @@ namespace archive
             byte[] pdfsdata = get_pdf_file(id);
             display_data();
             showPdf(pdfsdata);
+            formatCounterText(dtCombinedFilesData.Rows.Count,
+                dtCombinedFilesData.Rows.Count);
 
         }
         public void ReportViwerData(DataTable dt)
@@ -774,5 +837,35 @@ namespace archive
             this.reportViewer1.ZoomPercent = 125;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DgvSearch.Visible = !DgvSearch.Visible;
+        }
+
+        private void formatCounterText(int currentIndex, int totalNumber)
+        {
+            string stringFormat = currentIndex.ToString() + "/" + totalNumber.ToString();
+            counterIndicatorTextBox.Text = stringFormat;
+        }
+
+        private void jumpToLabel_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("format" + jumpToTextBox.Text);
+            int requiredId = int.Parse(jumpToTextBox.Text);
+            if (requiredId > dtCombinedFilesData.Rows.Count)
+            {
+                MessageBox.Show("هذا الرقم أكبر من حجم أصل الموضوع");
+                return;
+            }
+            globalIndex = requiredId - 1;
+            string id = (string)dtCombinedFilesData.Rows[globalIndex]["uniqueID"];
+
+            byte[] pdfsdata = get_pdf_file(id);
+            display_data();
+            showPdf(pdfsdata);
+            formatCounterText(requiredId,
+                dtCombinedFilesData.Rows.Count);
+
+        }
     }
 }

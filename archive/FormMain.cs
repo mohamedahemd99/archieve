@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Timers;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.IO;
-using System.Linq;
+using Tulpep.NotificationWindow;
+using System.Media;
+
 
 namespace archive
 {
@@ -18,6 +15,10 @@ namespace archive
        
         ArchieveDatabase Archieve = new ArchieveDatabase();
 
+        static string username;
+        static string pass;
+        static bool FormFollowingOpen = false;
+        static bool FormReminderOpen = false;
         string admin;
         string following;
         string user;
@@ -26,6 +27,7 @@ namespace archive
         string job;
         int counter;
         string history;
+        private System.Timers.Timer aTimer;
 
         public FormMain(string name,string password)
         {
@@ -33,8 +35,11 @@ namespace archive
             InitializeComponent();
             txtname.Text =name ;
             txtpassword.Text = password;
+            username = name;
+            pass = password;
+            InitTimer(name);
 
-
+            
             Archieve.con.Open();
             DataTable dt1 = new DataTable();
             MySqlCommand cmd = Archieve.con.CreateCommand();
@@ -133,7 +138,7 @@ namespace archive
 
         private void bunifuThinButton26_Click(object sender, EventArgs e)
         {
-                FormFollowing formFollowing = new FormFollowing(txtname.Text, txtpassword.Text);
+            FormFollowing formFollowing = new FormFollowing(txtname.Text, txtpassword.Text,DateTime.Now,DateTime.Now);
             formFollowing.Show();
 
         }
@@ -220,5 +225,108 @@ namespace archive
             FormReportItem item = new FormReportItem();
             item.Show();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (username == "لواء / محمد فرج" || username == "مصطفى الجندي")
+            {
+                FormReminders form = new FormReminders();
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("غير مسموح لك بدخول هذة الصفحة");
+            }
+        }
+
+        private static void OnTimedFollowingEvent(object source, ElapsedEventArgs e)
+        {
+
+
+            //TimeSpan end = new TimeSpan(12, 30, 0); //13 o'clock
+            TimeSpan end = new TimeSpan(7, 30, 0); //13 o'clock
+            TimeSpan now = DateTime.Now.TimeOfDay;
+
+            DateTime today = DateTime.Now;
+            DateTime tomorrow = today.AddDays(1);
+            if (now > end  && !FormFollowingOpen)
+            {
+                FormFollowingOpen = true;
+                FormMain.MakePopUp("عرض تقرير متابعة غدا");
+
+                Application.Run(new FormFollowing(username, pass,tomorrow,tomorrow));
+            }
+            
+        }
+
+        private static void OnTimedReminderEvent(object source, ElapsedEventArgs e)
+        {
+
+            //change time to 7
+            TimeSpan end = new TimeSpan(7, 0, 0); //7o'clock
+            TimeSpan now = DateTime.Now.TimeOfDay;
+
+            DateTime today = DateTime.Now;
+           
+            if (now > end && !FormFollowingOpen)
+            {
+                FormFollowingOpen = true;
+                FormMain.MakePopUp("عرض متابعات اليوم");
+                Console.WriteLine("showing pop up");
+                //open form reminders
+                Application.Run(new FormReminders(username,pass,DateTime.Today.ToString("d")));
+               
+            }
+
+        }
+
+        private void InitTimer(string name)
+        {
+            Console.WriteLine(name);
+            if (name == "عميد / ياسر فاروق")
+            {
+                aTimer = new System.Timers.Timer(1 * 60 * 1000); //one hour in milliseconds
+                aTimer.Elapsed += new ElapsedEventHandler(OnTimedFollowingEvent);
+                aTimer.Start();
+            }
+            else if (name == "لواء / محمد فرج" || name == "مصطفى الجندي")
+            {
+                aTimer = new System.Timers.Timer(5 * 1000); //quarter hour in milliseconds
+                aTimer.Elapsed += new ElapsedEventHandler(OnTimedReminderEvent);
+                aTimer.Start();
+            }
+
+        }
+
+        static void MakePopUp(string text)
+        {
+            PopupNotifier popup = new PopupNotifier();
+      
+            popup.ContentText = text;
+            
+            popup.ShowCloseButton = true;
+            popup.ShowOptionsButton = true;
+            popup.ContentFont = new Font("Tahoma", 15);
+            popup.TitleFont = new Font("Tahoma", 10);
+            popup.TitleColor = Color.White;
+            popup.BorderColor = Color.CornflowerBlue;
+            popup.BodyColor = Color.CornflowerBlue;
+            popup.ContentColor = Color.DarkBlue;       // should be
+            popup.ContentHoverColor = Color.DarkBlue;   // the same
+            popup.AnimationDuration = 1000;
+            popup.AnimationInterval = 1;
+            popup.HeaderColor = Color.DodgerBlue;
+            popup.ButtonHoverColor = Color.CadetBlue;
+            popup.ContentPadding = new Padding(2);
+            popup.ShowGrip = true;
+            popup.Scroll = true;
+            
+            popup.Popup();// show  
+
+            SoundPlayer splayer = new SoundPlayer(@"11.wav");
+            splayer.Play();
+            //MessageBox.Show(text);
+        }
+
     }
 }

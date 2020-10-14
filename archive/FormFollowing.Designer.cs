@@ -56,6 +56,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CmbBxUserName = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.show_report_btn = new System.Windows.Forms.Button();
             this.DatepickerEnd = new System.Windows.Forms.DateTimePicker();
             this.DatepickerStart = new System.Windows.Forms.DateTimePicker();
             this.BothActive = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -90,7 +91,7 @@
             this.ReportViewerFollowing.Location = new System.Drawing.Point(3, 215);
             this.ReportViewerFollowing.Name = "ReportViewerFollowing";
             this.ReportViewerFollowing.ServerReport.BearerToken = null;
-            this.ReportViewerFollowing.Size = new System.Drawing.Size(1353, 306);
+            this.ReportViewerFollowing.Size = new System.Drawing.Size(1353, 506);
             this.ReportViewerFollowing.TabIndex = 57;
             // 
             // panel3
@@ -311,6 +312,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panel1.Controls.Add(this.show_report_btn);
             this.panel1.Controls.Add(this.DatepickerEnd);
             this.panel1.Controls.Add(this.DatepickerStart);
             this.panel1.Controls.Add(this.BothActive);
@@ -335,10 +337,26 @@
             this.panel1.Controls.Add(this.bunifuCustomLabel7);
             this.panel1.Controls.Add(this.bunifuCustomLabel16);
             this.panel1.Controls.Add(this.bunifuCustomLabel15);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(3, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1353, 144);
             this.panel1.TabIndex = 68;
+            // 
+            // show_report_btn
+            // 
+            this.show_report_btn.BackColor = System.Drawing.Color.Purple;
+            this.show_report_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.show_report_btn.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.show_report_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_report_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.show_report_btn.Location = new System.Drawing.Point(239, 95);
+            this.show_report_btn.Name = "show_report_btn";
+            this.show_report_btn.Size = new System.Drawing.Size(174, 44);
+            this.show_report_btn.TabIndex = 78;
+            this.show_report_btn.Text = "عرض/ اخفاء التقرير";
+            this.show_report_btn.UseVisualStyleBackColor = false;
+            this.show_report_btn.Click += new System.EventHandler(this.show_report_btn_Click);
             // 
             // DatepickerEnd
             // 
@@ -541,7 +559,7 @@
             this.dataGridView.HeaderBgColor = System.Drawing.Color.Maroon;
             this.dataGridView.HeaderForeColor = System.Drawing.Color.White;
             this.dataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView.Location = new System.Drawing.Point(3, 527);
+            this.dataGridView.Location = new System.Drawing.Point(3, 244);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -563,7 +581,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ShowCellErrors = false;
-            this.dataGridView.Size = new System.Drawing.Size(1353, 194);
+            this.dataGridView.Size = new System.Drawing.Size(1353, 477);
             this.dataGridView.TabIndex = 87;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -628,5 +646,6 @@
         private System.Windows.Forms.DateTimePicker DatepickerEnd;
         private System.Windows.Forms.DateTimePicker DatepickerStart;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView;
+        private System.Windows.Forms.Button show_report_btn;
     }
 }

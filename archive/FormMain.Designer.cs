@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelMain = new System.Windows.Forms.Panel();
-            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -54,7 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,8 +62,8 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Controls.Add(this.button13);
             this.panelMain.Controls.Add(this.button12);
-            this.panelMain.Controls.Add(this.bunifuButton1);
             this.panelMain.Controls.Add(this.btnReport);
             this.panelMain.Controls.Add(this.button10);
             this.panelMain.Controls.Add(this.button11);
@@ -84,47 +83,38 @@
             this.panelMain.Size = new System.Drawing.Size(581, 740);
             this.panelMain.TabIndex = 0;
             // 
-            // bunifuButton1
+            // button13
             // 
-            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
-            this.bunifuButton1.ButtonText = "متابعة الجهات";
-            this.bunifuButton1.ButtonTextMarginLeft = 0;
-            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Gray;
-            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.White;
-            this.bunifuButton1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconPadding = 10;
-            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.bunifuButton1.IdleBorderRadius = 1;
-            this.bunifuButton1.IdleBorderThickness = 0;
-            this.bunifuButton1.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.bunifuButton1.IdleIconLeftImage = null;
-            this.bunifuButton1.IdleIconRightImage = null;
-            this.bunifuButton1.Location = new System.Drawing.Point(352, 695);
-            this.bunifuButton1.Name = "bunifuButton1";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties1.BorderRadius = 1;
-            stateProperties1.BorderThickness = 1;
-            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties1.IconLeftImage = null;
-            stateProperties1.IconRightImage = null;
-            this.bunifuButton1.onHoverState = stateProperties1;
-            this.bunifuButton1.Size = new System.Drawing.Size(153, 26);
-            this.bunifuButton1.TabIndex = 92;
-            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton1.Visible = false;
-            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
+            this.button13.BackColor = System.Drawing.Color.SteelBlue;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.Font = new System.Drawing.Font("Tahoma", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button13.Location = new System.Drawing.Point(289, 577);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(274, 69);
+            this.button13.TabIndex = 94;
+            this.button13.Text = "متابعة السيد نائب المدير";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.PapayaWhip;
+            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button12.Location = new System.Drawing.Point(0, 497);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(274, 65);
+            this.button12.TabIndex = 93;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // btnReport
             // 
             this.btnReport.BackColor = System.Drawing.Color.PapayaWhip;
             this.btnReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReport.BackgroundImage")));
             this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReport.Location = new System.Drawing.Point(289, 620);
+            this.btnReport.Location = new System.Drawing.Point(289, 497);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(274, 65);
             this.btnReport.TabIndex = 91;
@@ -136,7 +126,7 @@
             this.button10.BackColor = System.Drawing.Color.PapayaWhip;
             this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Location = new System.Drawing.Point(0, 532);
+            this.button10.Location = new System.Drawing.Point(0, 413);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(274, 65);
             this.button10.TabIndex = 90;
@@ -148,7 +138,7 @@
             this.button11.BackColor = System.Drawing.Color.PapayaWhip;
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Location = new System.Drawing.Point(289, 534);
+            this.button11.Location = new System.Drawing.Point(289, 415);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(274, 65);
             this.button11.TabIndex = 89;
@@ -160,7 +150,7 @@
             this.button8.BackColor = System.Drawing.Color.PapayaWhip;
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Location = new System.Drawing.Point(0, 428);
+            this.button8.Location = new System.Drawing.Point(0, 332);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(274, 65);
             this.button8.TabIndex = 88;
@@ -172,7 +162,7 @@
             this.button9.BackColor = System.Drawing.Color.PapayaWhip;
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Location = new System.Drawing.Point(289, 428);
+            this.button9.Location = new System.Drawing.Point(289, 332);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(274, 65);
             this.button9.TabIndex = 87;
@@ -184,7 +174,7 @@
             this.button6.BackColor = System.Drawing.Color.PapayaWhip;
             this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Location = new System.Drawing.Point(0, 319);
+            this.button6.Location = new System.Drawing.Point(0, 251);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(274, 65);
             this.button6.TabIndex = 86;
@@ -196,7 +186,7 @@
             this.button7.BackColor = System.Drawing.Color.PapayaWhip;
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Location = new System.Drawing.Point(289, 319);
+            this.button7.Location = new System.Drawing.Point(289, 251);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(274, 65);
             this.button7.TabIndex = 85;
@@ -208,7 +198,7 @@
             this.button4.BackColor = System.Drawing.Color.PapayaWhip;
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(0, 214);
+            this.button4.Location = new System.Drawing.Point(0, 170);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(274, 65);
             this.button4.TabIndex = 84;
@@ -220,7 +210,7 @@
             this.button5.BackColor = System.Drawing.Color.PapayaWhip;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(289, 214);
+            this.button5.Location = new System.Drawing.Point(289, 170);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(274, 65);
             this.button5.TabIndex = 83;
@@ -232,7 +222,7 @@
             this.button2.BackColor = System.Drawing.Color.PapayaWhip;
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(0, 109);
+            this.button2.Location = new System.Drawing.Point(0, 91);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(274, 65);
             this.button2.TabIndex = 82;
@@ -244,7 +234,7 @@
             this.button3.BackColor = System.Drawing.Color.PapayaWhip;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(289, 109);
+            this.button3.Location = new System.Drawing.Point(289, 91);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(274, 65);
             this.button3.TabIndex = 81;
@@ -329,22 +319,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arabic Typesetting", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(7, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 27);
+            this.label2.Size = new System.Drawing.Size(276, 29);
             this.label2.TabIndex = 17;
             this.label2.Text = "جندى م/محمود على عبد الستار";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arabic Typesetting", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(42, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 27);
+            this.label1.Size = new System.Drawing.Size(240, 29);
             this.label1.TabIndex = 17;
             this.label1.Text = "جندى م/محمود سامى محمد";
             // 
@@ -367,18 +357,6 @@
             this.panel5.Size = new System.Drawing.Size(57, 30);
             this.panel5.TabIndex = 18;
             this.panel5.Visible = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.PapayaWhip;
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Location = new System.Drawing.Point(0, 620);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(274, 65);
-            this.button12.TabIndex = 93;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // FormMain
             // 
@@ -427,13 +405,13 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnReport;
     }
 }

@@ -33,11 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisit));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ReportDataVisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DgvVisit = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DateEndVisit = new Bunifu.Framework.UI.BunifuDatepicker();
             this.BtnDeleteVisit = new System.Windows.Forms.Button();
@@ -61,7 +62,8 @@
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.BtnClear = new System.Windows.Forms.Button();
+            this.TxtExportID = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataVisitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVisit)).BeginInit();
             this.panel1.SuspendLayout();
@@ -122,6 +124,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.TxtExportID);
+            this.panel1.Controls.Add(this.bunifuCustomLabel4);
             this.panel1.Controls.Add(this.BtnClear);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.DateEndVisit);
@@ -143,6 +147,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1364, 244);
             this.panel1.TabIndex = 2;
+            // 
+            // BtnClear
+            // 
+            this.BtnClear.BackColor = System.Drawing.Color.PapayaWhip;
+            this.BtnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnClear.BackgroundImage")));
+            this.BtnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClear.Location = new System.Drawing.Point(32, 199);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(155, 43);
+            this.BtnClear.TabIndex = 79;
+            this.BtnClear.UseVisualStyleBackColor = false;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // bunifuCustomLabel8
             // 
@@ -457,17 +473,36 @@
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // BtnClear
+            // TxtExportID
             // 
-            this.BtnClear.BackColor = System.Drawing.Color.PapayaWhip;
-            this.BtnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnClear.BackgroundImage")));
-            this.BtnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClear.Location = new System.Drawing.Point(32, 199);
-            this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(155, 43);
-            this.BtnClear.TabIndex = 79;
-            this.BtnClear.UseVisualStyleBackColor = false;
-            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            this.TxtExportID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TxtExportID.BorderColorFocused = System.Drawing.Color.Blue;
+            this.TxtExportID.BorderColorIdle = System.Drawing.Color.Navy;
+            this.TxtExportID.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.TxtExportID.BorderThickness = 3;
+            this.TxtExportID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtExportID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtExportID.ForeColor = System.Drawing.Color.Black;
+            this.TxtExportID.isPassword = false;
+            this.TxtExportID.Location = new System.Drawing.Point(739, 102);
+            this.TxtExportID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TxtExportID.Name = "TxtExportID";
+            this.TxtExportID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtExportID.Size = new System.Drawing.Size(91, 33);
+            this.TxtExportID.TabIndex = 80;
+            this.TxtExportID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtExportID.OnValueChanged += new System.EventHandler(this.TxtExportID_OnValueChanged);
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(848, 103);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(100, 29);
+            this.bunifuCustomLabel4.TabIndex = 81;
+            this.bunifuCustomLabel4.Text = "رقم الصادر";
             // 
             // FormVisit
             // 
@@ -526,5 +561,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuDatepicker DateEndVisit;
         private System.Windows.Forms.Button BtnClear;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TxtExportID;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
     }
 }

@@ -7,6 +7,7 @@ namespace archive
 {
     public partial class FormVisit : Form
     {
+       
         ArchieveDatabase Visit = new ArchieveDatabase();
         string username;
         string visit;
@@ -280,6 +281,7 @@ namespace archive
 
         private void TxtImportID_OnValueChanged(object sender, EventArgs e)
         {
+
             DataTable Dt = new DataTable();
             Dt = Visit.QueryExecute("select orgname,summary from importdata where importid = '" + TxtImportID.Text + "' order by importdate DESC");
             string array = String.Empty;
@@ -296,6 +298,21 @@ namespace archive
             TxtorgVisit.Text = string.Empty;
             TxtImportID.Text = string.Empty;
             TxtOrg.Text = string.Empty;
+            TxtExportID.Text = string.Empty;
+        }
+
+        private void TxtExportID_OnValueChanged(object sender, EventArgs e)
+        {
+            
+            DataTable Dt = new DataTable();
+            Dt = Visit.QueryExecute("select orgname,summary from exportdata where exportid = '" + TxtExportID.Text + "' order by exportdate DESC");
+            string array = String.Empty;
+            if (Dt.Rows.Count > 0)
+            {
+                TxtOrg.Text = Dt.Rows[0]["orgname"].ToString();
+                Txtsubject.Text = Dt.Rows[0]["summary"].ToString();
+            }
+
         }
     }
 }
