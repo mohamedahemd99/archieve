@@ -20,7 +20,6 @@ namespace archive
         {
             ConnectNew();
             UpdateData();
-
         }
 
         private void ChkBxImport1_OnChange(object sender, EventArgs e)
@@ -43,13 +42,11 @@ namespace archive
             {
                 ChkBxImport1.Checked = false;
                 type1 = "ص";
-
             }
             else
             {
                 ChkBxImport1.Checked = true;
                 type1 = "و";
-
             }
         }
 
@@ -86,11 +83,10 @@ namespace archive
             DataTable Dt = new DataTable();
             try
             {
-
                 if (ChkBxImport2.Checked == true)
                 {
-                    String Quary = "select  connection from importfile where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
-                    Dt = Connect.QueryExecute(Quary);
+                    String query = "select  connection from importfile where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
+                    Dt = Connect.QueryExecute(query);
                     int count = Dt.Rows.Count;
                     if (count == 1)
                     {
@@ -107,16 +103,11 @@ namespace archive
                     {
                         Connection = "";
                     }
-
-
                 }
-
-
                 if (ChkBxExport2.Checked == true)
                 {
-
-                    String Quary = "select connection from exportfile where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
-                    Dt = Connect.QueryExecute(Quary);
+                    String query = "select connection from exportfile where id = '" + TxtCon2.Text + '-' + TxtDate2.Text + '-' + type2 + "'";
+                    Dt = Connect.QueryExecute(query);
                     int count = Dt.Rows.Count;
                     if (count == 1)
                     {
@@ -133,11 +124,8 @@ namespace archive
                     {
                         Connection = "";
                     }
-
                 }
-
             }
-
             catch (Exception ex)
             {
             }
@@ -163,8 +151,6 @@ namespace archive
                     }
 
                 }
-
-
                 if (ChkBxExport1.Checked == true)
                 {
                     String UpdateQuery = "UPDATE exportfile SET Connection = '" + Connection + "'where id = '" + TxtCon1.Text + '-' + TxtDate1.Text + '-' + type1 + "'";
@@ -184,10 +170,6 @@ namespace archive
             catch (Exception ex)
             {
             }
-
-
         }
-
-
     }
 }

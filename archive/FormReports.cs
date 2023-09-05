@@ -24,11 +24,7 @@ namespace archive
             Dt = Reports.QueryExecute(Quary);
             job = Dt.Rows[0]["job"].ToString();
         }
-        private void FormReports_Load(object sender, EventArgs e)
-        {
-            Authority();
-            FillMyData();
-        }
+
         void FillMyData()
         {
             DatepickerStart.Value = Convert.ToDateTime(DateTime.Now.Year.ToString() + "-1-1");
@@ -245,6 +241,12 @@ namespace archive
 
             }
 
+        }
+
+        private void FormReports_Shown(object sender, EventArgs e)
+        {
+            Authority();
+            FillMyData();
         }
     }
 }

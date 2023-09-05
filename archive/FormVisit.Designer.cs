@@ -29,124 +29,165 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisit));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisit));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ReportDataVisitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DgvVisit = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtImportID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.BtnClear = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.DateEndVisit = new Bunifu.Framework.UI.BunifuDatepicker();
             this.BtnDeleteVisit = new System.Windows.Forms.Button();
             this.BtnEditVisit = new System.Windows.Forms.Button();
             this.BtnAddVisit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DateStartVisit = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.TxtImportID = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtOrg = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtorgVisit = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.Txtsubject = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ReportViewerVisit = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DatepickerStart = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.DatepickerEnd = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.TxtExportID = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtExportID = new System.Windows.Forms.TextBox();
+            this.TxtOrg = new System.Windows.Forms.TextBox();
+            this.TxtorgVisit = new System.Windows.Forms.TextBox();
+            this.Txtsubject = new System.Windows.Forms.TextBox();
+            this.DateStartVisit = new System.Windows.Forms.DateTimePicker();
+            this.DateEndVisit = new System.Windows.Forms.DateTimePicker();
+            this.DatepickerStart = new System.Windows.Forms.DateTimePicker();
+            this.DatepickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.DgvVisit = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataVisitBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvVisit)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVisit)).BeginInit();
             this.SuspendLayout();
             // 
             // ReportDataVisitBindingSource
             // 
             this.ReportDataVisitBindingSource.DataMember = "ReportDataVisit";
             // 
-            // DgvVisit
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvVisit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvVisit.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvVisit.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DgvVisit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvVisit.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvVisit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvVisit.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DgvVisit.DoubleBuffered = true;
-            this.DgvVisit.EnableHeadersVisualStyles = false;
-            this.DgvVisit.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvVisit.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvVisit.Location = new System.Drawing.Point(12, 340);
-            this.DgvVisit.Name = "DgvVisit";
-            this.DgvVisit.ReadOnly = true;
-            this.DgvVisit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvVisit.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvVisit.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgvVisit.Size = new System.Drawing.Size(1338, 334);
-            this.DgvVisit.TabIndex = 1;
-            this.DgvVisit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVisit_CellClick);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel1.Controls.Add(this.TxtExportID);
-            this.panel1.Controls.Add(this.bunifuCustomLabel4);
-            this.panel1.Controls.Add(this.BtnClear);
-            this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.DateEndVisit);
+            this.panel1.Controls.Add(this.DateStartVisit);
+            this.panel1.Controls.Add(this.TxtExportID);
+            this.panel1.Controls.Add(this.Txtsubject);
+            this.panel1.Controls.Add(this.TxtorgVisit);
+            this.panel1.Controls.Add(this.TxtOrg);
+            this.panel1.Controls.Add(this.TxtImportID);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.BtnClear);
             this.panel1.Controls.Add(this.BtnDeleteVisit);
             this.panel1.Controls.Add(this.BtnEditVisit);
             this.panel1.Controls.Add(this.BtnAddVisit);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.DateStartVisit);
-            this.panel1.Controls.Add(this.TxtImportID);
-            this.panel1.Controls.Add(this.bunifuCustomLabel3);
-            this.panel1.Controls.Add(this.TxtOrg);
-            this.panel1.Controls.Add(this.bunifuCustomLabel2);
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
-            this.panel1.Controls.Add(this.TxtorgVisit);
-            this.panel1.Controls.Add(this.Txtsubject);
-            this.panel1.Controls.Add(this.bunifuCustomLabel7);
-            this.panel1.Controls.Add(this.bunifuCustomLabel6);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1364, 244);
             this.panel1.TabIndex = 2;
+            // 
+            // TxtImportID
+            // 
+            this.TxtImportID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtImportID.ForeColor = System.Drawing.Color.Black;
+            this.TxtImportID.Location = new System.Drawing.Point(740, 58);
+            this.TxtImportID.Name = "TxtImportID";
+            this.TxtImportID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtImportID.Size = new System.Drawing.Size(87, 29);
+            this.TxtImportID.TabIndex = 83;
+            this.TxtImportID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtImportID.TextChanged += new System.EventHandler(this.TxtImportID_OnValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(1238, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 27);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "جهة الزيارة";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(843, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 27);
+            this.label5.TabIndex = 82;
+            this.label5.Text = "رقم الصادر";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(851, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 27);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "رقم الوارد";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(766, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(150, 27);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "تاريخ نهاية الزيارة";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(1185, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 27);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "تاريخ بداية الزيارة";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(1256, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 29);
+            this.label3.TabIndex = 82;
+            this.label3.Text = "الموضوع";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(1267, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 27);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "الجهة";
             // 
             // BtnClear
             // 
@@ -159,32 +200,6 @@
             this.BtnClear.TabIndex = 79;
             this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(766, 202);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(163, 29);
-            this.bunifuCustomLabel8.TabIndex = 72;
-            this.bunifuCustomLabel8.Text = "تاريخ نهاية الزيارة";
-            // 
-            // DateEndVisit
-            // 
-            this.DateEndVisit.BackColor = System.Drawing.Color.MidnightBlue;
-            this.DateEndVisit.BorderRadius = 0;
-            this.DateEndVisit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateEndVisit.ForeColor = System.Drawing.Color.White;
-            this.DateEndVisit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateEndVisit.FormatCustom = "yyyy-MM-dd";
-            this.DateEndVisit.Location = new System.Drawing.Point(536, 204);
-            this.DateEndVisit.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.DateEndVisit.Name = "DateEndVisit";
-            this.DateEndVisit.Size = new System.Drawing.Size(204, 27);
-            this.DateEndVisit.TabIndex = 71;
-            this.DateEndVisit.Value = new System.DateTime(2019, 4, 2, 0, 0, 0, 0);
             // 
             // BtnDeleteVisit
             // 
@@ -231,161 +246,6 @@
             this.panel2.Size = new System.Drawing.Size(413, 48);
             this.panel2.TabIndex = 67;
             // 
-            // DateStartVisit
-            // 
-            this.DateStartVisit.BackColor = System.Drawing.Color.DodgerBlue;
-            this.DateStartVisit.BorderRadius = 0;
-            this.DateStartVisit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateStartVisit.ForeColor = System.Drawing.Color.White;
-            this.DateStartVisit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateStartVisit.FormatCustom = "yyyy-MM-dd";
-            this.DateStartVisit.Location = new System.Drawing.Point(974, 202);
-            this.DateStartVisit.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.DateStartVisit.Name = "DateStartVisit";
-            this.DateStartVisit.Size = new System.Drawing.Size(196, 29);
-            this.DateStartVisit.TabIndex = 64;
-            this.DateStartVisit.Value = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.DateStartVisit.onValueChanged += new System.EventHandler(this.DateVisit_onValueChanged);
-            // 
-            // TxtImportID
-            // 
-            this.TxtImportID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtImportID.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtImportID.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtImportID.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtImportID.BorderThickness = 3;
-            this.TxtImportID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtImportID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtImportID.ForeColor = System.Drawing.Color.Black;
-            this.TxtImportID.isPassword = false;
-            this.TxtImportID.Location = new System.Drawing.Point(739, 55);
-            this.TxtImportID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtImportID.Name = "TxtImportID";
-            this.TxtImportID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtImportID.Size = new System.Drawing.Size(91, 33);
-            this.TxtImportID.TabIndex = 22;
-            this.TxtImportID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtImportID.OnValueChanged += new System.EventHandler(this.TxtImportID_OnValueChanged);
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(848, 56);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(91, 29);
-            this.bunifuCustomLabel3.TabIndex = 23;
-            this.bunifuCustomLabel3.Text = "رقم الوارد";
-            this.bunifuCustomLabel3.Click += new System.EventHandler(this.bunifuCustomLabel3_Click);
-            // 
-            // TxtOrg
-            // 
-            this.TxtOrg.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtOrg.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtOrg.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtOrg.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtOrg.BorderThickness = 3;
-            this.TxtOrg.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtOrg.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtOrg.ForeColor = System.Drawing.Color.Black;
-            this.TxtOrg.isPassword = false;
-            this.TxtOrg.Location = new System.Drawing.Point(997, 52);
-            this.TxtOrg.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtOrg.Name = "TxtOrg";
-            this.TxtOrg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtOrg.Size = new System.Drawing.Size(231, 38);
-            this.TxtOrg.TabIndex = 20;
-            this.TxtOrg.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtOrg.OnValueChanged += new System.EventHandler(this.TxtOrg_OnValueChanged);
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(1262, 56);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(58, 29);
-            this.bunifuCustomLabel2.TabIndex = 21;
-            this.bunifuCustomLabel2.Text = "الجهة";
-            this.bunifuCustomLabel2.Click += new System.EventHandler(this.bunifuCustomLabel2_Click);
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(1185, 202);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(159, 29);
-            this.bunifuCustomLabel1.TabIndex = 19;
-            this.bunifuCustomLabel1.Text = "تاريخ بداية الزيارة";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
-            // 
-            // TxtorgVisit
-            // 
-            this.TxtorgVisit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtorgVisit.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtorgVisit.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtorgVisit.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtorgVisit.BorderThickness = 3;
-            this.TxtorgVisit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtorgVisit.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtorgVisit.ForeColor = System.Drawing.Color.Black;
-            this.TxtorgVisit.isPassword = false;
-            this.TxtorgVisit.Location = new System.Drawing.Point(997, 98);
-            this.TxtorgVisit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtorgVisit.Name = "TxtorgVisit";
-            this.TxtorgVisit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtorgVisit.Size = new System.Drawing.Size(231, 37);
-            this.TxtorgVisit.TabIndex = 12;
-            this.TxtorgVisit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtorgVisit.OnValueChanged += new System.EventHandler(this.TxtorgVisit_OnValueChanged);
-            // 
-            // Txtsubject
-            // 
-            this.Txtsubject.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Txtsubject.BorderColorFocused = System.Drawing.Color.Blue;
-            this.Txtsubject.BorderColorIdle = System.Drawing.Color.Navy;
-            this.Txtsubject.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.Txtsubject.BorderThickness = 3;
-            this.Txtsubject.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Txtsubject.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtsubject.ForeColor = System.Drawing.Color.Black;
-            this.Txtsubject.isPassword = false;
-            this.Txtsubject.Location = new System.Drawing.Point(746, 143);
-            this.Txtsubject.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Txtsubject.Name = "Txtsubject";
-            this.Txtsubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Txtsubject.Size = new System.Drawing.Size(482, 41);
-            this.Txtsubject.TabIndex = 10;
-            this.Txtsubject.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(1253, 143);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(88, 29);
-            this.bunifuCustomLabel7.TabIndex = 11;
-            this.bunifuCustomLabel7.Text = "الموضوع";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(1238, 106);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(106, 29);
-            this.bunifuCustomLabel6.TabIndex = 13;
-            this.bunifuCustomLabel6.Text = "جهة الزيارة";
-            this.bunifuCustomLabel6.Click += new System.EventHandler(this.bunifuCustomLabel6_Click);
-            // 
             // ReportViewerVisit
             // 
             reportDataSource1.Name = "DataSet1";
@@ -397,69 +257,6 @@
             this.ReportViewerVisit.ServerReport.BearerToken = null;
             this.ReportViewerVisit.Size = new System.Drawing.Size(1338, 24);
             this.ReportViewerVisit.TabIndex = 58;
-            // 
-            // DatepickerStart
-            // 
-            this.DatepickerStart.BackColor = System.Drawing.Color.DodgerBlue;
-            this.DatepickerStart.BorderRadius = 0;
-            this.DatepickerStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatepickerStart.ForeColor = System.Drawing.Color.White;
-            this.DatepickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatepickerStart.FormatCustom = "yyyy-MM-dd";
-            this.DatepickerStart.Location = new System.Drawing.Point(728, 268);
-            this.DatepickerStart.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.DatepickerStart.Name = "DatepickerStart";
-            this.DatepickerStart.Size = new System.Drawing.Size(179, 24);
-            this.DatepickerStart.TabIndex = 63;
-            this.DatepickerStart.Value = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            // 
-            // DatepickerEnd
-            // 
-            this.DatepickerEnd.BackColor = System.Drawing.Color.Turquoise;
-            this.DatepickerEnd.BorderRadius = 0;
-            this.DatepickerEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatepickerEnd.ForeColor = System.Drawing.Color.White;
-            this.DatepickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatepickerEnd.FormatCustom = "yyyy-MM-dd";
-            this.DatepickerEnd.Location = new System.Drawing.Point(467, 265);
-            this.DatepickerEnd.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.DatepickerEnd.Name = "DatepickerEnd";
-            this.DatepickerEnd.Size = new System.Drawing.Size(188, 27);
-            this.DatepickerEnd.TabIndex = 62;
-            this.DatepickerEnd.Value = new System.DateTime(2019, 4, 2, 0, 0, 0, 0);
-            // 
-            // bunifuCustomLabel15
-            // 
-            this.bunifuCustomLabel15.AutoSize = true;
-            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(684, 263);
-            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
-            this.bunifuCustomLabel15.Size = new System.Drawing.Size(32, 24);
-            this.bunifuCustomLabel15.TabIndex = 60;
-            this.bunifuCustomLabel15.Text = "الى";
-            // 
-            // bunifuCustomLabel16
-            // 
-            this.bunifuCustomLabel16.AutoSize = true;
-            this.bunifuCustomLabel16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel16.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(911, 268);
-            this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
-            this.bunifuCustomLabel16.Size = new System.Drawing.Size(30, 24);
-            this.bunifuCustomLabel16.TabIndex = 61;
-            this.bunifuCustomLabel16.Text = "من";
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(947, 268);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(88, 22);
-            this.bunifuCustomLabel5.TabIndex = 59;
-            this.bunifuCustomLabel5.Text = "تاريخ الزيارة";
             // 
             // BtnSearch
             // 
@@ -473,95 +270,222 @@
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(958, 269);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 22);
+            this.label8.TabIndex = 82;
+            this.label8.Text = "تاريخ الزيارة";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(913, 269);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 22);
+            this.label9.TabIndex = 82;
+            this.label9.Text = "من";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(670, 269);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 22);
+            this.label11.TabIndex = 82;
+            this.label11.Text = "الى";
+            // 
             // TxtExportID
             // 
-            this.TxtExportID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtExportID.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtExportID.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtExportID.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtExportID.BorderThickness = 3;
-            this.TxtExportID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtExportID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtExportID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.TxtExportID.ForeColor = System.Drawing.Color.Black;
-            this.TxtExportID.isPassword = false;
-            this.TxtExportID.Location = new System.Drawing.Point(739, 102);
-            this.TxtExportID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TxtExportID.Location = new System.Drawing.Point(740, 102);
             this.TxtExportID.Name = "TxtExportID";
             this.TxtExportID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtExportID.Size = new System.Drawing.Size(91, 33);
-            this.TxtExportID.TabIndex = 80;
-            this.TxtExportID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtExportID.OnValueChanged += new System.EventHandler(this.TxtExportID_OnValueChanged);
+            this.TxtExportID.Size = new System.Drawing.Size(87, 29);
+            this.TxtExportID.TabIndex = 83;
+            this.TxtExportID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtExportID.TextChanged += new System.EventHandler(this.TxtExportID_OnValueChanged);
+            this.TxtExportID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtImportID_OnValueChanged);
             // 
-            // bunifuCustomLabel4
+            // TxtOrg
             // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(848, 103);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(100, 29);
-            this.bunifuCustomLabel4.TabIndex = 81;
-            this.bunifuCustomLabel4.Text = "رقم الصادر";
+            this.TxtOrg.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtOrg.ForeColor = System.Drawing.Color.Black;
+            this.TxtOrg.Location = new System.Drawing.Point(997, 56);
+            this.TxtOrg.Name = "TxtOrg";
+            this.TxtOrg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtOrg.Size = new System.Drawing.Size(231, 29);
+            this.TxtOrg.TabIndex = 83;
+            this.TxtOrg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtorgVisit
+            // 
+            this.TxtorgVisit.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtorgVisit.ForeColor = System.Drawing.Color.Black;
+            this.TxtorgVisit.Location = new System.Drawing.Point(997, 102);
+            this.TxtorgVisit.Name = "TxtorgVisit";
+            this.TxtorgVisit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtorgVisit.Size = new System.Drawing.Size(231, 29);
+            this.TxtorgVisit.TabIndex = 83;
+            this.TxtorgVisit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtorgVisit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtImportID_OnValueChanged);
+            // 
+            // Txtsubject
+            // 
+            this.Txtsubject.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.Txtsubject.ForeColor = System.Drawing.Color.Black;
+            this.Txtsubject.Location = new System.Drawing.Point(740, 150);
+            this.Txtsubject.Name = "Txtsubject";
+            this.Txtsubject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Txtsubject.Size = new System.Drawing.Size(488, 29);
+            this.Txtsubject.TabIndex = 83;
+            this.Txtsubject.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txtsubject.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtImportID_OnValueChanged);
+            // 
+            // DateStartVisit
+            // 
+            this.DateStartVisit.Font = new System.Drawing.Font("Arial", 13F);
+            this.DateStartVisit.Location = new System.Drawing.Point(964, 199);
+            this.DateStartVisit.Name = "DateStartVisit";
+            this.DateStartVisit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DateStartVisit.Size = new System.Drawing.Size(200, 27);
+            this.DateStartVisit.TabIndex = 84;
+            // 
+            // DateEndVisit
+            // 
+            this.DateEndVisit.Font = new System.Drawing.Font("Arial", 13F);
+            this.DateEndVisit.Location = new System.Drawing.Point(549, 200);
+            this.DateEndVisit.Name = "DateEndVisit";
+            this.DateEndVisit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DateEndVisit.Size = new System.Drawing.Size(200, 27);
+            this.DateEndVisit.TabIndex = 84;
+            // 
+            // DatepickerStart
+            // 
+            this.DatepickerStart.Font = new System.Drawing.Font("Arial", 13F);
+            this.DatepickerStart.Location = new System.Drawing.Point(721, 265);
+            this.DatepickerStart.Name = "DatepickerStart";
+            this.DatepickerStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DatepickerStart.Size = new System.Drawing.Size(186, 27);
+            this.DatepickerStart.TabIndex = 84;
+            // 
+            // DatepickerEnd
+            // 
+            this.DatepickerEnd.Font = new System.Drawing.Font("Arial", 13F);
+            this.DatepickerEnd.Location = new System.Drawing.Point(481, 264);
+            this.DatepickerEnd.Name = "DatepickerEnd";
+            this.DatepickerEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DatepickerEnd.Size = new System.Drawing.Size(177, 27);
+            this.DatepickerEnd.TabIndex = 84;
+            // 
+            // DgvVisit
+            // 
+            this.DgvVisit.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvVisit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvVisit.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvVisit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvVisit.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvVisit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvVisit.Location = new System.Drawing.Point(12, 341);
+            this.DgvVisit.Name = "DgvVisit";
+            this.DgvVisit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvVisit.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvVisit.RowHeadersWidth = 60;
+            this.DgvVisit.Size = new System.Drawing.Size(1338, 376);
+            this.DgvVisit.TabIndex = 85;
+            this.DgvVisit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVisit_CellClick);
             // 
             // FormVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.DgvVisit);
             this.Controls.Add(this.BtnSearch);
-            this.Controls.Add(this.DatepickerStart);
             this.Controls.Add(this.DatepickerEnd);
-            this.Controls.Add(this.bunifuCustomLabel15);
-            this.Controls.Add(this.bunifuCustomLabel16);
-            this.Controls.Add(this.bunifuCustomLabel5);
+            this.Controls.Add(this.DatepickerStart);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.ReportViewerVisit);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.DgvVisit);
             this.Name = "FormVisit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "صفحة الزيارات";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataVisitBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvVisit)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVisit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvVisit;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtorgVisit;
-        private Bunifu.Framework.UI.BunifuMetroTextbox Txtsubject;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtImportID;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtOrg;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Microsoft.Reporting.WinForms.ReportViewer ReportViewerVisit;
         private System.Windows.Forms.BindingSource ReportDataVisitBindingSource;
-        private Bunifu.Framework.UI.BunifuDatepicker DatepickerStart;
-        private Bunifu.Framework.UI.BunifuDatepicker DatepickerEnd;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuDatepicker DateStartVisit;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnDeleteVisit;
         private System.Windows.Forms.Button BtnEditVisit;
         private System.Windows.Forms.Button BtnAddVisit;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuDatepicker DateEndVisit;
         private System.Windows.Forms.Button BtnClear;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtExportID;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TxtImportID;
+        private System.Windows.Forms.TextBox TxtExportID;
+        private System.Windows.Forms.TextBox TxtOrg;
+        private System.Windows.Forms.TextBox TxtorgVisit;
+        private System.Windows.Forms.TextBox Txtsubject;
+        private System.Windows.Forms.DateTimePicker DateStartVisit;
+        private System.Windows.Forms.DateTimePicker DateEndVisit;
+        private System.Windows.Forms.DateTimePicker DatepickerStart;
+        private System.Windows.Forms.DateTimePicker DatepickerEnd;
+        private System.Windows.Forms.DataGridView DgvVisit;
     }
 }

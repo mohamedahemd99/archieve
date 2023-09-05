@@ -32,47 +32,58 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnDeleteOrg = new System.Windows.Forms.Button();
             this.BtnEditOrg = new System.Windows.Forms.Button();
             this.ButnAddOrg = new System.Windows.Forms.Button();
-            this.TxtOrgName = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.TxtOrgId = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtSearch = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DgvOrg = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.TxtOrgId = new System.Windows.Forms.TextBox();
+            this.TxtOrgName = new System.Windows.Forms.TextBox();
+            this.DgvOrg = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvOrg)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvOrg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.TxtOrgName);
+            this.panel1.Controls.Add(this.TxtOrgId);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.BtnDeleteOrg);
             this.panel1.Controls.Add(this.BtnEditOrg);
             this.panel1.Controls.Add(this.ButnAddOrg);
-            this.panel1.Controls.Add(this.TxtOrgName);
-            this.panel1.Controls.Add(this.TxtOrgId);
-            this.panel1.Controls.Add(this.bunifuCustomLabel7);
-            this.panel1.Controls.Add(this.bunifuCustomLabel6);
             this.panel1.Location = new System.Drawing.Point(927, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 743);
             this.panel1.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(314, 136);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 29);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "كود الجهة";
             // 
             // panel4
             // 
@@ -119,98 +130,6 @@
             this.ButnAddOrg.UseVisualStyleBackColor = false;
             this.ButnAddOrg.Click += new System.EventHandler(this.BtnAddOrgClick);
             // 
-            // TxtOrgName
-            // 
-            this.TxtOrgName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtOrgName.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtOrgName.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtOrgName.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtOrgName.BorderThickness = 3;
-            this.TxtOrgName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtOrgName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtOrgName.ForeColor = System.Drawing.Color.Black;
-            this.TxtOrgName.isPassword = false;
-            this.TxtOrgName.Location = new System.Drawing.Point(5, 198);
-            this.TxtOrgName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtOrgName.Name = "TxtOrgName";
-            this.TxtOrgName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtOrgName.Size = new System.Drawing.Size(303, 38);
-            this.TxtOrgName.TabIndex = 12;
-            this.TxtOrgName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtOrgName.OnValueChanged += new System.EventHandler(this.TxtOrgName_OnValueChanged);
-            // 
-            // TxtOrgId
-            // 
-            this.TxtOrgId.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtOrgId.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtOrgId.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtOrgId.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtOrgId.BorderThickness = 3;
-            this.TxtOrgId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtOrgId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtOrgId.ForeColor = System.Drawing.Color.Black;
-            this.TxtOrgId.isPassword = false;
-            this.TxtOrgId.Location = new System.Drawing.Point(210, 136);
-            this.TxtOrgId.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtOrgId.Name = "TxtOrgId";
-            this.TxtOrgId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtOrgId.Size = new System.Drawing.Size(87, 34);
-            this.TxtOrgId.TabIndex = 10;
-            this.TxtOrgId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtOrgId.OnValueChanged += new System.EventHandler(this.TxtOrgId_OnValueChanged);
-            // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(314, 136);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(109, 34);
-            this.bunifuCustomLabel7.TabIndex = 11;
-            this.bunifuCustomLabel7.Text = "كود الجهة";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(316, 198);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(110, 34);
-            this.bunifuCustomLabel6.TabIndex = 13;
-            this.bunifuCustomLabel6.Text = "اسم الجهة";
-            // 
-            // TxtSearch
-            // 
-            this.TxtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtSearch.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtSearch.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtSearch.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtSearch.BorderThickness = 3;
-            this.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtSearch.isPassword = false;
-            this.TxtSearch.Location = new System.Drawing.Point(475, 87);
-            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(290, 34);
-            this.TxtSearch.TabIndex = 14;
-            this.TxtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtSearch.OnValueChanged += new System.EventHandler(this.TxtSearch_OnValueChanged_1);
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(772, 87);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(145, 34);
-            this.bunifuCustomLabel1.TabIndex = 15;
-            this.bunifuCustomLabel1.Text = "بحث عن جهة";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.DgvOrg);
@@ -218,57 +137,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(453, 399);
             this.panel2.TabIndex = 16;
-            // 
-            // DgvOrg
-            // 
-            this.DgvOrg.AllowUserToAddRows = false;
-            this.DgvOrg.AllowUserToDeleteRows = false;
-            this.DgvOrg.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvOrg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvOrg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvOrg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvOrg.BackgroundColor = System.Drawing.Color.MintCream;
-            this.DgvOrg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvOrg.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.DgvOrg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvOrg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvOrg.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DgvOrg.DoubleBuffered = true;
-            this.DgvOrg.EnableHeadersVisualStyles = false;
-            this.DgvOrg.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvOrg.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvOrg.Location = new System.Drawing.Point(3, 3);
-            this.DgvOrg.Name = "DgvOrg";
-            this.DgvOrg.ReadOnly = true;
-            this.DgvOrg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvOrg.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvOrg.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgvOrg.Size = new System.Drawing.Size(449, 393);
-            this.DgvOrg.TabIndex = 0;
-            this.DgvOrg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrg_CellClick);
             // 
             // panel3
             // 
@@ -328,27 +196,137 @@
             this.panel8.Size = new System.Drawing.Size(288, 219);
             this.panel8.TabIndex = 0;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "archive.oranizationReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(475, 566);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(426, 100);
+            this.reportViewer1.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(313, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 29);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "اسم الجهة";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(760, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 29);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "بحث عن جهة";
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TxtSearch.ForeColor = System.Drawing.Color.Black;
+            this.TxtSearch.Location = new System.Drawing.Point(484, 87);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtSearch.Size = new System.Drawing.Size(270, 23);
+            this.TxtSearch.TabIndex = 67;
+            this.TxtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtSearch.TextChanged += new System.EventHandler(this.TxtSearch_OnValueChanged_1);
+            // 
+            // TxtOrgId
+            // 
+            this.TxtOrgId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.TxtOrgId.ForeColor = System.Drawing.Color.Black;
+            this.TxtOrgId.Location = new System.Drawing.Point(210, 136);
+            this.TxtOrgId.Name = "TxtOrgId";
+            this.TxtOrgId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtOrgId.Size = new System.Drawing.Size(87, 26);
+            this.TxtOrgId.TabIndex = 68;
+            this.TxtOrgId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtOrgId.TextChanged += new System.EventHandler(this.TxtOrgId_OnValueChanged);
+            // 
+            // TxtOrgName
+            // 
+            this.TxtOrgName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.TxtOrgName.ForeColor = System.Drawing.Color.Black;
+            this.TxtOrgName.Location = new System.Drawing.Point(5, 184);
+            this.TxtOrgName.Name = "TxtOrgName";
+            this.TxtOrgName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtOrgName.Size = new System.Drawing.Size(292, 26);
+            this.TxtOrgName.TabIndex = 69;
+            this.TxtOrgName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtOrgName.TextChanged += new System.EventHandler(this.TxtOrgName_OnValueChanged);
+            // 
+            // DgvOrg
+            // 
+            this.DgvOrg.AllowUserToAddRows = false;
+            this.DgvOrg.AllowUserToDeleteRows = false;
+            this.DgvOrg.AllowUserToOrderColumns = true;
+            this.DgvOrg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvOrg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvOrg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvOrg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvOrg.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvOrg.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvOrg.Location = new System.Drawing.Point(3, 3);
+            this.DgvOrg.Name = "DgvOrg";
+            this.DgvOrg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvOrg.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvOrg.RowHeadersWidth = 60;
+            this.DgvOrg.Size = new System.Drawing.Size(446, 393);
+            this.DgvOrg.TabIndex = 70;
+            this.DgvOrg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrg_CellClick);
+            // 
             // FormOrg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.TxtSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.TxtSearch);
-            this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.panel1);
             this.Name = "FormOrg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "صفحة الجهات";
+            this.Text = "z`";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormOrg_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvOrg)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvOrg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,14 +335,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtOrgName;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtOrgId;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtSearch;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvOrg;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel11;
@@ -375,5 +346,13 @@
         private System.Windows.Forms.Button BtnEditOrg;
         private System.Windows.Forms.Button BtnDeleteOrg;
         private System.Windows.Forms.Panel panel4;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtSearch;
+        private System.Windows.Forms.TextBox TxtOrgId;
+        private System.Windows.Forms.TextBox TxtOrgName;
+        private System.Windows.Forms.DataGridView DgvOrg;
     }
 }

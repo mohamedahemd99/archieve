@@ -14,7 +14,6 @@ namespace archive
     {
        
         ArchieveDatabase Archieve = new ArchieveDatabase();
-
         static string username;
         static string pass;
         static bool FormFollowingOpen = false;
@@ -39,6 +38,7 @@ namespace archive
             pass = password;
             InitTimer(name);
 
+            
             
             Archieve.con.Open();
             DataTable dt1 = new DataTable();
@@ -72,7 +72,8 @@ namespace archive
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            //MessageBox.Show(System.Security.Principal.WindowsIdentity.GetCurrent().Name);
+            //MessageBox.Show(Environment.UserName);
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
@@ -214,12 +215,13 @@ namespace archive
             formReports.Show();
         }
 
+        /*
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
             FollowingOrgs followingOrgsPage = new FollowingOrgs();
             followingOrgsPage.Show();
         }
-
+        */
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             FormReportItem item = new FormReportItem();

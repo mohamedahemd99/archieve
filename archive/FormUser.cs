@@ -191,10 +191,5 @@ namespace archive
                 MessageBox.Show("هذه البيانات غير صحيحة");
             }
         }
-
-        private void TxtUserId_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

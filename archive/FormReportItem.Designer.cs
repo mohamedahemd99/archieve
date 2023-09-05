@@ -29,26 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportItem));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnformbrief = new System.Windows.Forms.Button();
             this.CmbBxName = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtDate1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnselect = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtCon = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.ChkBxExport2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ChkBxImport2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ReportViewerFollowing = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ChkBxExport2 = new System.Windows.Forms.CheckBox();
+            this.ChkBxImport2 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtCon = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtDate1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,103 +54,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel2.Controls.Add(this.bunifuButton1);
-            this.panel2.Controls.Add(this.bunifuButton2);
-            this.panel2.Controls.Add(this.bunifuCustomLabel2);
-            this.panel2.Controls.Add(this.btnformbrief);
-            this.panel2.Controls.Add(this.CmbBxName);
-            this.panel2.Controls.Add(this.bunifuCustomLabel10);
+            this.panel2.Controls.Add(this.addBtn);
+            this.panel2.Controls.Add(this.deleteBtn);
             this.panel2.Controls.Add(this.TxtDate1);
-            this.panel2.Controls.Add(this.btnselect);
-            this.panel2.Controls.Add(this.bunifuCustomLabel11);
             this.panel2.Controls.Add(this.TxtCon);
             this.panel2.Controls.Add(this.ChkBxExport2);
-            this.panel2.Controls.Add(this.bunifuCustomLabel8);
             this.panel2.Controls.Add(this.ChkBxImport2);
-            this.panel2.Controls.Add(this.bunifuCustomLabel5);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btnformbrief);
+            this.panel2.Controls.Add(this.CmbBxName);
+            this.panel2.Controls.Add(this.btnselect);
             this.panel2.Location = new System.Drawing.Point(1, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1341, 132);
             this.panel2.TabIndex = 2;
-            // 
-            // bunifuButton1
-            // 
-            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
-            this.bunifuButton1.ButtonText = "حذف";
-            this.bunifuButton1.ButtonTextMarginLeft = 0;
-            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Gray;
-            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.White;
-            this.bunifuButton1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconPadding = 10;
-            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.bunifuButton1.IdleBorderRadius = 1;
-            this.bunifuButton1.IdleBorderThickness = 0;
-            this.bunifuButton1.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.bunifuButton1.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.IdleIconLeftImage")));
-            this.bunifuButton1.IdleIconRightImage = null;
-            this.bunifuButton1.Location = new System.Drawing.Point(470, 88);
-            this.bunifuButton1.Name = "bunifuButton1";
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties3.BorderRadius = 1;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.bunifuButton1.onHoverState = stateProperties3;
-            this.bunifuButton1.Size = new System.Drawing.Size(166, 37);
-            this.bunifuButton1.TabIndex = 62;
-            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
-            // 
-            // bunifuButton2
-            // 
-            this.bunifuButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.BackgroundImage")));
-            this.bunifuButton2.ButtonText = "تسجيل";
-            this.bunifuButton2.ButtonTextMarginLeft = 0;
-            this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.LightSeaGreen;
-            this.bunifuButton2.DisabledFillColor = System.Drawing.Color.DarkTurquoise;
-            this.bunifuButton2.DisabledForecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuButton2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuButton2.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton2.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton2.IconPadding = 10;
-            this.bunifuButton2.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton2.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.bunifuButton2.IdleBorderRadius = 1;
-            this.bunifuButton2.IdleBorderThickness = 0;
-            this.bunifuButton2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.bunifuButton2.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.IdleIconLeftImage")));
-            this.bunifuButton2.IdleIconRightImage = null;
-            this.bunifuButton2.Location = new System.Drawing.Point(678, 88);
-            this.bunifuButton2.Name = "bunifuButton2";
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.BorderRadius = 1;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.bunifuButton2.onHoverState = stateProperties4;
-            this.bunifuButton2.Size = new System.Drawing.Size(166, 37);
-            this.bunifuButton2.TabIndex = 63;
-            this.bunifuButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton2.Click += new System.EventHandler(this.bunifuButton2_Click);
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(849, 31);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(48, 24);
-            this.bunifuCustomLabel2.TabIndex = 61;
-            this.bunifuCustomLabel2.Text = "السنة";
             // 
             // btnformbrief
             // 
@@ -177,36 +96,6 @@
             this.CmbBxName.TabIndex = 27;
             this.CmbBxName.SelectedIndexChanged += new System.EventHandler(this.CmbBxName_SelectedIndexChanged);
             // 
-            // bunifuCustomLabel10
-            // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(622, 27);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(72, 29);
-            this.bunifuCustomLabel10.TabIndex = 26;
-            this.bunifuCustomLabel10.Text = "الوصف";
-            // 
-            // TxtDate1
-            // 
-            this.TxtDate1.BackColor = System.Drawing.Color.FloralWhite;
-            this.TxtDate1.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtDate1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.TxtDate1.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtDate1.BorderThickness = 3;
-            this.TxtDate1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtDate1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDate1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtDate1.isPassword = false;
-            this.TxtDate1.Location = new System.Drawing.Point(746, 24);
-            this.TxtDate1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.TxtDate1.Name = "TxtDate1";
-            this.TxtDate1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtDate1.Size = new System.Drawing.Size(85, 34);
-            this.TxtDate1.TabIndex = 23;
-            this.TxtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // btnselect
             // 
             this.btnselect.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,85 +107,6 @@
             this.btnselect.UseVisualStyleBackColor = true;
             this.btnselect.Visible = false;
             this.btnselect.Click += new System.EventHandler(this.btnselect_Click);
-            // 
-            // bunifuCustomLabel11
-            // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(1072, 31);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(92, 24);
-            this.bunifuCustomLabel11.TabIndex = 20;
-            this.bunifuCustomLabel11.Text = "رقم المكاتبة";
-            // 
-            // TxtCon
-            // 
-            this.TxtCon.BackColor = System.Drawing.Color.FloralWhite;
-            this.TxtCon.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtCon.BorderColorIdle = System.Drawing.Color.Blue;
-            this.TxtCon.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtCon.BorderThickness = 3;
-            this.TxtCon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtCon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtCon.isPassword = false;
-            this.TxtCon.Location = new System.Drawing.Point(917, 25);
-            this.TxtCon.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtCon.Name = "TxtCon";
-            this.TxtCon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtCon.Size = new System.Drawing.Size(148, 33);
-            this.TxtCon.TabIndex = 0;
-            this.TxtCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCon_KeyDown);
-            // 
-            // ChkBxExport2
-            // 
-            this.ChkBxExport2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxExport2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxExport2.Checked = false;
-            this.ChkBxExport2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.ChkBxExport2.ForeColor = System.Drawing.Color.White;
-            this.ChkBxExport2.Location = new System.Drawing.Point(1301, 48);
-            this.ChkBxExport2.Name = "ChkBxExport2";
-            this.ChkBxExport2.Size = new System.Drawing.Size(20, 20);
-            this.ChkBxExport2.TabIndex = 3;
-            this.ChkBxExport2.OnChange += new System.EventHandler(this.ChkBxExport2_OnChange);
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(1219, 12);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(69, 24);
-            this.bunifuCustomLabel8.TabIndex = 20;
-            this.bunifuCustomLabel8.Text = "رقم وارد";
-            // 
-            // ChkBxImport2
-            // 
-            this.ChkBxImport2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.ChkBxImport2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.ChkBxImport2.Checked = true;
-            this.ChkBxImport2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.ChkBxImport2.ForeColor = System.Drawing.Color.White;
-            this.ChkBxImport2.Location = new System.Drawing.Point(1302, 15);
-            this.ChkBxImport2.Name = "ChkBxImport2";
-            this.ChkBxImport2.Size = new System.Drawing.Size(20, 20);
-            this.ChkBxImport2.TabIndex = 2;
-            this.ChkBxImport2.OnChange += new System.EventHandler(this.ChkBxImport2_OnChange);
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(1212, 45);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(76, 24);
-            this.bunifuCustomLabel5.TabIndex = 19;
-            this.bunifuCustomLabel5.Text = "رقم صادر";
             // 
             // ReportViewerFollowing
             // 
@@ -310,22 +120,145 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(-2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1363, 44);
             this.panel1.TabIndex = 59;
             // 
-            // bunifuCustomLabel1
+            // ChkBxExport2
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(624, 7);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(200, 64);
-            this.bunifuCustomLabel1.TabIndex = 17;
-            this.bunifuCustomLabel1.Text = "أختيار مكاتبات محددة\r\n ";
+            this.ChkBxExport2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBxExport2.Location = new System.Drawing.Point(1271, 61);
+            this.ChkBxExport2.Name = "ChkBxExport2";
+            this.ChkBxExport2.Size = new System.Drawing.Size(15, 14);
+            this.ChkBxExport2.TabIndex = 98;
+            this.ChkBxExport2.UseVisualStyleBackColor = true;
+            this.ChkBxExport2.CheckedChanged += new System.EventHandler(this.ChkBxExport2_OnChange);
+            // 
+            // ChkBxImport2
+            // 
+            this.ChkBxImport2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBxImport2.Location = new System.Drawing.Point(1271, 29);
+            this.ChkBxImport2.Name = "ChkBxImport2";
+            this.ChkBxImport2.Size = new System.Drawing.Size(15, 14);
+            this.ChkBxImport2.TabIndex = 97;
+            this.ChkBxImport2.UseVisualStyleBackColor = true;
+            this.ChkBxImport2.CheckedChanged += new System.EventHandler(this.ChkBxImport2_OnChange);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(1195, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 22);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "رقم صادر";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(1201, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 22);
+            this.label4.TabIndex = 96;
+            this.label4.Text = "رقم وارد";
+            // 
+            // TxtCon
+            // 
+            this.TxtCon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.TxtCon.ForeColor = System.Drawing.Color.Black;
+            this.TxtCon.Location = new System.Drawing.Point(955, 30);
+            this.TxtCon.Name = "TxtCon";
+            this.TxtCon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtCon.Size = new System.Drawing.Size(111, 26);
+            this.TxtCon.TabIndex = 99;
+            this.TxtCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtCon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCon_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(1072, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 24);
+            this.label2.TabIndex = 95;
+            this.label2.Text = "رقم المكاتبة";
+            // 
+            // TxtDate1
+            // 
+            this.TxtDate1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.TxtDate1.ForeColor = System.Drawing.Color.Black;
+            this.TxtDate1.Location = new System.Drawing.Point(753, 30);
+            this.TxtDate1.Name = "TxtDate1";
+            this.TxtDate1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtDate1.Size = new System.Drawing.Size(90, 26);
+            this.TxtDate1.TabIndex = 99;
+            this.TxtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtDate1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCon_KeyDown);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(849, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 24);
+            this.label3.TabIndex = 95;
+            this.label3.Text = "السنة";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(621, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 24);
+            this.label5.TabIndex = 95;
+            this.label5.Text = "الوصف";
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.PapayaWhip;
+            this.deleteBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.BackgroundImage")));
+            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteBtn.Location = new System.Drawing.Point(495, 77);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(139, 46);
+            this.deleteBtn.TabIndex = 100;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.bunifuButton1_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.BackColor = System.Drawing.Color.PapayaWhip;
+            this.addBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addBtn.BackgroundImage")));
+            this.addBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addBtn.Location = new System.Drawing.Point(688, 79);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(152, 41);
+            this.addBtn.TabIndex = 101;
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.bunifuButton2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(646, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(200, 32);
+            this.label6.TabIndex = 102;
+            this.label6.Text = "أختيار مكاتبات محددة";
             // 
             // FormReportItem
             // 
@@ -350,22 +283,22 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtCon;
-        private Bunifu.Framework.UI.BunifuCheckbox ChkBxExport2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuCheckbox ChkBxImport2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.Button btnselect;
         private Microsoft.Reporting.WinForms.ReportViewer ReportViewerFollowing;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Button btnformbrief;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtDate1;
         private System.Windows.Forms.ComboBox CmbBxName;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private System.Windows.Forms.CheckBox ChkBxExport2;
+        private System.Windows.Forms.CheckBox ChkBxImport2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtCon;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtDate1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Label label6;
     }
 }

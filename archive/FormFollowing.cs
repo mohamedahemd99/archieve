@@ -24,24 +24,10 @@ namespace archive
             
             if (job != null)
             {
-                bunifuCustomLabel1.Visible = false;
                 CmbBxUserName.Visible = false;
             }
-            
-            //Authority();
-            
             Search();
             FillCmbBxUserName();
-
-        }
-        void Authority()
-        {
-            DataTable Dt = new DataTable();
-            String Quary = "select * from login where name ='" + TxtUser.Text + "' ";
-            Dt = Following.QueryExecute(Quary);
-
-            job = Dt.Rows[0]["job"].ToString();
-
         }
         void FillCmbBxUserName()
         {
@@ -185,68 +171,6 @@ namespace archive
                 lstBxUsers.Items.Add(CmbBxUserName.Text);
             }
         }
-        private void Active_OnChange(object sender, EventArgs e)
-        {
-            if (Active.Checked == true)
-            {
-                BothActive.Checked = false;
-                NotActive.Checked = false;
-            }
-            else
-            {
-                if (ChkBxExport.Checked == true)
-                {
-                    BothActive.Checked = false;
-                }
-                else
-                {
-                    BothActive.Checked = true;
-                }
-            }
-        }
-        private void NotActive_OnChange(object sender, EventArgs e)
-        {
-            if (NotActive.Checked == true)
-            {
-                BothActive.Checked = false;
-                Active.Checked = false;
-            }
-            else
-            {
-                if (Active.Checked == true)
-                {
-                    BothActive.Checked = false;
-                }
-                else
-                {
-                    BothActive.Checked = true;
-                }
-            }
-        }
-        private void BothActive_OnChange(object sender, EventArgs e)
-        {
-            if (BothActive.Checked == true)
-            {
-                Active.Checked = false;
-                NotActive.Checked = false;
-            }
-            else
-            {
-                if (Active.Checked == true)
-                {
-                    NotActive.Checked = false;
-                }
-                else
-                {
-                    NotActive.Checked = true;
-                }
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormReportItem FormSearchReport = new FormReportItem();
-            FormSearchReport.Show();
-        }
         void Search()
         {
             string type = "وارد / صادر ";
@@ -327,7 +251,6 @@ namespace archive
                 MessageBox.Show(ex.Message);
             }
         }
-
         void Init_Dgv()
         {
             String[] DgvHeaders = { "رقم المكانبة ", "تاريخ المكاتبة ", "اسم الجهة", " ملخص الموضوع", "المختصون ", "تاريخ المتابعة ","ملف" ,"ك", "اجراء متخذ" };
@@ -347,9 +270,10 @@ namespace archive
             dataGridView.Columns[8].Width = 75;
             dataGridView.Columns[9].Visible = false;
         }
-
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+                return;
             string id = dataGridView[9, e.RowIndex].Value.ToString(); //to get id of clicked cell
             string summary = dataGridView[3, e.RowIndex].Value.ToString();
             string[] splittedID = id.Split('-');
@@ -360,10 +284,6 @@ namespace archive
             FormSearch Formsearch = new FormSearch(" " + TxtUser.Text, pw, correspondenceData);
             Formsearch.Show();
             Formsearch.BringToFront();
-            Console.WriteLine(correspondenceData[0]);
-            Console.WriteLine(correspondenceData[1]);
-            Console.WriteLine(correspondenceData[2]);
-
         }
 
         private void show_report_btn_Click(object sender, EventArgs e)

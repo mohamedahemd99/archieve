@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using Microsoft.Reporting.WinForms;
+
 
 namespace archive
 {
@@ -29,6 +24,7 @@ namespace archive
             FillMyData();
             DGV_Headers();
             Authority();
+            this.reportViewer1.RefreshReport();
         }
         void Authority()
         {
@@ -39,11 +35,13 @@ namespace archive
         }
         void FillMyData()
         {
-            DgvOrg.DataSource = Org.QueryExecute("select * from org");
+            DataTable dataTable = Org.QueryExecute("select * from org");
+            DgvOrg.DataSource = dataTable;
+            ReportViwerData(dataTable);
         }
         void DGV_Headers()
         {
-            DgvOrg.Columns[0].HeaderText = "كودالجهة ";
+            DgvOrg.Columns[0].HeaderText = "كود الجهة ";
             DgvOrg.Columns[1].HeaderText = "اسم الجهة";
             DgvOrg.Columns[0].Width = 80;
         }
@@ -219,5 +217,15 @@ namespace archive
             String Quary = "select * from org where orgname like'" + '%' + TxtOrgName.Text + '%' + "' ";
             DgvOrg.DataSource = Org.QueryExecute(Quary);
         }
+
+        public void ReportViwerData(DataTable dt)
+        {
+            ReportDataSource rprtDTSource = new ReportDataSource("ReportData", dt);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(rprtDTSource);
+            reportViewer1.LocalReport.Refresh();
+            reportViewer1.RefreshReport();
+        }
+
     }
 }

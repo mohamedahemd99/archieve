@@ -29,51 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAuthorities));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.txtnewpassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.CmbBxUserName = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btndelet = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtnewpassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtUsername = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.txtpassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.editchk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.registchk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.deletechk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.userchk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.followingchk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.conchk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.orgchk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.adminchk = new Bunifu.Framework.UI.BunifuCheckbox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.historychk = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.visitck = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.filesck = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.txtname = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.txtpass = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.DgvUser = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.adminchk = new System.Windows.Forms.CheckBox();
+            this.userchk = new System.Windows.Forms.CheckBox();
+            this.followingchk = new System.Windows.Forms.CheckBox();
+            this.registchk = new System.Windows.Forms.CheckBox();
+            this.historychk = new System.Windows.Forms.CheckBox();
+            this.orgchk = new System.Windows.Forms.CheckBox();
+            this.conchk = new System.Windows.Forms.CheckBox();
+            this.editchk = new System.Windows.Forms.CheckBox();
+            this.deletechk = new System.Windows.Forms.CheckBox();
+            this.filesck = new System.Windows.Forms.CheckBox();
+            this.visitck = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.DgvUser = new System.Windows.Forms.DataGridView();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUser)).BeginInit();
@@ -82,23 +81,56 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panel1.Controls.Add(this.txtpassword);
+            this.panel1.Controls.Add(this.txtnewpassword);
+            this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.CmbBxUserName);
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btndelet);
             this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.txtnewpassword);
-            this.panel1.Controls.Add(this.bunifuCustomLabel2);
-            this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.txtpassword);
-            this.panel1.Controls.Add(this.bunifuCustomLabel7);
-            this.panel1.Controls.Add(this.bunifuCustomLabel6);
             this.panel1.Location = new System.Drawing.Point(899, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(463, 743);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtpassword
+            // 
+            this.txtpassword.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtpassword.ForeColor = System.Drawing.Color.Black;
+            this.txtpassword.Location = new System.Drawing.Point(10, 126);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtpassword.Size = new System.Drawing.Size(222, 29);
+            this.txtpassword.TabIndex = 91;
+            this.txtpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtnewpassword
+            // 
+            this.txtnewpassword.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtnewpassword.ForeColor = System.Drawing.Color.Black;
+            this.txtnewpassword.Location = new System.Drawing.Point(10, 177);
+            this.txtnewpassword.Name = "txtnewpassword";
+            this.txtnewpassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtnewpassword.Size = new System.Drawing.Size(222, 29);
+            this.txtnewpassword.TabIndex = 90;
+            this.txtnewpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(10, 76);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtUsername.Size = new System.Drawing.Size(222, 29);
+            this.txtUsername.TabIndex = 90;
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CmbBxUserName
             // 
@@ -110,16 +142,49 @@
             this.CmbBxUserName.Size = new System.Drawing.Size(195, 27);
             this.CmbBxUserName.TabIndex = 33;
             // 
-            // bunifuCustomLabel1
+            // label14
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(251, 238);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(100, 26);
-            this.bunifuCustomLabel1.TabIndex = 32;
-            this.bunifuCustomLabel1.Text = "الاختصاص";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label14.Location = new System.Drawing.Point(240, 184);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(210, 19);
+            this.label14.TabIndex = 89;
+            this.label14.Text = "تاكيد كلمة المرور  او كلمة مرور جديدة";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(251, 232);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(111, 32);
+            this.label15.TabIndex = 89;
+            this.label15.Text = "الاختصاص";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label13.Location = new System.Drawing.Point(240, 123);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(122, 32);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "الرقم السري";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(268, 77);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 32);
+            this.label12.TabIndex = 89;
+            this.label12.Text = "الاسم";
             // 
             // panel3
             // 
@@ -166,479 +231,256 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // txtnewpassword
-            // 
-            this.txtnewpassword.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtnewpassword.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtnewpassword.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txtnewpassword.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtnewpassword.BorderThickness = 3;
-            this.txtnewpassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnewpassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnewpassword.ForeColor = System.Drawing.Color.Black;
-            this.txtnewpassword.isPassword = false;
-            this.txtnewpassword.Location = new System.Drawing.Point(10, 176);
-            this.txtnewpassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtnewpassword.Name = "txtnewpassword";
-            this.txtnewpassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtnewpassword.Size = new System.Drawing.Size(222, 34);
-            this.txtnewpassword.TabIndex = 20;
-            this.txtnewpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(235, 182);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(210, 19);
-            this.bunifuCustomLabel2.TabIndex = 21;
-            this.bunifuCustomLabel2.Text = "تاكيد كلمة المرور  او كلمة مرور جديدة";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUsername.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtUsername.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txtUsername.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtUsername.BorderThickness = 3;
-            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.isPassword = false;
-            this.txtUsername.Location = new System.Drawing.Point(10, 73);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsername.Size = new System.Drawing.Size(222, 36);
-            this.txtUsername.TabIndex = 12;
-            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtpassword
-            // 
-            this.txtpassword.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtpassword.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtpassword.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txtpassword.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtpassword.BorderThickness = 3;
-            this.txtpassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtpassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassword.ForeColor = System.Drawing.Color.Black;
-            this.txtpassword.isPassword = false;
-            this.txtpassword.Location = new System.Drawing.Point(10, 121);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtpassword.Name = "txtpassword";
-            this.txtpassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtpassword.Size = new System.Drawing.Size(222, 34);
-            this.txtpassword.TabIndex = 10;
-            this.txtpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(250, 121);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(122, 32);
-            this.bunifuCustomLabel7.TabIndex = 11;
-            this.bunifuCustomLabel7.Text = "الرقم السري";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(271, 73);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(60, 32);
-            this.bunifuCustomLabel6.TabIndex = 13;
-            this.bunifuCustomLabel6.Text = "الاسم";
-            // 
-            // editchk
-            // 
-            this.editchk.BackColor = System.Drawing.Color.White;
-            this.editchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.editchk.ChechedOffColor = System.Drawing.Color.White;
-            this.editchk.Checked = false;
-            this.editchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.editchk.ForeColor = System.Drawing.Color.Maroon;
-            this.editchk.Location = new System.Drawing.Point(540, 20);
-            this.editchk.Name = "editchk";
-            this.editchk.Size = new System.Drawing.Size(20, 20);
-            this.editchk.TabIndex = 3;
-            // 
-            // registchk
-            // 
-            this.registchk.BackColor = System.Drawing.Color.White;
-            this.registchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.registchk.ChechedOffColor = System.Drawing.Color.White;
-            this.registchk.Checked = false;
-            this.registchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.registchk.ForeColor = System.Drawing.Color.Maroon;
-            this.registchk.Location = new System.Drawing.Point(843, 22);
-            this.registchk.Name = "registchk";
-            this.registchk.Size = new System.Drawing.Size(20, 20);
-            this.registchk.TabIndex = 4;
-            // 
-            // deletechk
-            // 
-            this.deletechk.BackColor = System.Drawing.Color.White;
-            this.deletechk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.deletechk.ChechedOffColor = System.Drawing.Color.White;
-            this.deletechk.Checked = false;
-            this.deletechk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.deletechk.ForeColor = System.Drawing.Color.Maroon;
-            this.deletechk.Location = new System.Drawing.Point(241, 15);
-            this.deletechk.Name = "deletechk";
-            this.deletechk.Size = new System.Drawing.Size(20, 20);
-            this.deletechk.TabIndex = 5;
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(594, 17);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(242, 32);
-            this.bunifuCustomLabel3.TabIndex = 20;
-            this.bunifuCustomLabel3.Text = "تسجيل مكاتبة صادر/ وارد";
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(294, 12);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(239, 32);
-            this.bunifuCustomLabel5.TabIndex = 21;
-            this.bunifuCustomLabel5.Text = "تعديل مكاتبة صادر / وارد";
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(6, 13);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(229, 32);
-            this.bunifuCustomLabel8.TabIndex = 22;
-            this.bunifuCustomLabel8.Text = "حذف مكاتبة صادر/ وارد";
-            // 
-            // bunifuCustomLabel10
-            // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(688, 154);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(158, 32);
-            this.bunifuCustomLabel10.TabIndex = 28;
-            this.bunifuCustomLabel10.Text = "اكواد المختصون";
-            // 
-            // bunifuCustomLabel9
-            // 
-            this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(757, 85);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(79, 32);
-            this.bunifuCustomLabel9.TabIndex = 27;
-            this.bunifuCustomLabel9.Text = "المتابعة";
-            // 
-            // userchk
-            // 
-            this.userchk.BackColor = System.Drawing.Color.White;
-            this.userchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userchk.ChechedOffColor = System.Drawing.Color.White;
-            this.userchk.Checked = false;
-            this.userchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.userchk.ForeColor = System.Drawing.Color.Maroon;
-            this.userchk.Location = new System.Drawing.Point(843, 160);
-            this.userchk.Name = "userchk";
-            this.userchk.Size = new System.Drawing.Size(20, 20);
-            this.userchk.TabIndex = 26;
-            // 
-            // followingchk
-            // 
-            this.followingchk.BackColor = System.Drawing.Color.White;
-            this.followingchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.followingchk.ChechedOffColor = System.Drawing.Color.White;
-            this.followingchk.Checked = false;
-            this.followingchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.followingchk.ForeColor = System.Drawing.Color.Maroon;
-            this.followingchk.Location = new System.Drawing.Point(843, 90);
-            this.followingchk.Name = "followingchk";
-            this.followingchk.Size = new System.Drawing.Size(20, 20);
-            this.followingchk.TabIndex = 25;
-            // 
-            // bunifuCustomLabel11
-            // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(405, 145);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(128, 32);
-            this.bunifuCustomLabel11.TabIndex = 32;
-            this.bunifuCustomLabel11.Text = "اكواد الجهات";
-            // 
-            // bunifuCustomLabel12
-            // 
-            this.bunifuCustomLabel12.AutoSize = true;
-            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(416, 72);
-            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(117, 32);
-            this.bunifuCustomLabel12.TabIndex = 31;
-            this.bunifuCustomLabel12.Text = "ربط الوثائق";
-            // 
-            // conchk
-            // 
-            this.conchk.BackColor = System.Drawing.Color.White;
-            this.conchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conchk.ChechedOffColor = System.Drawing.Color.White;
-            this.conchk.Checked = false;
-            this.conchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.conchk.ForeColor = System.Drawing.Color.Maroon;
-            this.conchk.Location = new System.Drawing.Point(540, 81);
-            this.conchk.Name = "conchk";
-            this.conchk.Size = new System.Drawing.Size(20, 20);
-            this.conchk.TabIndex = 30;
-            // 
-            // orgchk
-            // 
-            this.orgchk.BackColor = System.Drawing.Color.White;
-            this.orgchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.orgchk.ChechedOffColor = System.Drawing.Color.White;
-            this.orgchk.Checked = false;
-            this.orgchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.orgchk.ForeColor = System.Drawing.Color.Maroon;
-            this.orgchk.Location = new System.Drawing.Point(540, 151);
-            this.orgchk.Name = "orgchk";
-            this.orgchk.Size = new System.Drawing.Size(20, 20);
-            this.orgchk.TabIndex = 29;
-            // 
-            // bunifuCustomLabel13
-            // 
-            this.bunifuCustomLabel13.AutoSize = true;
-            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel13.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(634, 235);
-            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
-            this.bunifuCustomLabel13.Size = new System.Drawing.Size(197, 32);
-            this.bunifuCustomLabel13.TabIndex = 34;
-            this.bunifuCustomLabel13.Text = "مسئول عن المنظومة";
-            // 
-            // adminchk
-            // 
-            this.adminchk.BackColor = System.Drawing.Color.White;
-            this.adminchk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adminchk.ChechedOffColor = System.Drawing.Color.White;
-            this.adminchk.Checked = false;
-            this.adminchk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.adminchk.ForeColor = System.Drawing.Color.Maroon;
-            this.adminchk.Location = new System.Drawing.Point(843, 243);
-            this.adminchk.Name = "adminchk";
-            this.adminchk.Size = new System.Drawing.Size(20, 20);
-            this.adminchk.TabIndex = 33;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Pink;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.bunifuCustomLabel15);
-            this.panel2.Controls.Add(this.historychk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel4);
-            this.panel2.Controls.Add(this.visitck);
-            this.panel2.Controls.Add(this.bunifuCustomLabel14);
-            this.panel2.Controls.Add(this.filesck);
-            this.panel2.Controls.Add(this.registchk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel13);
-            this.panel2.Controls.Add(this.bunifuCustomLabel3);
             this.panel2.Controls.Add(this.adminchk);
-            this.panel2.Controls.Add(this.editchk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel11);
-            this.panel2.Controls.Add(this.bunifuCustomLabel5);
-            this.panel2.Controls.Add(this.orgchk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel12);
             this.panel2.Controls.Add(this.userchk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel10);
-            this.panel2.Controls.Add(this.deletechk);
-            this.panel2.Controls.Add(this.conchk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel8);
             this.panel2.Controls.Add(this.followingchk);
-            this.panel2.Controls.Add(this.bunifuCustomLabel9);
+            this.panel2.Controls.Add(this.registchk);
+            this.panel2.Controls.Add(this.historychk);
+            this.panel2.Controls.Add(this.orgchk);
+            this.panel2.Controls.Add(this.conchk);
+            this.panel2.Controls.Add(this.editchk);
+            this.panel2.Controls.Add(this.deletechk);
+            this.panel2.Controls.Add(this.filesck);
+            this.panel2.Controls.Add(this.visitck);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(-2, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(901, 293);
             this.panel2.TabIndex = 35;
             // 
-            // bunifuCustomLabel15
+            // adminchk
             // 
-            this.bunifuCustomLabel15.AutoSize = true;
-            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(400, 225);
-            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
-            this.bunifuCustomLabel15.Size = new System.Drawing.Size(133, 32);
-            this.bunifuCustomLabel15.TabIndex = 43;
-            this.bunifuCustomLabel15.Text = "مسير المكاتبة";
+            this.adminchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminchk.Location = new System.Drawing.Point(836, 249);
+            this.adminchk.Name = "adminchk";
+            this.adminchk.Size = new System.Drawing.Size(15, 14);
+            this.adminchk.TabIndex = 102;
+            this.adminchk.UseVisualStyleBackColor = true;
+            // 
+            // userchk
+            // 
+            this.userchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userchk.Location = new System.Drawing.Point(836, 162);
+            this.userchk.Name = "userchk";
+            this.userchk.Size = new System.Drawing.Size(15, 14);
+            this.userchk.TabIndex = 101;
+            this.userchk.UseVisualStyleBackColor = true;
+            // 
+            // followingchk
+            // 
+            this.followingchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.followingchk.Location = new System.Drawing.Point(836, 87);
+            this.followingchk.Name = "followingchk";
+            this.followingchk.Size = new System.Drawing.Size(15, 14);
+            this.followingchk.TabIndex = 100;
+            this.followingchk.UseVisualStyleBackColor = true;
+            // 
+            // registchk
+            // 
+            this.registchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registchk.Location = new System.Drawing.Point(836, 26);
+            this.registchk.Name = "registchk";
+            this.registchk.Size = new System.Drawing.Size(15, 14);
+            this.registchk.TabIndex = 99;
+            this.registchk.UseVisualStyleBackColor = true;
             // 
             // historychk
             // 
-            this.historychk.BackColor = System.Drawing.Color.White;
-            this.historychk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.historychk.ChechedOffColor = System.Drawing.Color.White;
-            this.historychk.Checked = false;
-            this.historychk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.historychk.ForeColor = System.Drawing.Color.Maroon;
-            this.historychk.Location = new System.Drawing.Point(540, 231);
+            this.historychk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historychk.Location = new System.Drawing.Point(531, 242);
             this.historychk.Name = "historychk";
-            this.historychk.Size = new System.Drawing.Size(20, 20);
-            this.historychk.TabIndex = 42;
+            this.historychk.Size = new System.Drawing.Size(15, 14);
+            this.historychk.TabIndex = 98;
+            this.historychk.UseVisualStyleBackColor = true;
             // 
-            // bunifuCustomLabel4
+            // orgchk
             // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(147, 145);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(88, 32);
-            this.bunifuCustomLabel4.TabIndex = 41;
-            this.bunifuCustomLabel4.Text = "الزيارات";
+            this.orgchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orgchk.Location = new System.Drawing.Point(531, 155);
+            this.orgchk.Name = "orgchk";
+            this.orgchk.Size = new System.Drawing.Size(15, 14);
+            this.orgchk.TabIndex = 97;
+            this.orgchk.UseVisualStyleBackColor = true;
             // 
-            // visitck
+            // conchk
             // 
-            this.visitck.BackColor = System.Drawing.Color.White;
-            this.visitck.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.visitck.ChechedOffColor = System.Drawing.Color.White;
-            this.visitck.Checked = false;
-            this.visitck.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.visitck.ForeColor = System.Drawing.Color.Maroon;
-            this.visitck.Location = new System.Drawing.Point(241, 148);
-            this.visitck.Name = "visitck";
-            this.visitck.Size = new System.Drawing.Size(20, 20);
-            this.visitck.TabIndex = 38;
+            this.conchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conchk.Location = new System.Drawing.Point(531, 87);
+            this.conchk.Name = "conchk";
+            this.conchk.Size = new System.Drawing.Size(15, 14);
+            this.conchk.TabIndex = 96;
+            this.conchk.UseVisualStyleBackColor = true;
             // 
-            // bunifuCustomLabel14
+            // editchk
             // 
-            this.bunifuCustomLabel14.AutoSize = true;
-            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel14.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(158, 71);
-            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
-            this.bunifuCustomLabel14.Size = new System.Drawing.Size(77, 32);
-            this.bunifuCustomLabel14.TabIndex = 40;
-            this.bunifuCustomLabel14.Text = "الملفات";
+            this.editchk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editchk.Location = new System.Drawing.Point(531, 26);
+            this.editchk.Name = "editchk";
+            this.editchk.Size = new System.Drawing.Size(15, 14);
+            this.editchk.TabIndex = 95;
+            this.editchk.UseVisualStyleBackColor = true;
+            // 
+            // deletechk
+            // 
+            this.deletechk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletechk.Location = new System.Drawing.Point(234, 19);
+            this.deletechk.Name = "deletechk";
+            this.deletechk.Size = new System.Drawing.Size(15, 14);
+            this.deletechk.TabIndex = 94;
+            this.deletechk.UseVisualStyleBackColor = true;
             // 
             // filesck
             // 
-            this.filesck.BackColor = System.Drawing.Color.White;
-            this.filesck.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.filesck.ChechedOffColor = System.Drawing.Color.White;
-            this.filesck.Checked = false;
-            this.filesck.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.filesck.ForeColor = System.Drawing.Color.Maroon;
-            this.filesck.Location = new System.Drawing.Point(241, 78);
+            this.filesck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filesck.Location = new System.Drawing.Point(234, 82);
             this.filesck.Name = "filesck";
-            this.filesck.Size = new System.Drawing.Size(20, 20);
-            this.filesck.TabIndex = 39;
+            this.filesck.Size = new System.Drawing.Size(15, 14);
+            this.filesck.TabIndex = 93;
+            this.filesck.UseVisualStyleBackColor = true;
             // 
-            // txtname
+            // visitck
             // 
-            this.txtname.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtname.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtname.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txtname.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtname.BorderThickness = 3;
-            this.txtname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.ForeColor = System.Drawing.Color.Black;
-            this.txtname.isPassword = false;
-            this.txtname.Location = new System.Drawing.Point(148, 300);
-            this.txtname.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtname.Name = "txtname";
-            this.txtname.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtname.Size = new System.Drawing.Size(18, 34);
-            this.txtname.TabIndex = 37;
-            this.txtname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtname.Visible = false;
+            this.visitck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visitck.Location = new System.Drawing.Point(238, 151);
+            this.visitck.Name = "visitck";
+            this.visitck.Size = new System.Drawing.Size(15, 14);
+            this.visitck.TabIndex = 92;
+            this.visitck.UseVisualStyleBackColor = true;
             // 
-            // txtpass
+            // label11
             // 
-            this.txtpass.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtpass.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtpass.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txtpass.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtpass.BorderThickness = 3;
-            this.txtpass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtpass.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.ForeColor = System.Drawing.Color.Black;
-            this.txtpass.isPassword = false;
-            this.txtpass.Location = new System.Drawing.Point(187, 300);
-            this.txtpass.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtpass.Name = "txtpass";
-            this.txtpass.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtpass.Size = new System.Drawing.Size(20, 34);
-            this.txtpass.TabIndex = 36;
-            this.txtpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtpass.Visible = false;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(640, 236);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(179, 29);
+            this.label11.TabIndex = 91;
+            this.label11.Text = "مسئول عن المنظومة";
             // 
-            // DgvUser
+            // label10
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.DgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvUser.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DgvUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvUser.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DgvUser.DoubleBuffered = true;
-            this.DgvUser.EnableHeadersVisualStyles = false;
-            this.DgvUser.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvUser.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvUser.Location = new System.Drawing.Point(116, 375);
-            this.DgvUser.Name = "DgvUser";
-            this.DgvUser.ReadOnly = true;
-            this.DgvUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.DgvUser.Size = new System.Drawing.Size(704, 307);
-            this.DgvUser.TabIndex = 39;
-            this.DgvUser.Visible = false;
-            this.DgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUser_CellClick);
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(679, 154);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(142, 29);
+            this.label10.TabIndex = 90;
+            this.label10.Text = "اكواد المختصون";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(758, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 29);
+            this.label9.TabIndex = 89;
+            this.label9.Text = "المتابعة";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(15, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(206, 29);
+            this.label6.TabIndex = 88;
+            this.label6.Text = "حذف مكاتبة صادر/ وارد";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(400, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 29);
+            this.label7.TabIndex = 87;
+            this.label7.Text = "اكواد الجهات";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(395, 229);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 29);
+            this.label5.TabIndex = 87;
+            this.label5.Text = "مسير المكاتبة";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(295, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(216, 29);
+            this.label3.TabIndex = 86;
+            this.label3.Text = "تعديل مكاتبة صادر / وارد";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(595, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(220, 29);
+            this.label8.TabIndex = 85;
+            this.label8.Text = "تسجيل مكاتبة صادر/ وارد";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(417, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 29);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "ربط الوثائق";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(158, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 29);
+            this.label1.TabIndex = 84;
+            this.label1.Text = "الملفات";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(147, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 29);
+            this.label4.TabIndex = 83;
+            this.label4.Text = "الزيارات";
             // 
             // button1
             // 
@@ -664,17 +506,86 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.bunifuThinButton22_Click);
             // 
+            // DgvUser
+            // 
+            this.DgvUser.AllowUserToAddRows = false;
+            this.DgvUser.AllowUserToDeleteRows = false;
+            this.DgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvUser.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DgvUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DgvUser.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.DgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.DgvUser.ColumnHeadersHeight = 50;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvUser.DefaultCellStyle = dataGridViewCellStyle8;
+            this.DgvUser.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DgvUser.Location = new System.Drawing.Point(54, 373);
+            this.DgvUser.Name = "DgvUser";
+            this.DgvUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.DgvUser.RowHeadersWidth = 45;
+            this.DgvUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DgvUser.Size = new System.Drawing.Size(764, 288);
+            this.DgvUser.TabIndex = 90;
+            this.DgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUser_CellClick);
+            // 
+            // txtpass
+            // 
+            this.txtpass.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtpass.ForeColor = System.Drawing.Color.Black;
+            this.txtpass.Location = new System.Drawing.Point(196, 312);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtpass.Size = new System.Drawing.Size(15, 29);
+            this.txtpass.TabIndex = 92;
+            this.txtpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtpass.Visible = false;
+            // 
+            // txtname
+            // 
+            this.txtname.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtname.ForeColor = System.Drawing.Color.Black;
+            this.txtname.Location = new System.Drawing.Point(163, 312);
+            this.txtname.Name = "txtname";
+            this.txtname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtname.Size = new System.Drawing.Size(15, 29);
+            this.txtname.TabIndex = 92;
+            this.txtname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtname.Visible = false;
+            // 
             // FormAuthorities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.DgvUser);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtname);
             this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.DgvUser);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormAuthorities";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -687,51 +598,52 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUser)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtUsername;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtpassword;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtnewpassword;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCheckbox editchk;
-        private Bunifu.Framework.UI.BunifuCheckbox registchk;
-        private Bunifu.Framework.UI.BunifuCheckbox deletechk;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
-        private Bunifu.Framework.UI.BunifuCheckbox userchk;
-        private Bunifu.Framework.UI.BunifuCheckbox followingchk;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
-        private Bunifu.Framework.UI.BunifuCheckbox conchk;
-        private Bunifu.Framework.UI.BunifuCheckbox orgchk;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        private Bunifu.Framework.UI.BunifuCheckbox adminchk;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtpass;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtname;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvUser;
         private System.Windows.Forms.Button btndelet;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.ComboBox CmbBxUserName;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuCheckbox visitck;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
-        private Bunifu.Framework.UI.BunifuCheckbox filesck;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
-        private Bunifu.Framework.UI.BunifuCheckbox historychk;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox visitck;
+        private System.Windows.Forms.DataGridView DgvUser;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtnewpassword;
+        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.TextBox txtpass;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.CheckBox filesck;
+        private System.Windows.Forms.CheckBox deletechk;
+        private System.Windows.Forms.CheckBox adminchk;
+        private System.Windows.Forms.CheckBox userchk;
+        private System.Windows.Forms.CheckBox followingchk;
+        private System.Windows.Forms.CheckBox registchk;
+        private System.Windows.Forms.CheckBox historychk;
+        private System.Windows.Forms.CheckBox orgchk;
+        private System.Windows.Forms.CheckBox conchk;
+        private System.Windows.Forms.CheckBox editchk;
     }
 }

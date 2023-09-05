@@ -316,15 +316,11 @@ namespace archive
             TxtFileName.ResetText();
             TxtSubFileName.ResetText();
             TxtAction.ResetText();
-            FilesFound.Text = "";
             Pdf.FileName = "NotEnteredTillNow.pdf";
             AxAcroPDF.Hide();
             CkbxFollowing.Checked = false;
             TxtFollowingDate.Hide();
             TxtSubFileName.ResetText();
-            TxtSerial.ResetText();
-            TxtSeialK.ResetText();
-            TxtSeialG.ResetText();
             LstBxOrg.Items.Clear();
             LstBxOrgId.Items.Clear();
             lstBxUsers.Items.Clear();
@@ -437,7 +433,6 @@ namespace archive
         void DisplayDataFile(int index)
         {
             int FileIndex = index;
-            //FilesFound.Text = " العثور على عدد " + (index + 1).ToString() + "/" + DtSearchFile.Rows.Count.ToString() + " من الوثائق";
             ConnectKey = DtSearchFile.Rows[FileIndex]["connection"].ToString();
             //Console.WriteLine(ConnectKey);
             if (ConnectKey !="")
@@ -577,9 +572,6 @@ namespace archive
                     {
                         OrgsId += LstBxOrgId.Items[Index].ToString() + ",";
                     }
-                    // Connect();
-
-
 
                     string InsertQuery = "INSERT INTO exportdata(id,exportid , exportdate ,summary , following , followingdate , orgid  , orgname ,action,primaryfile,secondfile,primaryfileid,secondfileid,user, username) VALUES ('" + TxtExportId.Text + '-' + DateExport.Value.Year + '-' + "ص" + "','" + TxtExportId.Text + "','" + ExportDate + "','" + TxtSummary.Text + "','" + ChkBx + "' , @followdate , '" + OrgsId + "', '" + OrgsName + "','" + TxtAction.Text + "' ,'" + TxtFileName.Text + "','" + TxtSubFileName.Text + "','" + TxtFileId.Text + "','" + TxtSubFileId.Text + "','" + TxtUser.Text + "', @usernamelst) ";
                     MySqlCommand cmd = new MySqlCommand(InsertQuery, Export.con);
@@ -594,13 +586,10 @@ namespace archive
                     if (Check == 1)
                     {
                         note("تم حفظ البيانات");
-                     //   MessageBox.Show("تم حفظ البيانات");
-
                     }
                     else
                     {
                         note(" لم يتم حفظ البيانات");
-                      //  MessageBox.Show(" لم يتم حفظ البيانات");
                     }
 
                    
@@ -639,8 +628,6 @@ namespace archive
                     Export.con.Close();
                     if (Check == 1)
                     {
-                       // MessageBox.Show("تم حفظ الملف");
-
                     }
                     else
                     {
@@ -709,7 +696,6 @@ namespace archive
             {
                 OrgsId += LstBxOrgId.Items[Index].ToString() + ",";
             }
-           // Connect();
             string UpdateQuery = "UPDATE exportdata SET exportdate='" + ImportDate + "',summary='" + TxtSummary.Text + "', following='" + chkbx + "',orgid='" + OrgsId + "',orgname= '" + OrgsName + "',action='" + TxtAction.Text + "', primaryfile='" + TxtFileName.Text + "',secondfile= '" + TxtSubFileName.Text + "', primaryfileid='" + TxtFileId.Text + "',secondfileid= '" + TxtSubFileId.Text + "',followingdate= @followdate,username=@usernamelst  where  id= '" + TxtExportId.Text + '-' + DateExport.Value.Year + '-' + "ص" + "' ";
             MySqlCommand cmd = new MySqlCommand(UpdateQuery, Export.con);
             cmd.Parameters.AddWithValue("@followdate", FollowingDate);
@@ -724,12 +710,10 @@ namespace archive
             if (Check == 1)
             {
                 note("تم تعديل البيانات بنجاح");
-               // MessageBox.Show("تم تعديل البيانات بنجاح");  
             }
             else
             {
                 note("لم يتم التعديل");
-                //MessageBox.Show("لم يتم التعديل");
             }
         }
 
@@ -932,11 +916,11 @@ namespace archive
             Clear();
             ++Index;
 
-            if ((Index > DtSearch.Rows.Count - 1))
+            if (Index > DtSearch.Rows.Count - 1)
             {
                 Index = 0;
             }
-            else if ((Index < 0))
+            else if (Index < 0)
             {
                 Index = DtSearch.Rows.Count - 1;
             }
@@ -958,11 +942,6 @@ namespace archive
             }
             catch (Exception ex)
             { }
-        }
-
-        private void ClearSelectedUser_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void LstBxOrg_KeyDown(object sender, KeyEventArgs e)
@@ -1030,10 +1009,7 @@ namespace archive
 
             SoundPlayer splayer = new SoundPlayer(@"11.wav");
             splayer.Play();
-            // MessageBox.Show(text);
         }
-
-
     }
 
 }

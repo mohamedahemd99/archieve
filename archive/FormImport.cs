@@ -27,7 +27,6 @@ namespace archive
         //Create Index to exchange between Files 
         int Index = 0;
         //Create primarySubject  
-        String PrimarySubject = "";
         //Create GlobalPrimId  
         int GlobalPrimId = 0;
         string Regist;
@@ -173,7 +172,6 @@ namespace archive
                 CmbBxUserName.Items.Add(Dt.Rows[Index][0]);
             }
             CmbBxUserName.Text = "اختر مختص";
-            //CmbBxUserName.Sorted = true;
         }
 
         void ClearInputs()
@@ -192,7 +190,6 @@ namespace archive
             TxtSubFileId.ResetText();
             TxtFileName.ResetText();
             TxtSubFileName.ResetText();
-            FilesFound.Visible = false;
             TxtAction.ResetText();
             Pdf.FileName = "NotEnteredTillNow.pdf";
             AxAcroPDF.Hide();
@@ -200,9 +197,6 @@ namespace archive
             TxtFollowingDate.Hide();
             TxtSubFileName.ResetText();
             TxtMinisterNum.ResetText();
-            TxtSerial.ResetText();
-            TxtSeialK.ResetText();
-            TxtSeialG.ResetText();
             TxtCon.ResetText();
             lstBxUsers.Items.Clear();
             TxtCon.ResetText();
@@ -282,7 +276,6 @@ namespace archive
         void DisplayDataFile(int index)
         {
             int FileIndex = index;
-          // FilesFound.Text = " العثور على عدد " + (index + 1).ToString() + "/" + DtSearchFile.Rows.Count.ToString() + " من الوثائق";
             ConnectKey = DtSearchFile.Rows[FileIndex]["connection"].ToString();
             if (ConnectKey != "")
             {
@@ -315,7 +308,6 @@ namespace archive
         {
 
             int FileIndex = index;
-         FilesFound.Text = " العثور على عدد " + (index + 1).ToString() + "/" + DtSearch.Rows.Count.ToString() + " من الوثائق";
 
             if (DtSearch.Rows[0]["username"].ToString().Contains(job))
             {
@@ -368,18 +360,14 @@ namespace archive
             if (Executed == 1)
             {
                 note("تم حذف البيانات بنجاح");
-                //MessageBox.Show("تم حذف البيانات بنجاح");
                 String DeleteQuery1 = "delete  FROM importfile where id= '" + TxtImportId.Text + '-' + DateImport.Value.Year + '-' + "و" + "'";
                 int Executed1 = Archive.MyExecuteNonQuery(DeleteQuery1);
                 if (Executed1 == 1)
                 {
-                   // MessageBox.Show("تم حذف الملف بنجاح");
                 }
                 else
                 {
                     note("لم يتم حذف البيانات بنجاح ");
-                    //MessageBox.Show("تم حذف الملف بنجاح لم  ");
-
                 }
 
             }
@@ -461,12 +449,9 @@ namespace archive
             if (Check == 1)
             {
                 note("تم تعديل البيانات بنجاح");
-
-              //  MessageBox.Show("تم تعديل البيانات بنجاح");
             }
             else
             {
-               // MessageBox.Show("لم يتم التعديل");
                 note("لم يتم التعديل");
             }
         }
@@ -575,17 +560,12 @@ namespace archive
                     Archive.con.Close();
                     if (Check == 1)
                     {
-                       // MessageBox.Show("تم حفظ البيانات");
                         note("تم حفظ البيانات");
                     }
                     else
                     {
-                      //  MessageBox.Show(" لم يتم حفظ البيانات");
                         note(" لم يتم حفظ البيانات");
-
                     }
-
-
                 }
                 catch (Exception ex)
                 {
@@ -621,8 +601,6 @@ namespace archive
                     Archive.con.Close();
                     if (Check == 1)
                     {
-                     //   MessageBox.Show("تم حفظ الملف");
-
                     }
                     else
                     {
@@ -693,7 +671,6 @@ namespace archive
 
                 if (ChkBxExport.Checked == true)
                 {
-
                     String Query = "select connection from exportfile where id = '" + TxtCon.Text + '-' + TxtDate.Text + '-' + ConnectType + "'";
                     Dt = Archive.QueryExecute(Query);
                     int count = Dt.Rows.Count;
@@ -721,9 +698,6 @@ namespace archive
             {
             }
         }
-
-   
-
         void Search()
         {
             string[] Temp = new string[4];
@@ -768,7 +742,6 @@ namespace archive
         }
         void SearchFile()
         {
-            //Index = 0;
             DtSearchFile.Clear();
             string Query = "select * from importfile where id= '" + TxtImportId.Text + '-' + DateImport.Value.Year + '-' + "و" + "' ";
             MySqlDataAdapter da = new MySqlDataAdapter(Query, Archive.con);
@@ -778,12 +751,6 @@ namespace archive
             {
                 DisplayDataFile(0);
             }
-            else
-            {
-
-            }
-
-
         }     
         private void BtnConnect_Click(object sender, EventArgs e)
         {
@@ -817,16 +784,7 @@ namespace archive
 
         String StringNewSearchForm(String Data)
         {
-            int IndexString;
             StringBuilder NewFormat = new StringBuilder(Data);
-
-            //for (IndexString =0; IndexString < Data.Length; IndexString++)
-            //{
-            //    if (Data[IndexString] == 'أ' || Data[IndexString] == 'ا'   || Data[IndexString] == 'إ' || Data[IndexString] == 'آ' || Data[IndexString] == 'ي' || Data[IndexString] == 'ى' || Data[IndexString] == 'ه' || Data[IndexString] == 'ة' || Data[IndexString] == ' ')
-            //    {
-            //        NewFormat[IndexString] = '%';
-            //    }
-            //}
             return NewFormat.ToString();
         }
         private void DgvFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -842,11 +800,6 @@ namespace archive
                 TxtSubFileId.ResetText();
             }
             catch (Exception ex) { };
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void DgvSubFile_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -913,11 +866,6 @@ namespace archive
             TxtSubFileName.ResetText();
         }
 
-     
-        private void TxtImportId_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
         private void TxtOrgId_OnValueChanged(object sender, EventArgs e)
         {
             try
@@ -946,32 +894,17 @@ namespace archive
             {
                 lstBxUsers.Items.Add(CmbBxUserName.Text);
             }
-            //CmbBxUserName.Items.Remove(CmbBxUserName.Text);
-        }
-
-        private void DgvOrg_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string RowData = DgvOrg[0, e.RowIndex].Value.ToString();
-                string ClmData = DgvOrg[1, e.RowIndex].Value.ToString();
-                TxtOrgId.Text = RowData;
-                TxtOrgName.Text = ClmData;
-            }
-            catch (Exception ex)
-            {
-            }
         }
 
         private void BtnNext_Click(object sender, EventArgs e)
         {
             ClearInputs();
             ++Index;
-            if ((Index > DtSearch.Rows.Count - 1))
+            if (Index > DtSearch.Rows.Count - 1)
             {
                 Index = 0;
             }
-            else if ((Index < 0))
+            else if (Index < 0)
             {
                 Index = DtSearch.Rows.Count - 1;
             }
@@ -987,11 +920,11 @@ namespace archive
             ClearInputs();
 
             --Index;
-            if ((Index > DtSearch.Rows.Count - 1))
+            if (Index > DtSearch.Rows.Count - 1)
             {
                 Index = 0;
             }
-            else if ((Index < 0))
+            else if (Index < 0)
             {
                 Index = DtSearch.Rows.Count - 1;
             }
@@ -1068,8 +1001,6 @@ namespace archive
 
             SoundPlayer splayer = new SoundPlayer(@"11.wav");
             splayer.Play();
-           // MessageBox.Show(text);
         }
-
     }
 }

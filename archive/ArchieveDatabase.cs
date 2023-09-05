@@ -9,25 +9,23 @@ namespace archive
     {
         public MySqlConnection con { get; set; }
 
+        /// <summary>
+        /// The ip address of the connection string changes 
+        /// server ip : 192.168.0.1
+        /// localhost is used when testing or debugging the code locally
+        /// and server's ip is used when deploying the code to the target computers
+        /// </summary>
         public ArchieveDatabase()
         {
-        //con = new MySqlConnection("Server = 192.168.0.1 ; Database = archieve ; uid = developer ; pwd =developer ; SslMode=None ");
-        con = new MySqlConnection("Server = localhost; Database = archieve ; uid = developer ; pwd =developer ; SslMode=None");
-
+           //con = new MySqlConnection("Server = 192.168.1.110 ; Database = archieve ; uid = developer ; pwd =developer ; SslMode=None ");
+           con = new MySqlConnection("Server = localhost; Database = archieve ; uid = root ; pwd =root ; SslMode=None");
         }
-           //Function that get data from the database to c# in datatable representation
- 
 
-       public DataTable ShowMyData(String Data)
-       {
-           DataTable dt = new DataTable();
-           MySqlDataAdapter da = new MySqlDataAdapter("select * from " + Data, con);
-           da.Fill(dt);
-           return dt;
-       }
-
-        //Function that get data from the database to c# in datatable representation based on query sent
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public DataTable QueryExecute(String query)
         {
             Console.WriteLine("Query : " + query);
@@ -50,6 +48,11 @@ namespace archive
             return dt;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Query"></param>
+        /// <returns></returns>
         public int MyExecuteNonQuery(String Query)
         {
             if (con.State == ConnectionState.Closed)
@@ -62,39 +65,5 @@ namespace archive
             return RetResult;
         }
 
-
-
-        public int MyExecuteNonQueryAddedWithValues(String Query)
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            MySqlCommand cmd = new MySqlCommand(Query, con);
-            //for
-                int RetResult = cmd.ExecuteNonQuery();
-                con.Close();
-                return RetResult;
-           
-        }
-        //function to Search_users_username_using_like
-
-        public DataTable Search_users_username_using_like(String Data, String username)
-        {
-            DataTable dt = new DataTable();
-            string quary = "select * from " + Data + " where username like'" + '%' + username + '%' + "' ";
-            MySqlDataAdapter da = new MySqlDataAdapter(quary, con);
-            da.Fill(dt);
-          
-            return dt;
-        }
-        public DataTable orgSearch(String Data, String orgname)
-        {
-            DataTable dt2 = new DataTable();
-            string quary = "select * from " + Data + " where orgname like'" + '%' + orgname + '%' + "' ";
-            MySqlDataAdapter da = new MySqlDataAdapter(quary, con);
-            da.Fill(dt2);
-            return dt2;
-        }
     }
 }

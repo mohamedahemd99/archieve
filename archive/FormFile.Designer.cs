@@ -35,58 +35,78 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.BtnDeleteFile = new System.Windows.Forms.Button();
             this.BtnEditFile = new System.Windows.Forms.Button();
             this.BtnAddFile = new System.Windows.Forms.Button();
-            this.TxtFileName = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.TxtFileId = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BtnDeleteFileSub = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.BtnEditFileSub = new System.Windows.Forms.Button();
             this.BtnAddFileSub = new System.Windows.Forms.Button();
-            this.TxtFileNameSub = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.TxtFileidSub = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtSearch = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtSearchSub = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.DgvFile = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.DgvFileSub = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtFileId = new System.Windows.Forms.TextBox();
+            this.TxtFileName = new System.Windows.Forms.TextBox();
+            this.TxtFileNameSub = new System.Windows.Forms.TextBox();
+            this.TxtFileidSub = new System.Windows.Forms.TextBox();
+            this.TxtSearchSub = new System.Windows.Forms.TextBox();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.DgvFile = new System.Windows.Forms.DataGridView();
+            this.DgvFileSub = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFile)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFileSub)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.Controls.Add(this.TxtFileName);
+            this.panel1.Controls.Add(this.TxtFileId);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.BtnDeleteFile);
             this.panel1.Controls.Add(this.BtnEditFile);
             this.panel1.Controls.Add(this.BtnAddFile);
-            this.panel1.Controls.Add(this.TxtFileName);
-            this.panel1.Controls.Add(this.TxtFileId);
-            this.panel1.Controls.Add(this.bunifuCustomLabel7);
-            this.panel1.Controls.Add(this.bunifuCustomLabel6);
             this.panel1.Location = new System.Drawing.Point(913, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 332);
             this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(310, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 32);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "اسم الملف";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(310, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "كود الملف";
             // 
             // panel6
             // 
@@ -133,83 +153,32 @@
             this.BtnAddFile.UseVisualStyleBackColor = false;
             this.BtnAddFile.Click += new System.EventHandler(this.BtnAddFile_Click);
             // 
-            // TxtFileName
-            // 
-            this.TxtFileName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtFileName.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtFileName.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtFileName.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtFileName.BorderThickness = 3;
-            this.TxtFileName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtFileName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFileName.ForeColor = System.Drawing.Color.Black;
-            this.TxtFileName.isPassword = false;
-            this.TxtFileName.Location = new System.Drawing.Point(5, 108);
-            this.TxtFileName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtFileName.Name = "TxtFileName";
-            this.TxtFileName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtFileName.Size = new System.Drawing.Size(303, 38);
-            this.TxtFileName.TabIndex = 12;
-            this.TxtFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtFileName.OnValueChanged += new System.EventHandler(this.TxtFileName_OnValueChanged);
-            // 
-            // TxtFileId
-            // 
-            this.TxtFileId.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtFileId.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtFileId.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtFileId.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtFileId.BorderThickness = 3;
-            this.TxtFileId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtFileId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFileId.ForeColor = System.Drawing.Color.Black;
-            this.TxtFileId.isPassword = false;
-            this.TxtFileId.Location = new System.Drawing.Point(210, 59);
-            this.TxtFileId.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtFileId.Name = "TxtFileId";
-            this.TxtFileId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtFileId.Size = new System.Drawing.Size(87, 34);
-            this.TxtFileId.TabIndex = 10;
-            this.TxtFileId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtFileId.OnValueChanged += new System.EventHandler(this.TxtFileId_OnValueChanged);
-            // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(314, 59);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(110, 34);
-            this.bunifuCustomLabel7.TabIndex = 11;
-            this.bunifuCustomLabel7.Text = "كود الملف";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(311, 108);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(111, 34);
-            this.bunifuCustomLabel6.TabIndex = 13;
-            this.bunifuCustomLabel6.Text = "اسم الملف";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.TxtFileNameSub);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.TxtFileidSub);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.BtnDeleteFileSub);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.BtnEditFileSub);
             this.panel2.Controls.Add(this.BtnAddFileSub);
-            this.panel2.Controls.Add(this.TxtFileNameSub);
-            this.panel2.Controls.Add(this.TxtFileidSub);
-            this.panel2.Controls.Add(this.bunifuCustomLabel1);
-            this.panel2.Controls.Add(this.bunifuCustomLabel2);
             this.panel2.Location = new System.Drawing.Point(912, 334);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 403);
             this.panel2.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(312, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 32);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "اسم الملف";
             // 
             // panel7
             // 
@@ -231,6 +200,17 @@
             this.BtnDeleteFileSub.TabIndex = 33;
             this.BtnDeleteFileSub.UseVisualStyleBackColor = false;
             this.BtnDeleteFileSub.Click += new System.EventHandler(this.BtnDeleteFileSub_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(312, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 32);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "كود الملف";
             // 
             // BtnEditFileSub
             // 
@@ -256,126 +236,6 @@
             this.BtnAddFileSub.UseVisualStyleBackColor = false;
             this.BtnAddFileSub.Click += new System.EventHandler(this.BtnAddFileSub_Click);
             // 
-            // TxtFileNameSub
-            // 
-            this.TxtFileNameSub.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtFileNameSub.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtFileNameSub.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtFileNameSub.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtFileNameSub.BorderThickness = 3;
-            this.TxtFileNameSub.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtFileNameSub.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFileNameSub.ForeColor = System.Drawing.Color.Black;
-            this.TxtFileNameSub.isPassword = false;
-            this.TxtFileNameSub.Location = new System.Drawing.Point(5, 108);
-            this.TxtFileNameSub.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtFileNameSub.Name = "TxtFileNameSub";
-            this.TxtFileNameSub.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtFileNameSub.Size = new System.Drawing.Size(303, 38);
-            this.TxtFileNameSub.TabIndex = 12;
-            this.TxtFileNameSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // TxtFileidSub
-            // 
-            this.TxtFileidSub.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtFileidSub.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtFileidSub.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtFileidSub.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtFileidSub.BorderThickness = 3;
-            this.TxtFileidSub.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtFileidSub.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFileidSub.ForeColor = System.Drawing.Color.Black;
-            this.TxtFileidSub.isPassword = false;
-            this.TxtFileidSub.Location = new System.Drawing.Point(210, 59);
-            this.TxtFileidSub.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TxtFileidSub.Name = "TxtFileidSub";
-            this.TxtFileidSub.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TxtFileidSub.Size = new System.Drawing.Size(87, 34);
-            this.TxtFileidSub.TabIndex = 10;
-            this.TxtFileidSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(314, 59);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(110, 34);
-            this.bunifuCustomLabel1.TabIndex = 11;
-            this.bunifuCustomLabel1.Text = "كود الملف";
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(311, 108);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(111, 34);
-            this.bunifuCustomLabel2.TabIndex = 13;
-            this.bunifuCustomLabel2.Text = "اسم الملف";
-            // 
-            // TxtSearch
-            // 
-            this.TxtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtSearch.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtSearch.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtSearch.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtSearch.BorderThickness = 3;
-            this.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtSearch.isPassword = false;
-            this.TxtSearch.Location = new System.Drawing.Point(529, 2);
-            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(290, 28);
-            this.TxtSearch.TabIndex = 18;
-            this.TxtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtSearch.OnValueChanged += new System.EventHandler(this.TxtSearch_OnValueChanged);
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(835, 2);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(57, 34);
-            this.bunifuCustomLabel5.TabIndex = 19;
-            this.bunifuCustomLabel5.Text = "بحث";
-            // 
-            // TxtSearchSub
-            // 
-            this.TxtSearchSub.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtSearchSub.BorderColorFocused = System.Drawing.Color.Blue;
-            this.TxtSearchSub.BorderColorIdle = System.Drawing.Color.Navy;
-            this.TxtSearchSub.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.TxtSearchSub.BorderThickness = 3;
-            this.TxtSearchSub.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtSearchSub.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TxtSearchSub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtSearchSub.isPassword = false;
-            this.TxtSearchSub.Location = new System.Drawing.Point(543, 361);
-            this.TxtSearchSub.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtSearchSub.Name = "TxtSearchSub";
-            this.TxtSearchSub.Size = new System.Drawing.Size(205, 27);
-            this.TxtSearchSub.TabIndex = 20;
-            this.TxtSearchSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtSearchSub.OnValueChanged += new System.EventHandler(this.TxtSearchSub_OnValueChanged);
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(770, 354);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(57, 34);
-            this.bunifuCustomLabel8.TabIndex = 21;
-            this.bunifuCustomLabel8.Text = "بحث";
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.DgvFile);
@@ -384,56 +244,6 @@
             this.panel3.Size = new System.Drawing.Size(545, 322);
             this.panel3.TabIndex = 22;
             // 
-            // DgvFile
-            // 
-            this.DgvFile.AllowUserToAddRows = false;
-            this.DgvFile.AllowUserToDeleteRows = false;
-            this.DgvFile.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvFile.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvFile.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvFile.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvFile.BackgroundColor = System.Drawing.Color.LavenderBlush;
-            this.DgvFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvFile.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvFile.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DgvFile.DoubleBuffered = true;
-            this.DgvFile.EnableHeadersVisualStyles = false;
-            this.DgvFile.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvFile.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvFile.Location = new System.Drawing.Point(3, 3);
-            this.DgvFile.Name = "DgvFile";
-            this.DgvFile.ReadOnly = true;
-            this.DgvFile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvFile.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgvFile.Size = new System.Drawing.Size(555, 312);
-            this.DgvFile.TabIndex = 0;
-            this.DgvFile.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFile_CellClick);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.DgvFileSub);
@@ -441,56 +251,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(531, 286);
             this.panel4.TabIndex = 23;
-            // 
-            // DgvFileSub
-            // 
-            this.DgvFileSub.AllowUserToAddRows = false;
-            this.DgvFileSub.AllowUserToDeleteRows = false;
-            this.DgvFileSub.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvFileSub.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.DgvFileSub.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvFileSub.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvFileSub.BackgroundColor = System.Drawing.Color.LavenderBlush;
-            this.DgvFileSub.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvFileSub.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvFileSub.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DgvFileSub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvFileSub.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DgvFileSub.DoubleBuffered = true;
-            this.DgvFileSub.EnableHeadersVisualStyles = false;
-            this.DgvFileSub.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvFileSub.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvFileSub.Location = new System.Drawing.Point(5, 3);
-            this.DgvFileSub.Name = "DgvFileSub";
-            this.DgvFileSub.ReadOnly = true;
-            this.DgvFileSub.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvFileSub.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvFileSub.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.DgvFileSub.Size = new System.Drawing.Size(523, 279);
-            this.DgvFileSub.TabIndex = 0;
-            this.DgvFileSub.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFileSub_CellClick);
             // 
             // panel5
             // 
@@ -501,19 +261,193 @@
             this.panel5.Size = new System.Drawing.Size(275, 242);
             this.panel5.TabIndex = 24;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(833, -1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 32);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "بحث";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(781, 361);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 32);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "بحث";
+            // 
+            // TxtFileId
+            // 
+            this.TxtFileId.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtFileId.ForeColor = System.Drawing.Color.Black;
+            this.TxtFileId.Location = new System.Drawing.Point(226, 62);
+            this.TxtFileId.Name = "TxtFileId";
+            this.TxtFileId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtFileId.Size = new System.Drawing.Size(78, 29);
+            this.TxtFileId.TabIndex = 67;
+            this.TxtFileId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtFileId.TextChanged += new System.EventHandler(this.TxtFileId_OnValueChanged);
+            // 
+            // TxtFileName
+            // 
+            this.TxtFileName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtFileName.ForeColor = System.Drawing.Color.Black;
+            this.TxtFileName.Location = new System.Drawing.Point(18, 108);
+            this.TxtFileName.Name = "TxtFileName";
+            this.TxtFileName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtFileName.Size = new System.Drawing.Size(289, 29);
+            this.TxtFileName.TabIndex = 67;
+            this.TxtFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtFileName.TextChanged += new System.EventHandler(this.TxtFileName_OnValueChanged);
+            // 
+            // TxtFileNameSub
+            // 
+            this.TxtFileNameSub.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtFileNameSub.ForeColor = System.Drawing.Color.Black;
+            this.TxtFileNameSub.Location = new System.Drawing.Point(19, 109);
+            this.TxtFileNameSub.Name = "TxtFileNameSub";
+            this.TxtFileNameSub.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtFileNameSub.Size = new System.Drawing.Size(289, 29);
+            this.TxtFileNameSub.TabIndex = 68;
+            this.TxtFileNameSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtFileidSub
+            // 
+            this.TxtFileidSub.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TxtFileidSub.ForeColor = System.Drawing.Color.Black;
+            this.TxtFileidSub.Location = new System.Drawing.Point(227, 64);
+            this.TxtFileidSub.Name = "TxtFileidSub";
+            this.TxtFileidSub.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtFileidSub.Size = new System.Drawing.Size(78, 29);
+            this.TxtFileidSub.TabIndex = 69;
+            this.TxtFileidSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtSearchSub
+            // 
+            this.TxtSearchSub.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TxtSearchSub.ForeColor = System.Drawing.Color.Black;
+            this.TxtSearchSub.Location = new System.Drawing.Point(477, 368);
+            this.TxtSearchSub.Name = "TxtSearchSub";
+            this.TxtSearchSub.Size = new System.Drawing.Size(289, 23);
+            this.TxtSearchSub.TabIndex = 70;
+            this.TxtSearchSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtSearchSub.TextChanged += new System.EventHandler(this.TxtSearchSub_OnValueChanged);
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TxtSearch.ForeColor = System.Drawing.Color.Black;
+            this.TxtSearch.Location = new System.Drawing.Point(527, 3);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(289, 23);
+            this.TxtSearch.TabIndex = 71;
+            this.TxtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtSearch.TextChanged += new System.EventHandler(this.TxtSearch_OnValueChanged);
+            // 
+            // DgvFile
+            // 
+            this.DgvFile.AllowUserToAddRows = false;
+            this.DgvFile.AllowUserToDeleteRows = false;
+            this.DgvFile.AllowUserToOrderColumns = true;
+            this.DgvFile.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvFile.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvFile.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvFile.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvFile.Location = new System.Drawing.Point(0, 3);
+            this.DgvFile.Name = "DgvFile";
+            this.DgvFile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvFile.RowHeadersWidth = 60;
+            this.DgvFile.Size = new System.Drawing.Size(543, 316);
+            this.DgvFile.TabIndex = 45;
+            this.DgvFile.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFile_CellClick);
+            // 
+            // DgvFileSub
+            // 
+            this.DgvFileSub.AllowUserToAddRows = false;
+            this.DgvFileSub.AllowUserToDeleteRows = false;
+            this.DgvFileSub.AllowUserToOrderColumns = true;
+            this.DgvFileSub.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvFileSub.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvFileSub.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFileSub.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvFileSub.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvFileSub.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DgvFileSub.Location = new System.Drawing.Point(3, 3);
+            this.DgvFileSub.Name = "DgvFileSub";
+            this.DgvFileSub.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFileSub.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DgvFileSub.RowHeadersWidth = 60;
+            this.DgvFileSub.Size = new System.Drawing.Size(525, 283);
+            this.DgvFileSub.TabIndex = 46;
+            this.DgvFileSub.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFileSub_CellClick);
+            // 
             // FormFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.TxtSearch);
+            this.Controls.Add(this.TxtSearchSub);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.TxtSearchSub);
-            this.Controls.Add(this.bunifuCustomLabel8);
-            this.Controls.Add(this.TxtSearch);
-            this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormFile";
@@ -526,8 +460,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFile)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFileSub)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -537,24 +471,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtFileName;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtFileId;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private System.Windows.Forms.Panel panel2;
-        //private Bunifu.Framework.UI.BunifuThinButton2 BtnAddFileSub;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtFileNameSub;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtFileidSub;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtSearch;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TxtSearchSub;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvFile;
         private System.Windows.Forms.Panel panel4;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvFileSub;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button BtnDeleteFile;
         private System.Windows.Forms.Button BtnEditFile;
@@ -564,5 +483,19 @@
         private System.Windows.Forms.Button BtnAddFileSub;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TxtFileId;
+        private System.Windows.Forms.TextBox TxtFileName;
+        private System.Windows.Forms.TextBox TxtFileNameSub;
+        private System.Windows.Forms.TextBox TxtFileidSub;
+        private System.Windows.Forms.TextBox TxtSearchSub;
+        private System.Windows.Forms.TextBox TxtSearch;
+        private System.Windows.Forms.DataGridView DgvFile;
+        private System.Windows.Forms.DataGridView DgvFileSub;
     }
 }

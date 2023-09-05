@@ -28,66 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.DgvReminders = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txt_title = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DgvReminders = new System.Windows.Forms.DataGridView();
+            this.txt_title = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReminders)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DgvReminders
-            // 
-            this.DgvReminders.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvReminders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.DgvReminders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvReminders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvReminders.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DgvReminders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvReminders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvReminders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.DgvReminders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvReminders.DefaultCellStyle = dataGridViewCellStyle15;
-            this.DgvReminders.DoubleBuffered = true;
-            this.DgvReminders.EnableHeadersVisualStyles = false;
-            this.DgvReminders.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DgvReminders.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvReminders.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvReminders.Location = new System.Drawing.Point(72, 126);
-            this.DgvReminders.Name = "DgvReminders";
-            this.DgvReminders.ReadOnly = true;
-            this.DgvReminders.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvReminders.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvReminders.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.DgvReminders.Size = new System.Drawing.Size(454, 222);
-            this.DgvReminders.TabIndex = 80;
-            this.DgvReminders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReminders_CellClick);
             // 
             // deleteButton
             // 
@@ -102,35 +51,67 @@
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // bunifuCustomLabel10
+            // label2
             // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(261, 19);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(88, 29);
-            this.bunifuCustomLabel10.TabIndex = 85;
-            this.bunifuCustomLabel10.Text = "الموضوع";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(257, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 29);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "الموضوع";
+            // 
+            // DgvReminders
+            // 
+            this.DgvReminders.AllowUserToAddRows = false;
+            this.DgvReminders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvReminders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvReminders.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReminders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvReminders.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReminders.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvReminders.Location = new System.Drawing.Point(72, 126);
+            this.DgvReminders.Name = "DgvReminders";
+            this.DgvReminders.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReminders.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvReminders.RowHeadersWidth = 60;
+            this.DgvReminders.Size = new System.Drawing.Size(451, 222);
+            this.DgvReminders.TabIndex = 93;
+            this.DgvReminders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReminders_CellClick);
             // 
             // txt_title
             // 
-            this.txt_title.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_title.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txt_title.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txt_title.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txt_title.BorderThickness = 3;
-            this.txt_title.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_title.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_title.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.txt_title.ForeColor = System.Drawing.Color.Black;
-            this.txt_title.isPassword = false;
-            this.txt_title.Location = new System.Drawing.Point(72, 62);
-            this.txt_title.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_title.Location = new System.Drawing.Point(78, 77);
             this.txt_title.Name = "txt_title";
             this.txt_title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_title.Size = new System.Drawing.Size(451, 33);
-            this.txt_title.TabIndex = 91;
-            this.txt_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_title.Size = new System.Drawing.Size(439, 27);
+            this.txt_title.TabIndex = 94;
+            this.txt_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ShowRemindersDetails
             // 
@@ -138,9 +119,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 415);
             this.Controls.Add(this.txt_title);
-            this.Controls.Add(this.bunifuCustomLabel10);
-            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.DgvReminders);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.deleteButton);
             this.Name = "ShowRemindersDetails";
             this.Text = "تواريخ متابعة الموضوع";
             this.Load += new System.EventHandler(this.ShowRemindersDetails_Load);
@@ -151,9 +132,9 @@
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvReminders;
         private System.Windows.Forms.Button deleteButton;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txt_title;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView DgvReminders;
+        private System.Windows.Forms.TextBox txt_title;
     }
 }

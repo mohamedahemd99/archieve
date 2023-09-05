@@ -63,8 +63,8 @@ namespace archive
                 GlobalPrimId = int.Parse(DgvFile[0, e.RowIndex].Value.ToString());
                 String Query ="select * from scndfile where primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
                 DgvFileSub.DataSource = Files.QueryExecute(Query);
-                TxtFileNameSub.ResetText();
-                TxtFileidSub.ResetText();
+                TxtFileName.ResetText();
+                TxtFileId.ResetText();
                 NameOfFiles = TxtFileName.Text;
             }
 
@@ -77,9 +77,9 @@ namespace archive
         {
             try
             {
-                TxtFileidSub.Text = DgvFileSub[0, e.RowIndex].Value.ToString();
-                TxtFileNameSub.Text = DgvFileSub[1, e.RowIndex].Value.ToString();
-                NameOfSecondFiles = TxtFileNameSub.Text;
+                TxtFileId.Text = DgvFileSub[0, e.RowIndex].Value.ToString();
+                TxtFileName.Text = DgvFileSub[1, e.RowIndex].Value.ToString();
+                NameOfSecondFiles = TxtFileName.Text;
             }
             catch (Exception ex)
             {
@@ -238,7 +238,7 @@ namespace archive
                 {
                     if (files == "1")
                     {
-                        String InsertQuery = "INSERT INTO scndfile (scndfilename , scndfileid , primfileid) VALUES ('" + TxtFileNameSub.Text + "','" + TxtFileidSub.Text + "' , '" + GlobalPrimId.ToString() + "' )";
+                        String InsertQuery = "INSERT INTO scndfile (scndfilename , scndfileid , primfileid) VALUES ('" + TxtFileName.Text + "','" + TxtFileId.Text + "' , '" + GlobalPrimId.ToString() + "' )";
                     int Test = Files.MyExecuteNonQuery(InsertQuery);
                     if (Test == 1)
                     {
@@ -250,8 +250,8 @@ namespace archive
                     {
                         MessageBox.Show("لم يتم ادخال البيانات");
                     }
-                    TxtFileidSub.ResetText();
-                    TxtFileNameSub.ResetText();
+                    TxtFileId.ResetText();
+                    TxtFileName.ResetText();
                     }
                     else
                     {
@@ -281,13 +281,13 @@ namespace archive
                 if (result == DialogResult.Yes)
                 {
                     //String updateQuery = "UPDATE scndfile SET scndfilename= '" + TxtFileNameSub.Text + "'WHERE scndfileid='" + int.Parse(TxtFileidSub.Text) + "'";
-                    String DeleteQuery = "DELETE FROM  scndfile  WHERE scndfileid = '" + TxtFileidSub.Text + "' and primfileid = '" + GlobalPrimId + "' ";
-                    String InsertQuery = "INSERT INTO scndfile (scndfilename , scndfileid, primfileid) VALUES ('" + TxtFileNameSub.Text + "','" + TxtFileidSub.Text + "','" + GlobalPrimId.ToString() + "')";
+                    String DeleteQuery = "DELETE FROM  scndfile  WHERE scndfileid = '" + TxtFileId.Text + "' and primfileid = '" + GlobalPrimId + "' ";
+                    String InsertQuery = "INSERT INTO scndfile (scndfilename , scndfileid, primfileid) VALUES ('" + TxtFileName.Text + "','" + TxtFileId.Text + "','" + GlobalPrimId.ToString() + "')";
                     int Test1 = Files.MyExecuteNonQuery(DeleteQuery);
                     int Test2 = Files.MyExecuteNonQuery(InsertQuery);
                     if (Test1 == 1 && Test2 == 1)
                     {
-                        int Test = Files.MyExecuteNonQuery("UPDATE import SET secondfile =REPLACE(secondfile,'" + NameOfSecondFiles + "','" + TxtFileNameSub.Text + "') ");
+                        int Test = Files.MyExecuteNonQuery("UPDATE import SET secondfile =REPLACE(secondfile,'" + NameOfSecondFiles + "','" + TxtFileName.Text + "') ");
                         if (Test == 1) { }
                         string Query = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "' ORDER BY scndfileid";
                         DgvFileSub.DataSource = Files.QueryExecute(Query);
@@ -315,8 +315,8 @@ namespace archive
             {
                 MessageBox.Show(ex.Message);
             }
-            TxtFileNameSub.ResetText();
-            TxtFileidSub.ResetText();
+            TxtFileName.ResetText();
+            TxtFileId.ResetText();
         }
 
         private void BtnDeleteFileSub_Click(object sender, EventArgs e)
@@ -328,14 +328,14 @@ namespace archive
                     DialogResult result = MessageBox.Show("هل انت متاكد من حذف هذه الوثيقة", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                 if (result == DialogResult.Yes)
                 {
-                    String DeleteQuery = "DELETE FROM scndfile WHERE scndfileid ='" + TxtFileidSub.Text + "' and primfileid = '" + GlobalPrimId + "'  ";
+                    String DeleteQuery = "DELETE FROM scndfile WHERE scndfileid ='" + TxtFileId.Text + "' and primfileid = '" + GlobalPrimId + "'  ";
                 int Test = Files.MyExecuteNonQuery(DeleteQuery);
                 if (Test == 1)
                 {
                     string Query = "select * from scndfile where  primfileid = '" + GlobalPrimId.ToString() + "'ORDER BY scndfileid";
                     DgvFileSub.DataSource = Files.QueryExecute(Query);
-                    TxtFileNameSub.ResetText();
-                    TxtFileidSub.ResetText();
+                    TxtFileName.ResetText();
+                    TxtFileId.ResetText();
                     MessageBox.Show("تم حذف البيانات بنجاح");
                 }
                 else
@@ -377,5 +377,6 @@ namespace archive
             string Query = "select * from primfile where primfilename like'" + '%' + TxtFileName.Text + '%' + "' or primfileid like'" + '%' + TxtFileId.Text + '%' + "' ORDER BY primfileid ";
             DgvFile.DataSource = Files.QueryExecute(Query);
         }
+
     }
 }

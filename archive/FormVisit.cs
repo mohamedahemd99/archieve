@@ -19,11 +19,6 @@ namespace archive
         }
 
 
-        private void bunifuCustomLabel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormVisit_Load(object sender, EventArgs e)
         {
             FillMyData();
@@ -78,7 +73,7 @@ namespace archive
 
                     String VisitDate = Convert.ToDateTime(DateStartVisit.Value).ToString("yyyy-MM-dd");
                     String EndVisitDate = Convert.ToDateTime(DateEndVisit.Value).ToString("yyyy-MM-dd");
-                    int Test = Visit.MyExecuteNonQuery("INSERT INTO Visit (subject,orgvisit,date,enddate,org,importid) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtOrg.Text + "','" + TxtImportID.Text + "')");
+                    int Test = Visit.MyExecuteNonQuery("INSERT INTO Visit (subject,orgvisit,date,enddate,org,importid) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtImportID.Text + "','" + TxtImportID.Text + "')");
                     if (Test == 1)
                     {
                         FillMyData();
@@ -91,7 +86,7 @@ namespace archive
                     Txtsubject.ResetText();
                     TxtorgVisit.ResetText();
                     TxtImportID.ResetText();
-                    TxtOrg.ResetText();
+                    TxtImportID.ResetText();
                     DateStartVisit.ResetText();
                     DateEndVisit.ResetText();
                     }
@@ -124,7 +119,7 @@ namespace archive
                     String VisitDate = Convert.ToDateTime(DateStartVisit.Value).ToString("yyyy-MM-dd");
                 String EndVisitDate = Convert.ToDateTime(DateEndVisit.Value).ToString("yyyy-MM-dd");
                 String DeleteQuery = "DELETE FROM  Visit  WHERE importid= '" + TxtImportID.Text + "' ";
-                String InsertQuery = "INSERT INTO Visit (subject,orgvisit,date,enddate,org,importid) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtOrg.Text + "','" + TxtImportID.Text + "')";
+                String InsertQuery = "INSERT INTO Visit (subject,orgvisit,date,enddate,org,importid) VALUES ('" + Txtsubject.Text + "','" + TxtorgVisit.Text + "','" + VisitDate + "','" + EndVisitDate + "','" + TxtImportID.Text + "','" + TxtImportID.Text + "')";
                 int Test1 = Visit.MyExecuteNonQuery(DeleteQuery);
                 int Test2 = Visit.MyExecuteNonQuery(InsertQuery);
                 if (Test1 == 1 && Test2 == 1)
@@ -139,7 +134,7 @@ namespace archive
                 Txtsubject.ResetText();
                 TxtorgVisit.ResetText();
                 TxtImportID.ResetText();
-                TxtOrg.ResetText();
+                TxtImportID.ResetText();
                 DateStartVisit.ResetText();
                 DateEndVisit.ResetText();
                 }
@@ -177,7 +172,7 @@ namespace archive
                 Txtsubject.ResetText();
                 TxtorgVisit.ResetText();
                 TxtImportID.ResetText();
-                TxtOrg.ResetText();
+                TxtImportID.ResetText();
                 DateStartVisit.ResetText();
                 DateEndVisit.ResetText();
                 }
@@ -199,7 +194,7 @@ namespace archive
             try
             {
                 Txtsubject.Text = DgvVisit[2, e.RowIndex].Value.ToString();
-                TxtOrg.Text = DgvVisit[1, e.RowIndex].Value.ToString();  
+                TxtImportID.Text = DgvVisit[1, e.RowIndex].Value.ToString();  
                 TxtorgVisit.Text = DgvVisit[3, e.RowIndex].Value.ToString();
                 TxtImportID.Text = DgvVisit[0, e.RowIndex].Value.ToString();
                 DateStartVisit.Value = Convert.ToDateTime(DgvVisit[4, e.RowIndex].Value.ToString());
@@ -229,55 +224,6 @@ namespace archive
             FillMyData();
         }
 
-        private void bunifuCustomLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtorgVisit_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomLabel4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuDatepicker1_onValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateVisit_onValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtOrg_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtExportOrg_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void TxtImportID_OnValueChanged(object sender, EventArgs e)
         {
@@ -312,6 +258,11 @@ namespace archive
                 TxtOrg.Text = Dt.Rows[0]["orgname"].ToString();
                 Txtsubject.Text = Dt.Rows[0]["summary"].ToString();
             }
+
+        }
+
+        private void TxtImportID_OnValueChanged(object sender, KeyEventArgs e)
+        {
 
         }
     }

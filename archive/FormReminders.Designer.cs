@@ -29,31 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReminders));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.show_report_btn = new System.Windows.Forms.Button();
             this.remindersTotalTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_title = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.description_richTextBox = new System.Windows.Forms.RichTextBox();
             this.show_all_btn = new System.Windows.Forms.Button();
             this.show_all_coming_btn = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BtnClear = new System.Windows.Forms.Button();
             this.BtnDeleteVisit = new System.Windows.Forms.Button();
             this.BtnEditReminder = new System.Windows.Forms.Button();
             this.BtnAddReminder = new System.Windows.Forms.Button();
-            this.datePicker = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.title_combobox = new System.Windows.Forms.ComboBox();
-            this.txt_search = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.DgvReminders = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.txt_title = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DgvReminders = new System.Windows.Forms.DataGridView();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReminders)).BeginInit();
             this.SuspendLayout();
@@ -61,22 +57,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.datePicker);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txt_title);
             this.panel1.Controls.Add(this.show_report_btn);
             this.panel1.Controls.Add(this.remindersTotalTextBox);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txt_title);
             this.panel1.Controls.Add(this.description_richTextBox);
             this.panel1.Controls.Add(this.show_all_btn);
             this.panel1.Controls.Add(this.show_all_coming_btn);
-            this.panel1.Controls.Add(this.bunifuCustomLabel10);
-            this.panel1.Controls.Add(this.bunifuCustomLabel9);
             this.panel1.Controls.Add(this.BtnClear);
             this.panel1.Controls.Add(this.BtnDeleteVisit);
             this.panel1.Controls.Add(this.BtnEditReminder);
             this.panel1.Controls.Add(this.BtnAddReminder);
-            this.panel1.Controls.Add(this.datePicker);
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
-            this.panel1.Controls.Add(this.bunifuCustomLabel7);
             this.panel1.Location = new System.Drawing.Point(-5, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1364, 303);
@@ -116,25 +112,6 @@
             this.label1.TabIndex = 91;
             this.label1.Text = "عدد المتابعات";
             // 
-            // txt_title
-            // 
-            this.txt_title.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_title.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txt_title.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txt_title.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txt_title.BorderThickness = 3;
-            this.txt_title.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_title.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_title.ForeColor = System.Drawing.Color.Black;
-            this.txt_title.isPassword = false;
-            this.txt_title.Location = new System.Drawing.Point(699, 84);
-            this.txt_title.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_title.Name = "txt_title";
-            this.txt_title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_title.Size = new System.Drawing.Size(517, 34);
-            this.txt_title.TabIndex = 90;
-            this.txt_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // description_richTextBox
             // 
             this.description_richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,29 +147,6 @@
             this.show_all_coming_btn.Text = "عرض كل المتابعات القادمة";
             this.show_all_coming_btn.UseVisualStyleBackColor = false;
             this.show_all_coming_btn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bunifuCustomLabel10
-            // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(1247, 84);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(88, 29);
-            this.bunifuCustomLabel10.TabIndex = 84;
-            this.bunifuCustomLabel10.Text = "الموضوع";
-            // 
-            // bunifuCustomLabel9
-            // 
-            this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(583, 9);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(280, 40);
-            this.bunifuCustomLabel9.TabIndex = 82;
-            this.bunifuCustomLabel9.Text = "متابعة السيد نائب المدير";
             // 
             // BtnClear
             // 
@@ -242,156 +196,139 @@
             this.BtnAddReminder.UseVisualStyleBackColor = false;
             this.BtnAddReminder.Click += new System.EventHandler(this.BtnAddVisit_Click);
             // 
-            // datePicker
+            // txt_title
             // 
-            this.datePicker.BackColor = System.Drawing.Color.DodgerBlue;
-            this.datePicker.BorderRadius = 0;
-            this.datePicker.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker.ForeColor = System.Drawing.Color.White;
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker.FormatCustom = "yyyy-MM-dd";
-            this.datePicker.Location = new System.Drawing.Point(997, 252);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(196, 29);
-            this.datePicker.TabIndex = 64;
-            this.datePicker.Value = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.txt_title.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.txt_title.ForeColor = System.Drawing.Color.Black;
+            this.txt_title.Location = new System.Drawing.Point(702, 84);
+            this.txt_title.Name = "txt_title";
+            this.txt_title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_title.Size = new System.Drawing.Size(514, 27);
+            this.txt_title.TabIndex = 94;
+            this.txt_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // bunifuCustomLabel1
+            // label9
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(1224, 252);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(123, 29);
-            this.bunifuCustomLabel1.TabIndex = 19;
-            this.bunifuCustomLabel1.Text = "تاريخ المتابعة";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(1253, 148);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(82, 29);
-            this.bunifuCustomLabel7.TabIndex = 11;
-            this.bunifuCustomLabel7.Text = "التفاصيل";
-            // 
-            // title_combobox
-            // 
-            this.title_combobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_combobox.FormattingEnabled = true;
-            this.title_combobox.Location = new System.Drawing.Point(244, 369);
-            this.title_combobox.Name = "title_combobox";
-            this.title_combobox.Size = new System.Drawing.Size(614, 28);
-            this.title_combobox.TabIndex = 89;
-            this.title_combobox.Visible = false;
-            // 
-            // txt_search
-            // 
-            this.txt_search.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_search.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txt_search.BorderColorIdle = System.Drawing.Color.Navy;
-            this.txt_search.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txt_search.BorderThickness = 3;
-            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_search.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.ForeColor = System.Drawing.Color.Black;
-            this.txt_search.isPassword = false;
-            this.txt_search.Location = new System.Drawing.Point(894, 364);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_search.Size = new System.Drawing.Size(261, 32);
-            this.txt_search.TabIndex = 87;
-            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_search.Visible = false;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(1170, 367);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(160, 24);
-            this.bunifuCustomLabel2.TabIndex = 88;
-            this.bunifuCustomLabel2.Text = "بحث بملخص الموضوع";
-            this.bunifuCustomLabel2.Visible = false;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Blue;
+            this.label9.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(596, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(280, 40);
+            this.label9.TabIndex = 95;
+            this.label9.Text = "متابعة السيد مساعد مدير العقود";
             // 
             // DgvReminders
             // 
             this.DgvReminders.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvReminders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvReminders.AllowUserToDeleteRows = false;
             this.DgvReminders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvReminders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvReminders.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DgvReminders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvReminders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvReminders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvReminders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvReminders.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DgvReminders.DoubleBuffered = true;
-            this.DgvReminders.EnableHeadersVisualStyles = false;
-            this.DgvReminders.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DgvReminders.HeaderBgColor = System.Drawing.Color.DodgerBlue;
-            this.DgvReminders.HeaderForeColor = System.Drawing.Color.Black;
-            this.DgvReminders.Location = new System.Drawing.Point(12, 309);
-            this.DgvReminders.Name = "DgvReminders";
-            this.DgvReminders.ReadOnly = true;
-            this.DgvReminders.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DgvReminders.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DgvReminders.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DgvReminders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.DgvReminders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvReminders.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgvReminders.RowTemplate.Height = 50;
-            this.DgvReminders.Size = new System.Drawing.Size(1338, 412);
-            this.DgvReminders.TabIndex = 79;
+            this.DgvReminders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvReminders.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReminders.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DgvReminders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DgvReminders.Location = new System.Drawing.Point(9, 303);
+            this.DgvReminders.Name = "DgvReminders";
+            this.DgvReminders.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReminders.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DgvReminders.RowHeadersWidth = 45;
+            this.DgvReminders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DgvReminders.Size = new System.Drawing.Size(1336, 408);
+            this.DgvReminders.TabIndex = 90;
             this.DgvReminders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVisit_CellClick);
             this.DgvReminders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReminders_CellDoubleClick);
+            // 
+            // datePicker
+            // 
+            this.datePicker.CalendarForeColor = System.Drawing.Color.Blue;
+            this.datePicker.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
+            this.datePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.datePicker.CustomFormat = "dd/MM/yyyy";
+            this.datePicker.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(1027, 251);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.datePicker.RightToLeftLayout = true;
+            this.datePicker.Size = new System.Drawing.Size(189, 29);
+            this.datePicker.TabIndex = 91;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(1247, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 29);
+            this.label5.TabIndex = 96;
+            this.label5.Text = "الموضوع";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(1253, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 29);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "التفاصيل";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(1224, 249);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 29);
+            this.label3.TabIndex = 98;
+            this.label3.Text = "تاريخ المتابعة";
             // 
             // FormReminders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.title_combobox);
-            this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.DgvReminders);
+            this.Controls.Add(this.panel1);
             this.Name = "FormReminders";
             this.Text = "FormReminders";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReminders_FormClosed);
             this.Load += new System.EventHandler(this.FormReminders_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReminders)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -402,21 +339,18 @@
         private System.Windows.Forms.Button BtnDeleteVisit;
         private System.Windows.Forms.Button BtnEditReminder;
         private System.Windows.Forms.Button BtnAddReminder;
-        private Bunifu.Framework.UI.BunifuDatepicker datePicker;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvReminders;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private System.Windows.Forms.Button show_all_coming_btn;
         private System.Windows.Forms.Button show_all_btn;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txt_search;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private System.Windows.Forms.ComboBox title_combobox;
         private System.Windows.Forms.RichTextBox description_richTextBox;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txt_title;
         private System.Windows.Forms.TextBox remindersTotalTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button show_report_btn;
+        private System.Windows.Forms.TextBox txt_title;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView DgvReminders;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
     }
 }
